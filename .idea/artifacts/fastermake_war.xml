@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="fastermake:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="fastermake.war">
+      <element id="artifact" artifact-name="fastermake:war exploded" />
+    </root>
+  </artifact>
+</component>

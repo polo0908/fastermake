@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Maven: junit:junit:4.11">
+    <archive path="C:/Users/zj/.m2/repository/junit/junit/4.11/junit-4.11.jar" />
+  </library>
+  <library name="Maven: org.hamcrest:hamcrest-core:1.3">
+    <archive path="C:/Users/zj/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-core:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-core/4.2.5.RELEASE/spring-core-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-web:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-beans:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-beans/4.2.5.RELEASE/spring-beans-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-context:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-context/4.2.5.RELEASE/spring-context-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-aop:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-aop/4.2.5.RELEASE/spring-aop-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: aopalliance:aopalliance:1.0">
+    <archive path="C:/Users/zj/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-oxm:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-oxm/4.2.5.RELEASE/spring-oxm-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-tx:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-tx/4.2.5.RELEASE/spring-tx-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-jdbc:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-jdbc/4.2.5.RELEASE/spring-jdbc-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-webmvc:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-webmvc/4.2.5.RELEASE/spring-webmvc-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-expression:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-expression/4.2.5.RELEASE/spring-expression-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-context-support:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-context-support/4.2.5.RELEASE/spring-context-support-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-test:4.2.5.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/spring-test/4.2.5.RELEASE/spring-test-4.2.5.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.mybatis:mybatis:3.2.8">
+    <archive path="C:/Users/zj/.m2/repository/org/mybatis/mybatis/3.2.8/mybatis-3.2.8.jar" />
+  </library>
+  <library name="Maven: org.mybatis:mybatis-spring:1.2.2">
+    <archive path="C:/Users/zj/.m2/repository/org/mybatis/mybatis-spring/1.2.2/mybatis-spring-1.2.2.jar" />
+  </library>
+  <library name="Maven: org.aspectj:aspectjweaver:1.8.0">
+    <archive path="C:/Users/zj/.m2/repository/org/aspectj/aspectjweaver/1.8.0/aspectjweaver-1.8.0.jar" />
+  </library>
+  <library name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.2">
+    <archive path="C:/Users/zj/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.7.2/jackson-core-2.7.2.jar" />
+  </library>
+  <library name="Maven: com.fasterxml.jackson.core:jackson-databind:2.7.3">
+    <archive path="C:/Users/zj/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.7.3/jackson-databind-2.7.3.jar" />
+  </library>
+  <library name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.0">
+    <archive path="C:/Users/zj/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.7.0/jackson-annotations-2.7.0.jar" />
+  </library>
+  <library name="Maven: com.google.code.gson:gson:2.8.2">
+    <archive path="C:/Users/zj/.m2/repository/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar" />
+  </library>
+  <library name="Maven: org.apache.commons:commons-lang3:3.3.2">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar" />
+  </library>
+  <library name="Maven: net.sf.json-lib:json-lib:jdk15:2.4">
+    <archive path="C:/Users/zj/.m2/repository/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar" />
+  </library>
+  <library name="Maven: commons-beanutils:commons-beanutils:1.8.0">
+    <archive path="C:/Users/zj/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar" />
+  </library>
+  <library name="Maven: commons-collections:commons-collections:3.2.1">
+    <archive path="C:/Users/zj/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar" />
+  </library>
+  <library name="Maven: commons-lang:commons-lang:2.5">
+    <archive path="C:/Users/zj/.m2/repository/commons-lang/commons-lang/2.5/commons-lang-2.5.jar" />
+  </library>
+  <library name="Maven: commons-logging:commons-logging:1.1.1">
+    <archive path="C:/Users/zj/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" />
+  </library>
+  <library name="Maven: net.sf.ezmorph:ezmorph:1.0.6">
+    <archive path="C:/Users/zj/.m2/repository/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar" />
+  </library>
+  <library name="Maven: jstl:jstl:1.2">
+    <archive path="C:/Users/zj/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar" />
+  </library>
+  <library name="Maven: javax:javaee-api:7.0">
+    <archive path="C:/Users/zj/.m2/repository/javax/javaee-api/7.0/javaee-api-7.0.jar" />
+  </library>
+  <library name="Maven: com.sun.mail:javax.mail:1.5.0">
+    <archive path="C:/Users/zj/.m2/repository/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar" />
+  </library>
+  <library name="Maven: javax.activation:activation:1.1">
+    <archive path="C:/Users/zj/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar" />
+  </library>
+  <library name="Maven: mysql:mysql-connector-java:5.1.32">
+    <archive path="C:/Users/zj/.m2/repository/mysql/mysql-connector-java/5.1.32/mysql-connector-java-5.1.32.jar" />
+  </library>
+  <library name="Maven: commons-dbcp:commons-dbcp:1.2.2">
+    <archive path="C:/Users/zj/.m2/repository/commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar" />
+  </library>
+  <library name="Maven: commons-pool:commons-pool:1.3">
+    <archive path="C:/Users/zj/.m2/repository/commons-pool/commons-pool/1.3/commons-pool-1.3.jar" />
+  </library>
+  <library name="Maven: com.alibaba:fastjson:1.1.41">
+    <archive path="C:/Users/zj/.m2/repository/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.jar" />
+  </library>
+  <library name="Maven: org.slf4j:jcl-over-slf4j:1.7.12">
+    <archive path="C:/Users/zj/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.12/jcl-over-slf4j-1.7.12.jar" />
+  </library>
+  <library name="Maven: org.slf4j:slf4j-api:1.7.12">
+    <archive path="C:/Users/zj/.m2/repository/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar" />
+  </library>
+  <library name="Maven: ch.qos.logback:logback-core:1.1.3">
+    <archive path="C:/Users/zj/.m2/repository/ch/qos/logback/logback-core/1.1.3/logback-core-1.1.3.jar" />
+  </library>
+  <library name="Maven: ch.qos.logback:logback-classic:1.1.3">
+    <archive path="C:/Users/zj/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar" />
+  </library>
+  <library name="Maven: ch.qos.logback:logback-access:1.1.3">
+    <archive path="C:/Users/zj/.m2/repository/ch/qos/logback/logback-access/1.1.3/logback-access-1.1.3.jar" />
+  </library>
+  <library name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13">
+    <archive path="C:/Users/zj/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar" />
+  </library>
+  <library name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13">
+    <archive path="C:/Users/zj/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar" />
+  </library>
+  <library name="Maven: commons-fileupload:commons-fileupload:1.3.1">
+    <archive path="C:/Users/zj/.m2/repository/commons-fileupload/commons-fileupload/1.3.1/commons-fileupload-1.3.1.jar" />
+  </library>
+  <library name="Maven: commons-io:commons-io:2.4">
+    <archive path="C:/Users/zj/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar" />
+  </library>
+  <library name="Maven: commons-codec:commons-codec:1.9">
+    <archive path="C:/Users/zj/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar" />
+  </library>
+  <library name="Maven: org.apache.ant:ant-apache-xalan2:1.9.7">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/ant/ant-apache-xalan2/1.9.7/ant-apache-xalan2-1.9.7.jar" />
+  </library>
+  <library name="Maven: org.apache.ant:ant:1.9.7">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/ant/ant/1.9.7/ant-1.9.7.jar" />
+  </library>
+  <library name="Maven: org.apache.ant:ant-launcher:1.9.7">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/ant/ant-launcher/1.9.7/ant-launcher-1.9.7.jar" />
+  </library>
+  <library name="Maven: xalan:xalan:2.7.1">
+    <archive path="C:/Users/zj/.m2/repository/xalan/xalan/2.7.1/xalan-2.7.1.jar" />
+  </library>
+  <library name="Maven: xalan:serializer:2.7.1">
+    <archive path="C:/Users/zj/.m2/repository/xalan/serializer/2.7.1/serializer-2.7.1.jar" />
+  </library>
+  <library name="Maven: com.github.junrar:junrar:0.7">
+    <archive path="C:/Users/zj/.m2/repository/com/github/junrar/junrar/0.7/junrar-0.7.jar" />
+  </library>
+  <library name="Maven: commons-logging:commons-logging-api:1.1">
+    <archive path="C:/Users/zj/.m2/repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar" />
+  </library>
+  <library name="Maven: org.apache.commons:commons-vfs2:2.0">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/commons/commons-vfs2/2.0/commons-vfs2-2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-api:1.4">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/maven/scm/maven-scm-api/1.4/maven-scm-api-1.4.jar" />
+  </library>
+  <library name="Maven: org.codehaus.plexus:plexus-utils:1.5.6">
+    <archive path="C:/Users/zj/.m2/repository/org/codehaus/plexus/plexus-utils/1.5.6/plexus-utils-1.5.6.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-svnexe:1.4">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/maven/scm/maven-scm-provider-svnexe/1.4/maven-scm-provider-svnexe-1.4.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-svn-commons:1.4">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/maven/scm/maven-scm-provider-svn-commons/1.4/maven-scm-provider-svn-commons-1.4.jar" />
+  </library>
+  <library name="Maven: regexp:regexp:1.3">
+    <archive path="C:/Users/zj/.m2/repository/regexp/regexp/1.3/regexp-1.3.jar" />
+  </library>
+  <library name="Maven: org.jsoup:jsoup:1.8.1">
+    <archive path="C:/Users/zj/.m2/repository/org/jsoup/jsoup/1.8.1/jsoup-1.8.1.jar" />
+  </library>
+  <library name="Maven: net.sourceforge.htmlunit:htmlunit-core-js:2.22">
+    <archive path="C:/Users/zj/.m2/repository/net/sourceforge/htmlunit/htmlunit-core-js/2.22/htmlunit-core-js-2.22.jar" />
+  </library>
+  <library name="Maven: org.dom4j:dom4j:2.1.0">
+    <archive path="C:/Users/zj/.m2/repository/org/dom4j/dom4j/2.1.0/dom4j-2.1.0.jar" />
+  </library>
+  <library name="Maven: jaxen:jaxen:1.1.6">
+    <archive path="C:/Users/zj/.m2/repository/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar" />
+  </library>
+  <library name="Maven: com.thoughtworks.xstream:xstream:1.4.8">
+    <archive path="C:/Users/zj/.m2/repository/com/thoughtworks/xstream/xstream/1.4.8/xstream-1.4.8.jar" />
+  </library>
+  <library name="Maven: xmlpull:xmlpull:1.1.3.1">
+    <archive path="C:/Users/zj/.m2/repository/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar" />
+  </library>
+  <library name="Maven: xpp3:xpp3_min:1.1.4c">
+    <archive path="C:/Users/zj/.m2/repository/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar" />
+  </library>
+  <library name="Maven: org.apache.poi:poi:3.9">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar" />
+  </library>
+  <library name="Maven: org.apache.poi:poi-ooxml:3.9">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar" />
+  </library>
+  <library name="Maven: org.apache.poi:poi-ooxml-schemas:3.9">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar" />
+  </library>
+  <library name="Maven: org.apache.xmlbeans:xmlbeans:2.3.0">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar" />
+  </library>
+  <library name="Maven: stax:stax-api:1.0.1">
+    <archive path="C:/Users/zj/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar" />
+  </library>
+  <library name="Maven: dom4j:dom4j:1.6.1">
+    <archive path="C:/Users/zj/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" />
+  </library>
+  <library name="Maven: xml-apis:xml-apis:1.0.b2">
+    <archive path="C:/Users/zj/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" />
+  </library>
+  <library name="Maven: com.google.zxing:core:3.2.0">
+    <archive path="C:/Users/zj/.m2/repository/com/google/zxing/core/3.2.0/core-3.2.0.jar" />
+  </library>
+  <library name="Maven: com.google.zxing:javase:3.1.0">
+    <archive path="C:/Users/zj/.m2/repository/com/google/zxing/javase/3.1.0/javase-3.1.0.jar" />
+  </library>
+  <library name="Maven: redis.clients:jedis:2.9.0">
+    <archive path="C:/Users/zj/.m2/repository/redis/clients/jedis/2.9.0/jedis-2.9.0.jar" />
+  </library>
+  <library name="Maven: org.apache.commons:commons-pool2:2.4.2">
+    <archive path="C:/Users/zj/.m2/repository/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar" />
+  </library>
+  <library name="Maven: org.springframework.data:spring-data-redis:1.7.11.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/data/spring-data-redis/1.7.11.RELEASE/spring-data-redis-1.7.11.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework.data:spring-data-keyvalue:1.1.11.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/data/spring-data-keyvalue/1.1.11.RELEASE/spring-data-keyvalue-1.1.11.RELEASE.jar" />
+  </library>
+  <library name="Maven: org.springframework.data:spring-data-commons:1.12.11.RELEASE">
+    <archive path="C:/Users/zj/.m2/repository/org/springframework/data/spring-data-commons/1.12.11.RELEASE/spring-data-commons-1.12.11.RELEASE.jar" />
+  </library>
+  <library name="Maven: commons-httpclient:commons-httpclient:3.0.1">
+    <archive path="C:/Users/zj/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar" />
+  </library>
+</eclipse-userlibraries>
+

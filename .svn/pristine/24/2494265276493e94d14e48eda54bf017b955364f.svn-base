@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<header class="header" id="header">
+		<div class="header_top">
+			<div class="header_bottom">
+				<div class="header_bottom_in w12 clearfix">
+					<div class="contact_tc" id="wechat_div">
+						<div class="close">
+							<span class="glyphicon glyphicon-remove"></span>
+						</div>
+						<a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx6ddc97078f4b9a47&redirect_uri=https%3A%2F%2Fkuaizhizao.cn%2Fwechat%2Fcallback.do&response_type=code&scope=snsapi_login&state=3d6be0a4035d839573b04816624a415e#wechat_redirect" target="_blank" class="clearfix">
+							<div class="clearfix">
+								<div class="imgs pull-left">
+									<img src="/images/wechat_50.png" />
+								</div>
+								<p class="pull-right">现在关注公众号并登陆       获取实际询盘消息推送</p>
+							</div>
+							<div class="img text-center mt15">
+								<img src="../images/qrcode_for_kuaizhizao.jpg" class="img-responsive">
+							</div>
+							
+						</a>
+					</div>
+					<a href="http://www.kuaizhizao.cn" class="logo pull-left"><img
+						src="/images/head.png" alt="" /></a>
+					<div class="header_top_in dl_zc w12 clearfix">
+					
+						<nav class="pull-left add__head_nav">
+							<ul class="nav-list clearfix">
+								<li class="pull-left">
+									<a>询盘(订单)分类列表
+										<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+										<span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+									</a>
+									<ul class="sub-nav ul1">
+										<li>
+
+
+											<a href="http://www.kuaizhizao.cn/rfq/plastic/1" > 塑料询盘(订单)</a>
+											<dl class="dl1">
+												<dt></dt>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/plastic/injection-molding/1">注塑最新询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/plastic/vacuum-forming/1">吸塑最新询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/plastic/rotational-molding/1">滚塑最新询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/plastic/blow-molding/1">吹塑最新询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/plastic/plastic-extrusion/1">挤塑最新询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/plastic/others-plastic/1">其他塑料工艺</a></dd>
+											</dl>
+										</li>
+										<li>
+											<a href="http://www.kuaizhizao.cn/rfq/cast/1" >铸造询盘(订单)</a>
+											<dl class="dl2">
+												<dt></dt>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/cast/stainless-steel-casting/1">不锈钢铸造(硅溶胶、水玻璃）询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/cast/die-casting/1">压铸（铝、锌、镁、铜等）询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/cast/sand-casting/1">砂铸(钢、铁、铜、铝等)询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/cast/gravity-casting/1">重力铸造（铝、铜等）询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/cast/others-casting/1">其他铸造询盘</a></dd>
+											</dl>
+										</li>
+										<li>
+											<a href="http://www.kuaizhizao.cn/rfq/raw/1">原料采购粗加工询盘(订单)</a>
+
+										</li>
+										<li>
+											<a href="http://www.kuaizhizao.cn/rfq/metal/1" >钣金加工询盘(订单)</a>
+											<dl >
+												<dt></dt>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/metal/sheet-metal-machining/1">钣金加工（切割，折弯，焊接，组装）询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/metal/stamping-and-stretching/1">冲压拉伸询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/metal/spinning/1">旋压询盘</a></dd>
+												<dd><a href="http://www.kuaizhizao.cn/rfq/metal/raw-material-procurement/1">铝挤压询盘</a></dd>
+											</dl>
+										</li>
+										<li><a href="http://www.kuaizhizao.cn/rfq/machining/1">机加工询盘(订单)</a></li>
+										<li><a href="http://www.kuaizhizao.cn/rfq/goods/1">现货采购询盘(订单)</a></li>
+									</ul>
+								</li>
+								<li class="pull-left">
+									<a >工厂库
+										<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+										<span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+									</a>
+									<ul class="sub-nav ul2">
+										<li><a href="http://www.kuaizhizao.cn/manufacturer-category/plastic-1">塑料工厂</a></li>
+										<li><a href="http://www.kuaizhizao.cn/manufacturer-category/cast-1">铸造工厂</a></li>
+										<li><a href="http://www.kuaizhizao.cn/manufacturer-category/forging-1">锻造工厂</a></li>
+										<li><a href="http://www.kuaizhizao.cn/manufacturer-category/raw-1">原料采购粗加工工厂</a></li>
+										<li><a href="http://www.kuaizhizao.cn/manufacturer-category/metal-1">钣金工厂</a></li>
+										<li><a href="http://www.kuaizhizao.cn/manufacturer-category/machining-1" >机加工工厂</a></li>
+										<li><a href="http://www.kuaizhizao.cn/manufacturer-category/goods-1">现货采购工厂</a></li>
+									</ul>
+								</li>
+							   </ul>
+							</nav>
+					
+					
+						<div class="head_R pull-right">
+
+							<ul class="index_head_R_Login">
+									<li class="beforLogin">
+										<a>工厂入口</a>
+										<ul class="facotory_ul">
+											<li>作为供应商，我可以：</li>
+											<li><span></span> 完善档案，<a href="/zh/new_inquiry.html">轻松找到适合自己的各种询盘</a>；</li>
+											<li><span></span> <a href="/zh/quote_list.html">查找询盘</a>，在线提交报价给采购商；</li>
+											<li class="home_head_dl text-right">
+												<!-- <a href="/zh/login.html" class="active">登录</a> 
+												<a href="/zh/register_zh.html?type=1" class="supp_register">注册</a> -->
+												<a href="/zh/login.html" class="active">登录</a>
+												<a href="/zh/register_zh.html" class="supp_register">注册</a>
+											</li>
+										</ul>
+									</li>
+									<li class="beforLogin">
+										<a>采购商入口</a>
+										<ul class="pur_register purchase_ul">
+											<li>作为采购商，我可以：</li>
+											<li><span></span> <a href="/zh/quickly_release.html">发布询盘</a>，获取全中国范围内的供应商报价；</li>
+											<li><span></span> 通过工厂库 <a
+												href="/zh/comments_echart.html">搜索和筛选心仪供应商</a> ，并添加收藏；</li>
+											<li><span></span> 直接发送询盘给有意向的供应商，<a
+												href="/zh/quickly_release.html">获取报价</a>；</li>
+											<li><span></span> 在线管理我的供应商，更快速的建立合作关系；</li>
+											<li class="home_head_dl text-right">
+												<a href="/zh/login.html" class="active">登录</a>												
+												<a href="/zh/register_zh.html?type=2" class="pur_register">注册</a>								
+											</li>
+										</ul>
+									</li>
+									<li class="afterLogin">
+										<a href="###">
+											<span class="iconfont">&#xe6c9;</span>
+											<span id="username"></span>
+										</a>
+										<ul class="account_ul">
+											<li>
+												<a href="/zh/account_management.html">账户管理</a> 
+												<a href="#"onclick="exit()">
+													<span class="iconfont">&#xe60a;</span>退出
+												</a>											
+											</li>
+										</ul>
+									</li>
+									
+									<li class="afterLogin" onclick="window.location='/zh/news.html'"> 
+										<a href="/zh/business_view.html" class="bk">
+											消息 <span id="newMessageCount" class="gs"></span>
+										</a>
+										<ul class="new_ul">
+											<li><a href="/zh/news.html">所有消息</a></li>
+											<li>
+												<a href="/zh/news.html?status=1">未读消息
+													<em style="color: #da4f49" id="unRead"></em>
+												</a> 
+											</li>
+											<li>
+												<a href="/zh/news.html?status=3">授盘通知											
+													<em style="color: #da4f49" id="award"></em>
+												</a>
+											</li>
+											<li>
+												<a href="/zh/news.html?status=4">生产进度更新
+													<em style="color: #da4f49" id="updateProcess"></em>
+												</a>
+											</li>
+											<li>
+												<a href="/zh/news.html?status=2">已发出的消息</a>
+											</li>
+										</ul>										
+									</li>
+									<li class="afterLogin"> 
+										<a href="/zh/business_view.html" class="bk">业务看板</a>
+									</li>
+									<li class="afterLogin">
+										<a href="###"><span class="iconfont">&#xe63f;</span>我的询盘</a>	
+										<ul class="rfq_ul">
+											<li>
+												<div class="pull-left div1" id="supplier_list">供应商
+												 	<a href="/zh/quote_list.html">
+												 		<button class="btn btn-default">可报价询盘查看</button>
+													</a>
+												</div>
+												<div class="pull-left">采购商
+													 <a href="/zh/purchase_list.html">
+													 	<button class="btn btn-default">我发出的询盘</button>
+													 </a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="afterLogin">
+										<a href="/zh/enterprise_archives.html">我的账户</a>							
+									</li>
+									<li class="send_li">
+										<a href="/zh/quickly_release.html">
+											<button class="btn btn-default pull-right">快速发布询盘</button>
+										</a>
+									</li>
+								</ul>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</body>
+</html>
+<script src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/upload-base.js"></script>
+<script src="/js/easydialog.min.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script src="/js/getServerName.js"></script>
+<script>
+	$.post("/account/changeLanguage.do", {
+		"language" : 'zh'
+	}, function(result) {
+	});
+
+	// 微信弹窗关闭按钮
+	$('.header_bottom .contact_tc .close').click(function(){
+		$('.header_bottom .contact_tc').hide();
+	});	
+	/*语言改变设置*/
+	function change_lan() {
+
+		var lan = getCookie("language");
+		if (lan == 'en') {
+			lan = 'zh'
+		} else {
+			lan = 'en'
+		}
+
+		$.post("/account/changeLanguage.do", {
+			"language" : lan
+		}, function(result) {
+			var url = window.location.search;
+			if (lan == 'en') {
+				url = url.replace('zh', 'en');
+				window.location = url;
+			} else {
+				url = url.replace('en', 'zh');
+				window.location = url;
+			}
+		});
+
+	}
+	$('.beforLogin').show()
+	$('.afterLogin').hide()
+	var userName = getCookie("userName");
+	var factoryInfo = getCookie("F_INFO");
+	//是否绑定微信
+	var w_flag = getCookie("w_flag");
+	
+	var factoryType;
+	if (userName != null && userName != '' && userName != undefined) {
+		var base = new Base64();
+		userName = base.decode(userName);
+		$('#username').text(userName);
+
+	}
+
+	//判断是否登录显示
+	if (factoryInfo != null && factoryInfo != '' && factoryInfo != undefined) {
+		var base = new Base64();
+		factoryInfo = base.decode(factoryInfo);
+		var strs = factoryInfo.split('&');
+		factoryType = strs[strs.length - 1];
+		if (factoryType == 2) {
+//			$('#supplier_list').find('a').attr('href', "#").css({
+//				"background-color" : "#ddd"
+//			});
+			
+			 $('#wechat_div').hide();
+			
+		} else if (factoryType == 1) {
+//			$('#supplier_list').next().find('a').attr('href', "#").css({
+//				"background-color" : "#ddd"
+//			});
+		}
+
+		//如果已绑定微信不显示浮框
+		if(w_flag){
+			$('#wechat_div').hide();
+		}
+		
+		$('.beforLogin').hide()
+		$('.afterLogin').show()
+	}else{
+		$('#wechat_div').hide();
+	}
+
+	//获取消息数量
+	getMessage();
+
+	function getMessage() {
+
+		if (factoryInfo == null || factoryInfo == '') {
+			return false;
+		} else {
+			window.clearInterval(newMessage_interval);
+		}
+		$.ajax({
+			url : "/noteMessage/newMessageCount.do",
+			cache : false,
+			success : function(data) {
+
+				if (data.state == 0) {
+
+					var summap = data.data
+
+					if (summap) {
+
+						var count = summap.unRead
+						var award = summap.award
+						var updateProcess = summap.updateProcess
+						$('#unRead').text(count ? count : "")
+						$('#newMessageCount').text(count ? count : "")
+						$('#award').text(award ? award : "")
+						$('#updateProcess').text(
+								updateProcess ? updateProcess : "")
+                        $('#inodeNewMessageCount').text(count ? count : "")
+						$('#inodeNewAwardCount').text(award ? award : "")
+					}
+
+				}
+			}
+		});
+
+	}
+
+	function exit() {
+
+		$.post("/account/clearCookie.do", function(result) {
+			if (result.state == 0) {
+				//根据cookie判断不同语言退出页面
+				var lan = getCookie("language");
+				var serverName = getServerName(lan);
+				if (lan == 'en') {
+					window.location = serverName + "/en/login.html";
+				} else {
+					window.location = serverName + "/zh/login.html";
+				}
+			}
+		})
+
+	}
+
+	//计算新消息数量  add by jason  请不要删除，我先注释了
+	var newMessage_interval = setInterval(function() {
+		getMessage();
+	}, 60000);
+</script>

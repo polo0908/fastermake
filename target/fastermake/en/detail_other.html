@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="Keywords">
+<meta name="Description" th:content="${descrpition}">
+	<title th:text="${quoteInfo.quoteTitle + ' RFQ | Quickpart.cn'}"></title>
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+<script src="/lib/respond/respond.js"></script>
+<link rel="canonical" th:href="@{${'https://www.kuaizhizao.cn/rfq/'+orderId}}"/>
+<link rel="stylesheet" href="/css/css.css?v=20181008" />
+<link rel="stylesheet" href="/css/details.css" />
+<link rel="stylesheet" href="/css/easydialog.css" />
+<link rel="stylesheet" href="/css/progressBar.css" />
+<link rel="stylesheet" href="/css/ui.css" />
+<link rel="stylesheet" href="/css/ui.progress-bar.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+<body>
+	<div class="supplier_detail offer_detail purchase_supplier">
+		<input type="hidden" id="order_id" th:value="${orderId}">
+		<div id="header"></div>
+		<div class="section">
+			<div class="container w12">
+				<div class="row">
+					<div class="product_detail_title">
+						<ol class="breadcrumb">
+							<li><a href="https://www.quickpart.cn/">Home</a></li>
+							<li class="active"><a th:href="@{${'https://www.quickpart.cn/rfq/'+orderId}}">Inquiry Details</a></li>
+						</ol>
+						<h2>
+							<span style="font-size: 30px;"></span><span id="quote_title"
+								style="font-size: 26px; padding-right: 64px;"></span> Inquiry number #<span
+								id="quoteId" style="font-size: 26px;"></span> - <small>Quote available</small>
+							<button id="self_or_other" style="color: red;font-weight: normal;border: 1px solid;background-color: #fff;margin-left: 40px;font-size: 20px;"></button>
+							<span style="font-size: 15px;"></span>
+							<em class="color_red">Temporary not available for oversea manufacturers</em>
+					    </h2>
+					</div>
+					<nav>
+						<ul class="clearfix" id="title_ul">
+							<li><a class="active">Inquiry details</a></li>
+						</ul>
+					</nav>
+
+
+
+					<div class="panel panel1 panel2" id="quote_status" style="display: none;">
+						<div class="panel-heading">Project status</div>
+						<div class="panel-body ">							
+							<div class="reason2 clearfix">
+								<em>Current quotation</em> <span></span>
+							</div>
+							<div class="reason2 clearfix" style="display: none;"
+								id="follow_status">
+								<em>Follow up on the case</em> <span></span>
+							</div>
+							<div class="reason2 clearfix" style="display: none;"
+								id="order_factory">
+								<em>Order situation</em> <span></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel1" style="display: none;" id="refuse_div">
+						<div class="panel-heading">Reason for quotation failure</div>
+						<div class="panel-body ">
+							<div class="reason1 clearfix">
+								<em></em> <span></span>
+							</div>
+							<div class="reason2 clearfix">
+								<em></em> <span></span>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="con w12 container con_1">
+
+						<div class="card" style="display: none;">
+							<div class="close">
+								<span class="glyphicon glyphicon-remove"></span>
+							</div>
+							<div class="bj_ewm">
+								<!-- <div class="close"><span class="glyphicon glyphicon-remove"></span></div> -->
+								<p>Scan the QRcode and try to quote online</p>
+								<div class="imgs">
+									<img src=""  id="qr_code" />
+								</div>
+							</div>
+						</div>
+						<div class="xpxi clearfix">
+							<div class="title pull-left">
+								<!--<span class="pull-left"></span>-->
+								Inquiry information
+							</div>
+						</div>
+						<div class="xp_detail clearfix">
+							<ul>
+								<li><span>Country：</span>
+									<div>
+										<img src="/images/zg.png" alt="" /> <i id="country"></i>
+									</div></li>
+								<li><span>Adopting process：</span>
+									<div>
+										<i id="process"></i>
+									</div></li>
+								<li><span>Quoted Manufacturers:</span>
+									<div style="padding-top: 4px;">
+										<i class="jing" id="current_number"></i>
+									</div></li>
+							</ul>
+							<ul>
+								<li><span>Confidentiality：</span>
+									<div>
+										<i id="confidentiality_agreement"></i>
+									</div></li>
+								<li><span>Delivery Date：</span>
+									<div>
+										<i id="delivery_date"></i>
+									</div></li>
+								<!-- <li>
+                                 <span>图纸附件：</span>
+                                 <div><a href="#" id="drawing_path">图纸附件下载</a></div>
+                               </li> -->
+							</ul>
+							<ul>
+								<li><span>Publish Date：</span>
+									<div>
+										<i id="publish_date"></i>
+									</div></li>
+								<li><span>Ending Date：</span>
+									<div>
+										<i id="end_date"></i>
+									</div></li>
+							</ul>
+						</div>
+					</div>
+					<div class="describe describe_offer">
+						<span>Description:&nbsp;</span><em></em>
+					</div>
+
+					<div class="lj_info">
+						<div class="lj_title">
+							<span class="iconfont">&#xe60c;</span>Parts Info <a id="drawing_path">More Details</a>
+						</div>
+						<div class="lj_det" id="product_div">
+							<table class=table>
+								<thead id="product_thead">
+									<tr>
+										<th></th>
+										<th>Part Name</th>
+										<th>Process</th>
+										<th>Material</th>
+										<th>Weight(KG)</th>
+										<th class="th6 th61">Qty 1</th>
+										<th class="th6 th62">Qty 2</th>
+										<th class="th6 th63">Qty 3</th>
+										<th>EAU</th>
+									</tr>
+								</thead>
+								<tbody id="product_tbody">
+
+
+								</tbody>
+							</table>
+
+						</div>
+
+						<div class="quotation clearfix">
+							<div class="q_left pull-left">
+								<table class="tab1">
+									<thead id="comparison_thead">
+										<tr>
+											<th class="f9">Qualification review</th>
+
+										</tr>
+									</thead>
+									<tbody id="comparison_tbody">
+										<tr>
+											<td class="f9">My situation</td>
+										</tr>
+										<tr>
+											<td colspan="6" class="td3"></td>
+										</tr>
+									</tbody>
+								</table>
+								<!--<div class="divp"><button>报价</button>还剩 <span>6 天 20 小时</span>才能报价 <em>（普通会员不能享受优先报价询盘的服务）</em></div>-->
+							</div>
+							<form id="file_upload_id"
+								action="/upload/uploadAttachmentAndChangeName.do"
+								onsubmit="return false;" method="post"
+								enctype="multipart/form-data">
+								<input type="hidden" id="filePath" /> <input type="hidden"
+									id="orderId" name="orderId" />
+								<div class="q_right pull-right">
+									<div class="title">
+										<i class="iconfont">&#xe63a;</i>Livechat with purchaser
+									</div>
+									<div class="q_detail" id="quote_message">
+										<div id="message"></div>
+										<textarea id="message_details" class="form-control"></textarea>
+										<div class="btn">
+											<input type="text"
+												style="width: 100px; margin-left: -130px; text-decoration: underline;"
+												id="fileName" name="selectDrawingName"> <span></span>
+											<input type="file"
+												style="position: absolute; margin-top: -30px; width: 10px; margin-left: -25px; opacity: 0; overflow: hidden;"
+												name="file_upload" onchange="show_drawingName(this)">
+											<button onclick="send_message(this)">Send</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+		<div class="w-out-box" id="show_upload_dialog" style="display: none;">
+			<div class="weui_mask"></div>
+			<div class="w-weui_dialog" style="width: 510px;">
+				<div id="container">
+
+					<div class="content">
+						<h1>Upload Progress</h1>
+					</div>
+
+					<!-- 				Progress bar -->
+					<div id="progress_bar" class="ui-progress-bar ui-container">
+						<div class="ui-progress" style="width: 0%;"
+							id="ui-progress-upload">
+							<span class="ui-label" style="display: none;">Loading...<b
+								class="value">0%</b></span>
+						</div>
+					</div>
+					<!-- 				/Progress bar -->
+					<a class="close-reveal-modal" style="color: #eee; font-size: 22px;"
+						href="javascript:void(0);" onclick="cancel_upload()">×</a>
+					<div class="content" id="main_content" style="display: none;">
+						<p>Loading completed</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script src="/js/dateFormat.js"></script>
+<script src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script type="text/javascript" src="/js/jquery-form.js"></script>
+<script src="/js/getNationalFlag.js"></script>
+<script src="/en/icn/quoteDetails.js"></script>
+<script>
+	$('#header').load('/en/header.html');
+	$('#footer').load('/en/footer.html');
+
+    /*零件信息显示隐藏切换*/
+	$('.offer_detail .lj_det tbody tr:first-child em').css({
+		'background':'url(/images/red.png) no-repeat'
+	})
+	$('.offer_detail .lj_det tbody em').click(function(){
+	    var $this = $(this).parent().parent().next('.trcol');
+	    if($this.hasClass('currdis')){
+	            $this.removeClass('currdis');
+	            $this.show();
+	        $(this).css({
+	            'background':'url(/images/red.png) no-repeat'
+	        })
+	    }else{
+	        $this.addClass('currdis');
+	        $this.hide();
+	        $(this).css({
+	            'background':'url(/images/green.png) no-repeat'
+	        })
+	    }
+	})
+	/* 隔行换色*/
+	$(".offer_detail .lj_det tbody tr:not('.trcol'):even").css({
+		'background-color':'#f9f9f9'
+	})
+    /*点击收藏，弹窗出现*/
+
+//     $('.divt1 .sc1').click(function(){
+//         $('.supplier_detail .tc').show();
+//     })
+    $(' .tc_con-title em').click(function(){
+        $('.supplier_detail .tc').hide();
+    })
+
+    /* 隔行换色效果*/
+$('.history tbody tr:nth-child(2n)').css({
+        'background-color':'#f9f9f9'
+    })
+
+    
+    /*历史报价显示隐藏切换*/
+  $('.offer_detail .history .p1:first-child i').css({
+                'background':'url(/images/red.png) no-repeat'                	
+            })
+    $('.offer_detail .history .p1 i').click(function(){
+
+        var $this = $(this).parent().next('table');
+        if($this.hasClass('dis')){
+        	$this.removeClass('dis');
+                $this.show();
+            $(this).css({
+                'background':'url(/images/red.png) no-repeat'
+            })
+        }else{
+        	$this.addClass('dis');
+            $this.hide();
+            $(this).css({
+                'background':'url(/images/green.png) no-repeat'
+            })
+        }
+    })
+    // 关闭按钮
+    $('.close').click(function(){
+    	$(this).parent().hide();
+    })
+
+
+    //循环遍历获取国家图片
+    $('#newQuote').find('li').each(function(){
+        var country = $(this).find('.top').find('img').attr('alt');
+        var img = getFlag(country);
+        $(this).find('.top').find('img').attr('src',img);
+    })
+</script>
+</html>
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<body>		
+			<div class ="foot clearfix">
+				<a href="/m-zh/login.html" id="login" class="col-xs-6 a_border" style="display:none">登录/注册
+				</a>
+				<div class="col-xs-6 a_border login">				
+				<div class="login_in col-xs-12" >欢迎，<span id="username"></span>&nbsp;&nbsp;您已登录</div>				
+					<ul class="ul1">
+						<li><a href="#" onclick="">账户操作</a></li>
+						<li><a href="#" onclick="exit()">退出登录</a></li>													
+					</ul> 				
+				</div>
+				<div class="col-xs-6 a_border inquiry">功能菜单				
+					<ul class="ul1 ul2" id="quote_ul">
+					  <li><a href="/m-zh/quote_list.html" class="">首页最新询盘</a></li>
+						<li><a href="/m-zh/quote_list.html?quoteStatus=100" class="active">被邀请报价<em></em></a></li>
+						<li><a href="/m-zh/quote_list.html?quoteStatus=102" class="">沟通中<em></em></a></li>
+						<li><a href="/m-zh/quote_list.html?quoteStatus=1" class="">已报价<em></em></a></li>
+						<li><a href="/m-zh/quote_list.html?quoteStatus=2" class="">授盘生产中<em></em></a></li>
+						<li><a href="#" class="">已结束<em></em></a></li>
+					</ul> 				
+				</div>
+				<!-- <div class="col-xs-4 a_border"> 我的工厂
+					<ul class="ul1">
+						<li><a href="" class="">我的快评分(英)</a></li>		
+					    <li><a href="" class="">我的快评分(中)</a></li>														    							
+					</ul> 					
+				</div> -->
+			</div>
+	</body>
+</html>
+
+ <!--<script src="/lib/jquery/jquery.min.js"></script>-->
+<script src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script src="/js/easydialog.min.js"></script>
+
+<script>
+        window.onload = window.onresize = function(){
+
+            var clientWidth =document.documentElement.clientWidth;
+
+            document.getElementsByTagName("html")[0].style.fontSize =  
+
+                    clientWidth / 1200 * 40 + "px";
+        }
+
+        
+        
+        $('#product_name').bind('input propertychange', function() {
+        	queryByKey($(this));
+        });
+        
+        
+        //根据cookie判断用户是否登录
+        var factoryInfo = getCookie("factoryInfo");
+        if(factoryInfo == null || factoryInfo == ''){       
+        	$('#login').next().hide();
+         	$('#login').show();
+        }else{
+        	var userName = getCookie("userName");
+        	if (userName != null && userName != '' && userName != undefined) {
+        		var base = new Base64();
+        		userName = base.decode(userName);
+        		$('#username').text(userName);
+        		$('.login_in').attr('title','欢迎,'+ userName +'  您已登录');				
+    					
+        	}
+        }
+        //退出登录
+    	function exit(){
+            
+    		$.post("/account/clearCookie.do",
+    			function(result){
+    			if(result.state == 0){
+    				window.location = "/m-zh/login.html";
+    			}			
+    		})		
+        }
+
+</script>
+<script>
+
+	$(function(){
+        $.post("/inquiry/queryCountList.do",
+            function(result){
+                if(result.state == 0){
+                    var invitationOrder = result.data.invitationOrder;
+                    var quoteOrder = result.data.normalOrder;
+                    var collectCount = result.data.collectCount;
+                    var quoteFinishOrder = result.data.quoteFinishOrder;
+                    var refusedOrder = result.data.refusedOrder;
+                    var messageOrder = result.data.messageOrder;
+
+                    if(invitationOrder>0){
+                        $('#quote_ul').find('li').eq(1).find('em').text((invitationOrder == 0 ? '' : "("+invitationOrder+")"));
+                    }
+                    if(quoteOrder>0){
+                        $('#quote_ul').find('li').eq(3).find('em').text("("+quoteOrder+")");
+                    }
+                    if(collectCount>0){
+                        $('#quote_ul').find('li').eq(7).find('em').text("("+collectCount+")");
+                    }
+                    if(quoteFinishOrder>0){
+                        $('#quote_ul').find('li').eq(4).find('em').text("("+quoteFinishOrder+")");
+                    }
+                    if(refusedOrder>0){
+                        $('#quote_ul').find('li').eq(6).find('em').text("("+refusedOrder+")");
+                    }
+                    if(messageOrder>0){
+                        $('#quote_ul').find('li').eq(2).find('em').text("("+messageOrder+")");
+                    }
+                }
+            })
+	})
+
+
+
+    $('.foot .a_border').click(function(){
+	$(this).find('ul').toggle();
+})
+
+</script>
+
+

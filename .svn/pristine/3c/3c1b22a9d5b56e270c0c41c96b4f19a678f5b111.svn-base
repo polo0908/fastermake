@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<meta http-equiv="pragram" content="no-cache">  
+		<meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+		<meta http-equiv="expires" content="0">
+		<title>微信快制造-图文上传</title>
+		<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />		
+		<link rel="stylesheet" href="/css/easydialog.css" />
+		<link rel="stylesheet" href="/css/progressBar.css" />
+		<link rel="stylesheet" href="/css/ui.css" />
+		<link rel="stylesheet" href="/css/ui.progress-bar.css"/>
+		<link rel="stylesheet" href="/m-zh/css/m-css.css" />
+	<style>
+		.w-weui_dialog{width:100%;}
+		#container{width:auto;background-color:#fff;}
+		.content h1{font-size:20px;}
+	</style>	
+	</head>
+	<body>
+		<div class="container-fluid upload pb40">
+			<div class="row row1 ">
+			<div class="row row_logo clearfix ">
+				<img src="../images/head.png" alt="" class="pull-left">
+				<!-- <div class="pull-left lh40 color_fff m_l10">我工厂的快评分:<span></span></div> -->
+			</div>
+			<div class="row pl5 pr5">
+				<a class="btn btn-default f20 mt10" id="back">返回询盘的大货生产页</a>
+			</div>
+			<div class="row pl5 pr5">
+				<h3 id="orderId"><span>询盘-大货生产-生产进度上传等4种</span></h3>
+			</div>	
+			<div class="row pl5 pr5 pic">
+				<h3>照片/图片</h3>
+				<form id="file_upload_id1"  onsubmit="return false;" enctype="multipart/form-data">
+				<input type="hidden" name="orderId">
+				<input type="hidden" name="csgOrderId">
+				<input type="hidden" name="projectStage">
+				<input type="hidden" value="0" name="fileType">
+				<div class="lis">
+					<ul class="clearfix" id="pic_ul">
+						<li class="text-center add_li"><i class="glyphicon glyphicon-plus"></i>													
+						<input type="file" name="file" onchange="upload_photos(this)" multiple/>
+						</li>
+					</ul>
+				</div>
+				</form>
+			</div>
+			<div class="row pl5 pr5">
+				<form id="file_upload_id"  onsubmit="return false;" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="orderId">
+					<input type="hidden" name="csgOrderId">
+					<input type="hidden" name="projectStage">
+					<input type="hidden" name="fileName">
+					<input type="hidden" value="1" name="fileType">
+				<div class="position_relative">
+					<h3 class="pull-left mr10">文档</h3>
+					<input type="file" name="file1" onchange="upload_report(this)" class="pull-left mt10">
+					<!-- <a class="btn btn-default pull-left sc">上传</a> -->
+				</div>
+				<table class="table tablered">
+					<tbody>
+
+					</tbody>
+				</table>
+				</form>
+			</div>
+			<div class="row pl5 pr5">
+				<form id="file_upload_id2"  onsubmit="return false;" method="post" enctype="multipart/form-data">
+						<input type="hidden" name="orderId">
+						<input type="hidden" name="csgOrderId">
+						<input type="hidden" name="projectStage">
+						<input type="hidden" name="fileName">
+						<input type="hidden" value="2" name="fileType">
+					<div class="position_relative">
+						<h3 class="pull-left mr10">视频</h3>
+						<input type="file" name="file2" onchange="upload_report(this)" class="pull-left mt10">
+						<!-- <a class="btn btn-default pull-left sc">上传</a> -->
+					</div>
+					<table class="table tablered">
+						<tbody>
+
+						</tbody>
+					</table>
+				</form>
+			</div>	
+			<div class="row pl5 pr5">
+				<h3>文字说明</h3>
+				<textarea class="form-control" id="remark"></textarea>
+			</div>	
+			<div class="row mt40 pl5 pr5">
+				<a class="btn btn-default f20 mt10" onclick="save()">提交并保存所有内容</a>
+			</div>								
+			<div id="footer"></div>
+
+		<div class="w-out-box" id="show_upload_dialog" style="display:none;">
+			<div class="weui_mask"></div>
+			<div class="w-weui_dialog">
+				<div id="container">
+					<div class="content">
+						<h1>上传进度</h1>
+					</div>
+					<!-- Progress bar -->
+					<div id="progress_bar" class="ui-progress-bar ui-container">
+						<div class="ui-progress" style="width: 0%;" id="ui-progress-upload">
+							<span class="ui-label" style="display:none;">正在加载...<b class="value">0%</b></span>
+						</div>
+					</div>
+					<!-- /Progress bar -->
+					<a class="close-reveal-modal" style="color: #fff; font-size: 30px;position: absolute;right: 10px;top: 10px;" href="javascript:void(0);" onclick="cancel_upload()">×</a>
+					<div class="content" id="main_content" style="display: none;">
+						<p>加载完成。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	 </div>	
+	</body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/easydialog.min.js"></script>
+<script type="text/javascript" src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/upload-base.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script type="text/javascript" src="/js/jquery-form.js"></script>
+<script src="/m-zh/js/report_upload.js"></script>
+<script src="/js/dist/lrz.all.bundle.js"></script>
+<script>
+        $('#footer').load('/m-zh/footer.html');
+
+
+        window.onload = window.onresize = function(){
+
+            var clientWidth =document.documentElement.clientWidth;
+
+            document.getElementsByTagName("html")[0].style.fontSize =
+
+                    clientWidth / 1200 * 40 + "px";
+        }
+
+        
+        
+//         $('#product_name').bind('input propertychange', function() {
+//         	queryByKey($(this));
+//         });
+        
+
+        
+</script>
+<script>
+
+$('.foot div').click(function(){
+	$(this).find('ul').toggle();
+})
+
+</script>
+
+

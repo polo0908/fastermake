@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<meta http-equiv="pragram" content="no-cache">  
+		<meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+		<meta http-equiv="expires" content="0">
+		<title>微信快制造-账户操作</title>
+		<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/m-zh/css/m-css.css" />
+	</head>
+	<body>
+		<div class="account_operation container-fluid">
+			<div class="row row1 pl10 pr10">
+				<div class="row row_logo pl5 pr5 ml0 mr0">
+					<img src="../images/head.png" alt="">
+				</div>	
+				<div class="pl10 pr10">
+					<h3 class="ml0 pl5">工厂名:<span>字数字数</span></h3>
+					<p>本账号为<span>总账号/子账号</span></p>
+					<table class="tabel table-bordered">
+					<tbody>
+						<tr>
+							<td>总账号名称：</td>
+							<td>账号名称</td>
+							<td><button class="btn btn-default">设为总账号</button></td>
+							<td><button class="btn btn-default">删除</button></td>
+						</tr>
+						<tr>
+							<td>子账号名称：</td>
+							<td>账号名称</td>
+							<td><button class="btn btn-default">设为总账号</button></td>
+							<td><button class="btn btn-default">删除</button></td>
+						</tr>
+						<tr>
+							<td>子账号名称：</td>
+							<td>账号名称</td>
+							<td><button class="btn btn-default">设为总账号</button></td>
+							<td><button class="btn btn-default">删除</button></td>
+						</tr>
+					</tbody>
+					</table>
+					<p>扫码绑定新的子账号</p>
+					<div class="ewm"><img src=""></div>
+				</div>						
+			<div id="footer"></div>
+		</div>
+	 </div>	
+	</body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+        $('#footer').load('/m-zh/footer.html');
+
+
+        window.onload = window.onresize = function(){
+
+            var clientWidth =document.documentElement.clientWidth;
+
+            document.getElementsByTagName("html")[0].style.fontSize =
+
+                    clientWidth / 1200 * 40 + "px";
+        }
+</script>
+<script>
+
+$('.foot div').click(function(){
+	$(this).find('ul').toggle();
+})
+
+</script>
+
+

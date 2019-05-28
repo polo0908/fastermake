@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="Description" content="QUICKPART.CN is a subsidiary of china-sourcing.com have over 15 years sourcing experience.">
+    <title>Who are we | QUICKPART.cn</title>
+    <link rel="shortcut icon" href="/img/favicon.ico"/>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/easydialog.css" />
+    <link rel="stylesheet" href="/css/css.css"/>
+    <script src="/lib/html5sshiv/html5shiv.min.js"></script>
+    <script src="/lib/respond/respond.js"></script>
+    <script src="/js/easydialog.min.js"></script>
+    <style>
+        @media (min-width: 1200px) {
+            .container {
+                width: 1200px;
+                padding:0;
+            }
+        }               
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+<body>
+<div class="contact_us">
+    <div id="header"></div>     
+    <div class="section container">
+    	<div class="panel">
+    		<div class="panel-body">
+    			<ol class="breadcrumb">
+    				<li><a href="https://www.quickpart.cn">Home</a></li>
+    				<li><a href="###">About Us</a></li>
+    				<li><a href="###">Contact Us</a></li>
+    			</ol>
+    			<div class="clearfix div_center">
+    					<img src="../images/en/2.jpg" class="pull-left img1">
+    					<div class="pull-left words">
+    						<div class="top text-left">
+    							<!-- <img src="/images/head_en.png" alt=""> -->
+    							<h1>QUICKPART.cn</h1>
+    						</div>
+    						<div class="bottom">
+    							<p>Tel:</p>
+									<p>+86 15921081083</p>
+									<p>+86 21 67899056</p>
+									<p>+86 21 63757326</p>
+									<p>+86 21 67899058</p>
+									<p>+86 21 63757266</p>
+									<p>Fax: 086-021-63757728</p>
+									<p>English service: 844 / 842 / 813 / 826 / 846</p>
+									<p>or E-mail: <a href="mailto:RFQ@CSMFG.COM?subject=QUICKPART.CN&body=%0d%0d%0a Note: We will reply you within 24 hours.">rfq@csmfg.com</a></p>									
+    						</div>
+    					</div>
+    			</div>
+					
+    		</div>
+    	</div>
+    </div>
+		<div id="footer"></div>
+</div>
+</body>
+
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script type="text/javascript" src="/js/cookie_util.js"></script> 
+<script>
+	$('#header').load('header.html');
+	$('#footer').load('footer.html');
+</script>

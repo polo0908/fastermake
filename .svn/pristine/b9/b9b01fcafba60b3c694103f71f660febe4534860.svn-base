@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="Keywords" content="">	
+<meta name="Description" content="本页是现货采购类目下所有工艺的询盘汇总页">
+<title>现货采购询盘——免费报价、发布询盘网——快制造</title>
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/css.css" />
+<!-- <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script> -->
+
+</head>
+<body>
+	<div class="home inquiry_list_2">
+
+		<header class="header" id="header">
+
+			<div class="header_top">
+				<div class="header_bottom">
+					<div class="header_bottom_in w12 clearfix">
+						<div class="contact_tc" id="wechat_div">
+							<div class="close">
+								<span class="glyphicon glyphicon-remove"></span>
+							</div>
+							<a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx6ddc97078f4b9a47&redirect_uri=https%3A%2F%2Fkuaizhizao.cn%2Fwechat%2Fcallback.do&response_type=code&scope=snsapi_login&state=3d6be0a4035d839573b04816624a415e#wechat_redirect" target="_blank" class="clearfix">
+								<div class="imgs pull-left">
+									<img src="../images/wechat_50.png" />
+								</div>
+								<p class="pull-right">现在就扫一扫绑定微信号，各种询盘信息第一时间通知到您手机</p>
+							</a>
+						</div>
+						<a href="/zh/index.html" class="logo pull-left"> <img
+							src="/images/head.png" alt="" />
+						</a>
+						<div class="header_top_in dl_zc w12 clearfix">
+
+							<nav class="pull-left add__head_nav">
+								<ul class="nav-list clearfix">
+									<li class="pull-left">
+										<a href="###">询盘(订单)分类列表
+											 <span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+											 <span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+										 </a>
+										<ul class="sub-nav ul1">
+											<li>
+												<a href="###">塑料询盘(订单)</a>
+												<dl class="dl1">
+													<dt></dt>
+													<dd><a href="###">注塑最新询盘</a></dd>
+													<dd><a href="###">吸塑最新询盘</a></dd>
+													<dd><a href="###">滚塑最新询盘</a></dd>
+													<dd><a href="###">吹塑最新询盘</a></dd>
+													<dd><a href="###">挤塑最新询盘</a></dd>
+												</dl>
+											</li>
+											<li>
+												<a href="###">铸造询盘(订单)</a>
+												<dl class="dl2">
+													<dt></dt>
+													<dd><a href="###">不锈钢铸造(硅溶胶、水玻璃）询盘</a></dd>
+													<dd><a href="###">压铸（铝、锌、镁、铜等）询盘</a></dd>
+													<dd><a href="###">砂铸(钢、铁、铜、铝等)询盘</a></dd>
+													<dd><a href="###">重力铸造（铝、铜等）询盘</a></dd>
+													<dd><a href="###">其他铸造询盘</a></dd>
+												</dl>
+											</li>
+											<li>
+												<a href="###">原料采购粗加工询盘(订单)</a>
+
+											</li>
+											<li>
+												<a href="###">钣金加工询盘(订单)</a>
+												<dl >
+													<dt></dt>
+													<dd><a href="###">钣金加工（切割，折弯，焊接，组装）询盘</a></dd>
+													<dd><a href="###">冲压拉伸询盘</a></dd>
+													<dd><a href="###">旋压询盘</a></dd>
+													<dd><a href="###">铝挤压询盘</a></dd>
+													<dd><a href="###">其他铸造询盘</a></dd>
+												</dl>
+											</li>
+											<li><a href="###">机加工询盘(订单)</a></li>
+											<li><a href="###">现货采购询盘(订单)</a></li>											
+										</ul>
+									</li>
+									<li class="pull-left">
+										<a href="###" rel="nofollow">工厂库
+										 	<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+											<span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+										</a>
+										<ul class="sub-nav ul2">
+											<li><a href="###">塑料工厂</a></li>
+											<li><a href="###">铸造工厂</a></li>
+											<li><a href="###">锻造工厂</a></li>
+											<li><a href="###">原料采购粗加工工厂</a></li>
+											<li><a href="###">钣金工厂</a></li>	
+											<li><a href="###">机加工工厂</a></li>		
+											<li><a href="###">现货采购工厂</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav>
+
+							<div class="head_R pull-right">
+								<div class="head_l pull-left">
+									<div class="xxs head_hover">
+										<div class="xx yhm afterLogin">
+											<span class="iconfont">&#xe6c9;</span><span id="username"></span>
+											<!-- <span class="iconf1 s1"></span>  -->
+										</div>
+										<div class="xxlist">
+											<a href="/zh/account_management.html">账户管理</a> <a href="#"
+												onclick="exit()"><span class="iconfont">&#xe60a;</span>退出
+											</a>
+										</div>
+
+									</div>
+									<a href="/zh/business_view.html" class="bk ywkb afterLogin">业务看板</a>
+									<div class="xxs head_hover">
+										<div class="xx afterLogin"
+											onclick="window.location='/zh/news.html'">
+											消息 <span id="newMessageCount" class="gs"></span>
+
+										</div>
+										<div class="xxlist news_xx" style="width: 130px;">
+											<a href="/zh/news.html">所有消息</a><a
+												href="/zh/news.html?status=1">未读消息<em
+												style="color: #da4f49" id="unRead"></em></a> <a
+												href="/zh/news.html?status=3">授盘通知<em
+												style="color: #da4f49" id="award"></em></a><a
+												href="/zh/news.html?status=4">生产进度更新<em
+												style="color: #da4f49" id="updateProcess"></em></a> <a
+												href="/zh/news.html?status=2">已发出的消息</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="xxs kzz gys head_hover">
+									<div class="xx xp beforLogin">
+										工厂入口
+										<!--<span class="iconf s2"></span>-->
+									</div>
+									<div class="xxlist xplist clearfix">
+										<div class="N l_sm">
+											<ul>
+												<li>作为供应商，我可以：</li>
+												<li><span></span> 完善档案，<a href="/zh/new_inquiry.html">轻松找到适合自己的各种询盘</a>；</li>
+												<li><span></span> <a href="/zh/quote_list.html">查找询盘</a>，在线提交报价给采购商；</li>
+												<!--<li><span></span> 查看 <a href="/zh/big_buyer.html">大买家采购项目</a>-->
+													<!--，在线给大客户评价；</li>-->
+
+												<li class="home_head_dl"><a href="/zh/login.html"
+													class="active">登录</a> <a href="/zh/register_zh.html?type=1"
+													class="supp_register">注册</a></li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<div class="xxs kzz head_hover">
+									<div class="xx xp beforLogin mlr5">
+										采购商入口
+										<!--<span class="iconf s2 "></span>-->
+									</div>
+									<div class="xxlist xplist clearfix">
+										<div class="N l_sm">
+											<ul class="pur_register">
+												<li>作为采购商，我可以：</li>
+												<li><span></span> <a href="/zh/quickly_release.html">发布询盘</a>，获取全中国范围内的供应商报价；</li>
+												<li><span></span> 通过工厂库 <a
+													href="/zh/comments_echart.html">搜索和筛选心仪供应商</a> ，并添加收藏；</li>
+												<li><span></span> 直接发送询盘给有意向的供应商，<a
+													href="/zh/quickly_release.html">获取报价</a>；</li>
+												<li><span></span> 在线管理我的供应商，更快速的建立合作关系；</li>
+												<li class="home_head_dl"><a href="/zh/login.html"
+													class="active">登录</a> <a href="/zh/register_zh.html?type=2"
+													class="pur_register">注册</a></li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="xxs kzz head_hover">
+									<div class="xx xp xp_new afterLogin">
+										<span class="iconfont">&#xe63f;</span>询盘
+										<!-- <span class="iconf s2"></span> -->
+									</div>
+									<div class="xxlist xplist xpwidth clearfix">
+										<div class="L" id="supplier_list">
+											供应商 <a href="/zh/quote_list.html"><button
+													class="btn btn-default">可报价询盘查看</button></a>
+										</div>
+										<div class="L">
+											采购商 <a href="/zh/purchase_list.html"><button
+													class="btn btn-default">我发出的询盘</button></a>
+										</div>
+									</div>
+								</div>
+
+								<a href="/zh/enterprise_archives.html"
+									class="bk qy x xp head_hover afterLogin mlr52">企业档案<!-- <span
+						class="iconf s2"></span> --></a>
+								<!--<a href="###"
+						class="head_hover afterLogin ml20">更多服务<span class="iconf s2"></span></a>-->
+
+								<div class="afterLogin xxs kzz head_hover more_news">
+									<!-- <div class="xx xp serve">更多服务</div> -->
+									<!-- <div class="xxlist xplist clearfix" style="display: none">
+										<a href="/zh/products.html">产品库</a>
+									</div> -->
+								</div>
+
+								<a href="/zh/quote_list.html" class="ml20 beforLogin">最新询盘</a>
+								<!-- <a
+									href="/zh/comments_echart.html" class="ml20 beforLogin">工厂库</a>
+								<a href="/zh/products.html" class="ml20 beforLogin">产品库</a> -->
+								<a href="/zh/quickly_release.html"><button
+										class="btn btn-default pull-right">快速发布询盘</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="section w12 home-in">
+			<div class="inquiry_2_top">			
+				<ol class="breadcrumb">
+					<li><a href="https://www.kuaizhizao.cn/">首页</a></li>
+					<li><a href="###">现货采购询盘</a></li>
+				</ol>
+				<h1 class="inquiry_2_h1">现货采购询盘（订单）</h1>
+				<p class="inquiry_2_p">本页是现货采购类目下所有工艺的询盘汇总页</p>
+
+			</div>
+			<div class="latest-inquiry">
+				<!-- <div class="loop clearfix" id="new_quote" style="display: none;">
+							<span class="pull-left">最新下单:</span>
+							<div class="factory pull-left">
+								<ul class="factory_in clearfix" id="order_factory">
+						
+						
+								</ul>
+							</div>
+						</div>		 -->		
+				<div class="products">
+					<ul class="clearfix" id="newQuote">
+
+
+					</ul>
+				</div>
+				<div aria-label="Page navigation" class="inquiry_2_page">
+					<ul class="pagination pagination-lg">
+						<li>
+							<a href="###" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>							 
+						</li>
+						<li class="active"><a href="###">1</a></li>
+					    <li><a href="###">2</a></li>
+					    <li><a href="###">3</a></li>
+					    <li><a href="###">4</a></li>
+					    <li><a href="###">5</a></li>
+					    <li>
+					    	<a href="###" aria-label="Next">
+					    		<span aria-hidden="true">&raquo;</span>
+					    	</a>
+					    </li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		<footer class="footer">
+			<div class="footer_in w12">
+				<div class="logo">
+					<img src="/images/foot.png" alt="免费报价 、发布询盘网 - 快制造" />
+				</div>
+				<div class="b_a">
+					备案许可编号:<br>沪ICP备17041761号-3
+				</div>
+				<button class="more">更多</button>
+				<div class="dls clearfix">
+					<dl class="pull-left">
+						<dt><a rel="no follow">新手指南</a></dt>
+						<dd>
+							<a href="/zh/new_inquiry.html" rel="no follow">免费询盘</a>
+						</dd>
+						<dd>
+							<a rel="no follow">快经验</a>
+						</dd>
+						<dd>
+							<a href="/zh/register_zh.html" rel="no follow">工厂入口</a>
+						</dd>
+						<dd>
+							<a href="/zh/register_zh.html" rel="no follow">采购商入门</a>
+						</dd>
+						
+					</dl>
+					<dl class="pull-left dl_gy">
+						<dt><a rel="no follow">供应商服务</a></dt>
+						<dd> <a rel="no follow" href="/search/plastic/0"> 注塑询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/plastic/1"> 吸塑询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/plastic/2"> 滚塑询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/plastic/3"> 吹塑询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/plastic/4"> 挤塑询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/cast/6"> 不锈钢铸造询盘</a></dd>
+						<dd> <a rel="no follow" href="/search/cast/7"> 压铸询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/cast/8"> 砂铸询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/cast/9"> 重力铸造询盘</a></dd>
+						<dd> <a rel="no follow" href="/search/forging"> 锻造询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/metal"> 钣金询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/machining"> 机加工询盘 </a></dd>
+						<dd> <a rel="no follow" href="/search/goods"> 现货询盘 </a></dd>
+					</dl>
+					<dl class="pull-left">
+						<dt><a rel="no follow" >采购商服务</a></dt>						
+						<dd>
+							<a rel="no follow" href="/zh/quickly_release.html">快速发布询盘</a>
+						</dd>
+					</dl>
+					
+					<dl class="pull-left">
+						<dt>帮助中心</dt>						
+						<dd>
+							<a href="###">联系我们</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="qrcode">
+					<span>欢迎关注快制造微信服务号</span> <img src="/images/qrcode.jpg" alt="免费报价、发布询盘网 微信服务号">
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- SEO代码 开始-->
+	<div style="display: none">
+		快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘
+
+		Keywords: <a href="https://www.kuaizhizao.cn/" title="快制造"
+			target="_blank"><strong>快制造</strong></a> <a
+			href="https://www.kuaizhizao.cn/" title="外发加工" target="_blank"><strong>外发加工</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="注塑模具" target="_blank"><strong>注塑模具</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="机械加工" target="_blank"><strong>机械加工</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="钣金加工" target="_blank"><strong>钣金加工</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="塑料模具厂" target="_blank"><strong>塑料模具厂</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="注塑加工" target="_blank"><strong>注塑加工</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="塑料模具设计与制造" target="_blank"><strong>塑料模具设计与制造</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="压铸厂" target="_blank"><strong>压铸厂</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="零件加工" target="_blank"><strong>零件加工</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="外贸加工订单" target="_blank"><strong>外贸加工订单</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="非标定制" target="_blank"><strong>非标定制</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="外发订单" target="_blank"><strong>外发订单</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="外协加工" target="_blank"><strong>外协加工</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="加工订单" target="_blank"><strong>加工订单</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="注塑订单" target="_blank"><strong>注塑订单</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="压铸订单" target="_blank"><strong>压铸订单</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="钣金订单" target="_blank"><strong>钣金订单</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="机加工询盘" target="_blank"><strong>机加工询盘</strong></a>
+		<a href="https://www.kuaizhizao.cn/" title="外贸询盘" target="_blank"><strong>外贸询盘</strong></a>
+	</div>
+	<!-- SEO代码 开始-->
+	<!-- 51la统计代码 -->
+	<script type="text/javascript" src="//js.users.51.la/19493791.js"></script>
+</body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/cookie_util.js"></script>
+<script src="/js/getNationalFlag.js"></script>
+<script src="/js/translate/md5.js"></script>
+<script src="/js/translate/index.js"></script>
+<script src="/lib/jquery/jquery.lazyload.js"></script>
+<script src="/js/index/index.js?v=20180515"></script>
+<script src="/js/getServerName.js"></script>
+<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+<script src="/lib/respond/respond.js"></script>
+<script type="text/javascript" src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+
+<script>
+// 懒加载
+	$('.lazy').lazyload({
+	    effect : "fadeIn"
+	});
+// 尾部点击更多效果
+	$('.footer .more').on('click',function(){
+		var button_text = $('.footer .more').text();
+		if(button_text == '更多'){
+			$('.footer .more').text('收起').animate({'top':'280px'},300);
+			$('.footer').css({'overflow':'hidden'});
+			$('.footer .dl_gy,.footer .footer_in').css({'height':'340px'});
+			$('.footer,.footer .footer_in .dls').css({'height':'320px'});
+			$('.footer .dl_gy').animate({'height':'285px','margin-bottom':'0px'},300);
+		}else if(button_text == '收起'){
+			$('.footer .more').text('更多').animate({'top':'110px'},600);
+			$('.footer,.footer .footer_in').animate({'height':'150px'},300);			
+			$('.footer .footer_in .dls').animate({'height':'140px'},300);
+			$('.footer .dl_gy').animate({'height':'94px'},300);
+		};
+			
+	});
+// 分页效果
+$('.inquiry_2_page li').click(function(){
+	$(this).addClass('active').siblings().removeClass('active');
+})
+</script>
+
+
+
+<script>
+	$.post("/account/changeLanguage.do", {
+		"language" : 'zh'
+	}, function(result) {
+	});
+
+	//判断当前域名是quickpart.cn还是kuaizhizao.cn
+	var domain = window.location.host;
+	if (domain == "quickpart.cn" || domain == "www.quickpart.cn") {
+		$.post("/account/changeLanguage.do", {
+			"language" : 'en'
+		}, function(result) {
+		});
+		var serverName = getServerName('en');
+		window.location = serverName + '/en/index.html';
+	}
+
+	$('.buyer-purchase li').hover(
+			function() {
+				$(this).children('.li-hover').addClass('active').siblings()
+						.children('.li-hover').removeClass('active');
+			}, function() {
+				$(this).children('.li-hover').removeClass('active');
+			})
+
+	/*导航栏鼠标经过效果*/
+	$('.inquiry_detail .section nav li a').hover(
+			function() {
+				$(this).addClass('active').parent().siblings('li')
+						.children('a').removeClass('active');
+			})
+
+	//*顶部鼠标经过子信息出现效果*/
+	$('.header_top_in .xxs').hover(function() {
+		$(this).children('.xx').css({
+			'border-color' : 'transparent',
+			'border-bottom-color' : 'transparent',
+			'background-color' : '#0046cd'
+		})
+		$(this).children('.xxlist').show();
+	}, function() {
+		$(this).children('.xx').css({
+			'border-color' : 'transparent',
+			'background-color' : 'transparent'
+		})
+		$(this).children('.xxlist').hide();
+	})
+	/*更多消息里面鼠标经过效果*/
+	$('.xxlist a').hover(function() {
+		$(this).css({
+			'color' : '#006DCC'
+		}).siblings().css({
+			'color' : '#666'
+		})
+	})
+
+	$('.xxlist .home_head_dl a').hover(function() {
+		$(this).css({
+			'background-color' : '#006DCC',
+			'color' : '#fff'
+		})
+	}, function() {
+		$('.xxlist .home_head_dl a').css({
+			'background-color' : '#fff',
+			'border' : '1px solid #006DCC',
+			'color' : '#006DCC'
+		})
+
+	})
+
+	$('.beforLogin').show();
+	$('.afterLogin').hide();
+
+	//获取工厂信息
+	var factoryInfo = getCookie("F_INFO");
+	//用户名
+	var userName = getCookie("userName");
+	//工厂id
+	var factoryId = getCookie("F_ID");
+	//是否绑定微信
+	var w_flag = getCookie("w_flag");
+	var factoryType;
+
+	if (factoryInfo != null && factoryInfo != '' && factoryInfo != undefined) {
+		$('.beforLogin').hide()
+		$('.afterLogin').show()
+		
+		//获取工厂类型
+		//如果为采购商或者已绑定微信则不显示微信弹框
+        var base = new Base64();
+        factoryInfo = base.decode(factoryInfo);
+		var strs = [];
+		strs = factoryInfo.split("&");
+		factoryType = strs[2];
+		if(factoryType == 2 || w_flag){
+			$('#wechat_div').hide();
+		}
+	}else{
+		$('#wechat_div').hide();
+	}
+	if (userName != null && userName != '' && userName != undefined) {
+		var base = new Base64();
+		userName = base.decode(userName);
+		$('#username').text(userName);
+	}
+
+	//获取消息数量
+	getMessage();
+
+	function getMessage() {
+
+		if (factoryInfo == null || factoryInfo == '') {
+			return false;
+		} else {
+			window.clearInterval(newMessage_interval);
+		}
+		$.ajax({
+			url : "/noteMessage/newMessageCount.do",
+			cache : false,
+			success : function(data) {
+
+				if (data.state == 0) {
+
+					var summap = data.data
+
+					if (summap) {
+
+						var count = summap.unRead
+						var award = summap.award
+						var updateProcess = summap.updateProcess
+						$('#unRead').text(count ? count : "")
+						$('#newMessageCount').text(count ? count : "")
+						$('#award').text(award ? award : "")
+						$('#updateProcess').text(
+								updateProcess ? updateProcess : "")
+
+					}
+
+				}
+			}
+		});
+
+	}
+
+	function exit() {
+
+		$.post("/account/clearCookie.do", function(result) {
+			if (result.state == 0) {
+				//根据cookie判断不同语言退出页面
+				var lan = getCookie("language");
+				var serverName = getServerName(lan);
+				if (lan == 'en') {
+					window.location = serverName + "/en/login.html";
+				} else {
+					window.location = serverName + "/zh/login.html";
+				}
+			}
+		})
+
+	}
+	var newMessage_interval = setInterval(function() {
+		getMessage();
+	}, 60000);
+
+	/*视频播放控制*/
+	$('.home .bf_botton').click(function() {
+		$(this).siblings('.div_video').show();
+		var div_h = $('.home .div_video').height();
+		console.log(div_h);
+		var video_h = $(this).parent().find('video').height();
+		console.log(video_h);
+		var m_t = (div_h - video_h) / 2;
+		$(this).parent().find('video').css({
+			'margin-top' : m_t + 'px'
+		});
+
+	})
+
+	$('.home .close_button').click(function() {
+		$(this).parent().hide();
+	})
+	
+	// 微信弹窗关闭按钮
+	$('.home .contact_tc .close').click(function(){
+		$('.home .contact_tc').hide();
+	})
+
+	// 让视频居中对齐
+
+	/*语言改变设置*/
+	function change_lan() {
+
+		var lan = getCookie("language");
+		if (lan == 'en') {
+			lan = 'zh'
+		} else {
+			lan = 'en'
+		}
+
+		$.post("/account/changeLanguage.do", {
+			"language" : lan
+		}, function(result) {
+
+			var serverName = getServerName(lan);
+			if (lan == 'en') {
+				window.location = serverName + '/en/index.html';
+			} else {
+				window.location = serverName + '/zh/index.html';
+			}
+		});
+
+	}
+</script>
+
+
+<script>
+
+
+	if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+
+		window.location.href = "http://kuaizhizao.cn/m-zh/quote_list.html";
+
+	} else if (/(Android)/i.test(navigator.userAgent)) {
+
+		window.location.href = "http://kuaizhizao.cn/m-zh/quote_list.html";
+
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

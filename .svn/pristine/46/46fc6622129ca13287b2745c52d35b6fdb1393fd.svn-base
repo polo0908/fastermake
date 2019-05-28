@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>	
+<head lang="en">
+</head>
+<body>
+	<header class="header header_en" id="header">
+		<div class="header_top">
+			<div class="header_bottom">
+				<div class="header_bottom_in w12 clearfix">
+					<!--<div class="logo pull-left"></div>-->
+				        <a href="https://www.quickpart.cn" class="logo pull-left"><img src="/images/head_en.png" alt=""/></a>
+				        <div class="header_top_in dl_zc w12 clearfix">
+				
+				<div class="head_R pull-right">
+					<ul class="index_head_R_Login clearfix">
+						<!-- <li class="beforLogin">										
+							<a href="/en/login.html" >Sign</a> 
+						</li> -->
+						<li class="afterLogin">										
+							<a>
+								<span class="iconfont">&#xe6c9;</span><span id="username"></span>
+							</a>
+							<ul class="xxlist">
+								<li>
+									<a onclick="exit()"><span class="iconfont">&#xe60a;</span>Exit</a>												
+								</li>												
+							</ul>											
+						</li>
+						<li class="beforLogin">
+							<a>Purchaser Access</a>
+							<ul class="Purchaser_access_ul">
+								<li><b>if you have continuous needs to find new suppliers and get quites,you can post your profile or RFQ here and build a selected supply network.</b></li>
+								<li><span></span>Interested suppliers will contact you,and you can choose the ones that fits your criteria</li>
+								<li><span></span>when you post a new RFQ,it will only reach the suppliers pre-selected by you.</li>
+								<li><span></span>After follow-up collaborations(audits,productions),you can keep the goods ones gradually build a supply network.</li>
+								<li class="home_head_dl"><a href="/en/login.html" class="active">Sign</a><a href="/en/register_en.html">Register</a></li>											 												
+							</ul>
+						</li>						
+						<li class="afterLogin">
+							<a href="/en/news.html">Messages</a>										
+						</li>						
+						<li class="afterLogin"><a href="/en/business_view.html">Business Panel</a>																			
+						</li>
+						<li class="afterLogin">
+							<a href="/en/purchase_list.html">
+								<span class="iconfont">&#xe63f;</span>My RFQs
+							</a>
+						</li>
+						<li class="afterLogin">
+							<a href="/en/account_management.html">My Account</a>																		
+						</li>
+						<li class="send_li">
+							<a href="/en/quickly_release.html">
+								<button class="btn btn-default pull-right" type="button">Send RFQ</button>
+							</a>																		
+						</li>												
+					</ul>										
+				</div>
+			</div>					
+				</div>
+			</div>
+		</div>
+		<div class=" bgcolor_cc0">
+			<nav class="add__head_nav w12 add__head_nav_en">
+				<ul class="nav-list clearfix">
+					
+					<li class="pull-left">
+						<a >All RFQs
+							<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+							<span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+						</a>
+						<ul class="sub-nav ul1">
+							<li>
+								<a href="http://www.quickpart.cn/rfq/plastic/1" >Plastic RFQ(Sourcing Request)</a>
+								<dl class="dl1">
+									<dt></dt>
+									<dd><a href="http://www.quickpart.cn/rfq/plastic/injection-molding/1">Injection Molding RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/plastic/vacuum-forming/1">Vacuum Forming RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/plastic/rotational-molding/1">Rotational Molding RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/plastic/blow-molding/1">Blow Molding RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/plastic/plastic-extrusion/1">Plastic Extrusion RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/plastic/others-plastic/1">Others(Plastic) RFQ(Sourcing Request)</a></dd>
+								</dl>
+							</li>
+							<li>
+								<a href="http://www.quickpart.cn/rfq/cast/1" >Casting RFQ(Sourcing Request)</a>
+								<dl class="dl2">
+									<dt></dt>
+									<dd><a href="http://www.quickpart.cn/rfq/cast/stainless-steel-casting/1">Stainless steel casting (silicon glue, water glass) RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/cast/die-casting/1">Die casting (aluminum, zinc, magnesium, copper, etc.) RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/cast/sand-casting/1">Sand casting (steel, iron, copper, aluminum, etc.) RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/cast/gravity-casting/1">Gravity casting (aluminum, copper, etc.) RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/cast/others-casting/1">Others(casting) RFQ(Sourcing Request)</a></dd>
+								</dl>
+							</li>
+							<li>
+								<a href="http://www.quickpart.cn/rfq/raw/1">Forging RFQ(Sourcing Request)</a>
+							</li>
+							<li>
+								<a href="http://www.quickpart.cn/rfq/metal/1" >Metal Fabrication RFQ(Sourcing Request)</a>
+								<dl class="dl5">
+									<dt></dt>
+									<dd><a href="http://www.quickpart.cn/rfq/metal/sheet-metal-machining/1">Sheet metal machining (cutting, bending, welding, assembly) RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/metal/stamping-and-stretching/1">Stamping and stretching RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/metal/spinning/1">Spinning RFQ(Sourcing Request)</a></dd>
+									<dd><a href="http://www.quickpart.cn/rfq/metal/raw-material-procurement/1">Aluminum Extrusion RFQ(Sourcing Request)</a></dd>
+								</dl>
+							</li>
+							<li><a href="http://www.quickpart.cn/rfq/machining/1">Machining RFQ(Sourcing Request)</a></li>
+							<li><a href="http://www.quickpart.cn/rfq/goods/1">Prompt Goods(other purchases) RFQ(Sourcing Request)</a></li>
+						</ul>
+						
+					</li>
+					<li class="pull-left">
+						<a rel="nofollow" href="/en/manufacturer_category.html">Manufacturer Categories
+							<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+							<span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+						</a>
+						<ul class="sub-nav ul2">
+							<li><a href="http://www.quickpart.cn/manufacturer-category/plastic-1">Plastic Manufacturer(supplier)</a></li>
+							<li><a href="http://www.quickpart.cn/manufacturer-category/cast-1">Casting Manufacturer(supplier)</a></li>
+							<li><a href="http://www.quickpart.cn/manufacturer-category/forging-1">Forging Manufacturer(supplier)</a></li>
+							<li><a href="http://www.quickpart.cn/manufacturer-category/raw-1">Raw Material Procuring Manufacturer(supplier)</a></li>
+							<li><a href="http://www.quickpart.cn/manufacturer-category/metal-1">Metal Fabrication Manufacturer(supplier)</a></li>
+							<li><a href="http://www.quickpart.cn/manufacturer-category/machining-1">Machining Manufacturer(supplier)</a></li>
+							<li><a href="http://www.quickpart.cn/manufacturer-category/goods-1">Prompt Goods & Others Manufacturer(supplier)</a></li>
+						</ul>
+					</li>
+					<li class="pull-left">
+						<a rel="nofollow" href="/en/ManufactureCalculator.html">Manufacture Calculator
+							<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+							<span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+						</a>
+						<ul class="sub-nav ul4">
+									<li><a href="/en/InjectionMolding.html" target="_blank">Injection Molding Price Calculator</a></li>
+									<li><a href="/en/DieCasting.html" target="_blank">Die Casting Price Calculator</a></li>
+									<li><a href="/en/MetalFabrication.html" target="_blank">Metal Fabrication Price Calculator</a></li>
+								</ul>
+					</li>
+					<li class="pull-left">
+							<a rel="nofollow" href="#">About Us
+							 	<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+								<span class="nav_s2 glyphicon glyphicon-menu-up"></span>	
+								<ul class="sub-nav ul4">	
+									<li><a href=""></a></li>
+									<li><a href="/en/who_we.html">Who Are We</a></li>
+									<li><a href="/en/contact_us.html">Contact Us</a></li>
+								</ul>					
+							</a>
+						</li>
+					<!-- <li class="pull-left"><a>Quickpart Today</a></li> -->
+					<!-- <li class="pull-left"><a>Kickstarter</a></li>
+					<li class="pull-left"><a>Belt &amp; Road</a></li> -->
+				</ul>
+			</nav>
+		</div>
+	</header>
+</body>
+</html>
+<script src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/upload-base.js"></script>
+<script src="/js/easydialog.min.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script src="/js/getServerName.js"></script>
+<script src="/js/getNationalFlag.js"></script>
+<script>
+	$.post("/account/changeLanguage.do",
+			{"language":'en'},
+	function(result){
+	});   		
+		/*���Ըı�����*/        
+ 	function change_lan(){        	
+	  var lan = getCookie("language");
+		if(lan == 'en'){
+			lan = 'zh'
+		}else{
+			lan = 'en'
+		}		
+            $.post("/account/changeLanguage.do",
+      			{"language": lan},    	
+      			function(result){
+    	        	var url = window.location.search;        	
+    	        	if(lan == 'en'){
+    	        		url = url.replace('zh','en');
+  		            window.location = url;      	        		 
+    	        	}else{
+    	        		url = url.replace('en','zh');
+	        			window.location = url;
+	        		}
+      	});   			
+ 	}
+	$('.beforLogin').show()
+	$('.afterLogin').hide()
+	var userName = getCookie("userName");
+	var factoryInfo = getCookie("F_INFO");
+	var factoryType;
+	if (userName != null && userName != '' && userName != undefined) {
+		var base = new Base64();
+		userName = base.decode(userName);
+		$('#username').text(userName);
+		$('.beforLogin').hide()
+		$('.afterLogin').show()
+	}
+	if (userName != null && userName != '' && userName != undefined) {
+		var base = new Base64();
+		factoryInfo = base.decode(factoryInfo);
+		var strs = factoryInfo.split('&');
+		factoryType = strs[strs.length-1];
+		if(factoryType == 2){
+			$('#supplier_list').find('a').attr('href',"#").css({"background-color":"#ddd"});			
+		}else if(factoryType == 1){
+			$('#supplier_list').next().find('a').attr('href',"#").css({"background-color":"#ddd"});
+		}
+	}
+	//��ȡ��Ϣ����
+	getMessage();
+	function getMessage(){			
+			if (factoryInfo == null || factoryInfo == '') {
+				return false;
+			}else{
+				window.clearInterval(newMessage_interval); 
+			}
+			$.ajax({
+				url : "/noteMessage/newMessageCount.do",
+				cache : false,
+				success : function(data) {	
+					if (data.state == 0) {	
+						var summap = data.data	
+						if (summap) {	
+							var count = summap.unRead
+							var award = summap.award
+							var updateProcess = summap.updateProcess
+							$('#unRead').text(count ? count : "")
+							$('#newMessageCount').text(count ? count : "")
+							$('#award').text(award ? award : "")
+							$('#updateProcess').text(
+									updateProcess ? updateProcess : "")	
+						}	
+					}
+				}
+			});			
+		}
+	function exit(){        
+		$.post("/account/clearCookie.do",
+			function(result){
+			if(result.state == 0){				
+				//����cookie�жϲ�ͬ�����˳�ҳ��
+				var lan = getCookie("language");
+				var	serverName = getServerName(lan);	
+				var lan = getCookie("language");
+				if(lan == 'en'){
+					window.location = serverName+"/en/login.html";
+				}else{
+					window.location = serverName+"/zh/login.html";
+				}				
+			}			
+		})	
+	}
+	//��������Ϣ����  add by jason  �벻Ҫɾ��������ע����
+	var newMessage_interval = setInterval(function() {
+		getMessage();
+	}, 60000);		
+</script>
+
+

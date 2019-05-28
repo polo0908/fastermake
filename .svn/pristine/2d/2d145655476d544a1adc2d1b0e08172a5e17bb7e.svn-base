@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="Description" content="在快制造网站上快速地发布询盘，得到报价">	
+<title>快速创建询盘-免费报价、发布询盘网-快制造</title>
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="/lib/datetimepicker/css/bootstrap-datetimepicker.min.css" />
+<link rel="stylesheet" href="/css/easydialog.css" />
+<link rel="stylesheet" href="/css/css.css" />
+<link rel="stylesheet" href="/css/matrix-style.css" />
+<link rel="stylesheet" href="/css/progressBar.css" />
+<link rel="stylesheet" href="/css/ui.css" />
+<link rel="stylesheet" href="/css/ui.progress-bar.css" />
+<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+<script src="/lib/respond/respond.js"></script>
+<style>
+	.container {
+		width: 1200px;
+		background-color: #fff;
+		margin:0 auto;
+	
+.page1 .parentDiv {
+	width: 460px;
+}
+
+.page1 .childenSpan {
+	padding: 6px 12px;
+	display: none;
+}
+
+.form-horizontal .control-label {
+	padding-top: 7px;
+}
+
+.page1.quickly_release .sc .drawFile {
+	left: 689px;
+}
+
+.deleteQuantityList {
+	cursor: pointer;
+}
+
+.addQuantityList {
+	cursor: pointer;
+}
+
+.ff5 {
+	margin-left: 25px;
+}
+
+.weui_mask_new {
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.6);
+}
+</style>
+</head>
+<body>
+	<div class="quickly_release_div quickly_release_new">
+	<div class="div_transparent"></div>
+		<div id="header"></div>
+
+		<div class="quickly_release product_invitation page1">
+
+			<div class="section">
+				<div class="nav_head container">
+					<a class="a1">1.创建询盘获取报价</a> <a>2.完善询盘信息</a>
+					<a>3.注册登录</a> <a>4.确认询盘信息</a> <a>5.快制造检查和发布</a>
+					<a>6.收到报价</a>
+					<h4>快速创建询盘</h4>
+				</div>
+				<div class="panel panel-default container">
+					<div class="panel-heading posirela">
+						<ol class="breadcrumb">
+							<li><a href="#">首页</a></li>
+							<li>快速创建询盘</li>
+						</ol>
+						<!--<a href="#"  id="createNewQuote" class="creata">创建多零件且具有更多条件的询盘></a>-->
+					</div>
+					<div class="panel-body">
+						<h3>
+							<i></i>零件信息和数量
+						</h3>
+						<form class="form-horizontal quickly_form">
+							<input type="hidden" name="fileName" value="" /> <input
+								type="hidden" name="orderId" value=""> <input
+								type="hidden" name="libraryFactoryId" value="" />
+								
+								
+						  <div class="form-group xpbt">
+                            <label class="col-sm-2 control-label" style="width:120px;"><i class="ffhh">*</i>询盘标题</label>
+                            <div class="col-sm-6 w600">
+                                <input type="text" class="form-control" id="quoteTitle" name="quoteTitle" placeholder="请为您的询盘起一个标题" field="标题" require/>
+                                <span style="right: -116px;position: absolute;"></span>
+                            </div>
+                           </div>	
+							<table class="table-bordered">
+								<thead>
+									<tr>
+										<th class="th1"><div class="d1">
+												<span class="ffhh">*</span>零件名称
+											</div></th>
+										<th class="th2"><div class="d1">
+												<span class="ffhh">*</span>数量
+											</div></th>
+										<th class="th3"><div class="d1">单位</div></th>
+										<th class="th4"><div class="d1">目标价格</div></th>
+										<th class="th5"><div class="d1">材料</div></th>
+										<th class="th6"><div class="d1">重量</div></th>
+										<th class="th7"><div class="d1">备注</div></th>
+										<th class="th8"><div class="d1"></div></th>
+									</tr>
+								</thead>
+								<tbody id="firstProduct" class="addProducts">
+									<tr>
+										<td><textarea class="form-control" id="productName"
+												name="productName" require></textarea></td>
+										<td><textarea type="text" class="form-control w100"
+												name="quantityList" require
+												onkeypress="return inputNum(event);" placeholder="1">1</textarea></td>
+										<td class="td_input_select">
+											<div class="top">
+												<input type="text" class="form-control" name="quantityUnit"
+													placeholder="Pcs" value="Pcs"> <span class="caret"></span>
+											</div>
+											<ul class="form-control">
+												<li>Pcs</li>
+												<li>Sets</li>
+											</ul>
+										</td>
+										<td><textarea  class="form-control"
+												name="targetPrice" onkeyup="keyUp(this)"
+												onkeypress="keyPress(this)" onblur="onBlur(this)"></textarea></td>
+										<td><textarea  class="form-control"
+												name="materials"></textarea></td>
+										<td>
+											<div class="form-group has-success has-feedback">
+												<div class="input-group div_w135">
+													<input type="text" class="form-control inputGroupSuccess1"
+														name="weight" id="inputGroupSuccess1"
+														aria-describedby="inputGroupSuccess1Status" onkeyup="keyUp(this)"
+														   onkeypress="keyPress(this)" onblur="onBlur(this)"> <span
+														class="input-group-addon" >KG</span>
+												</div>
+												<span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+											</div>
+										</td>
+										<td><textarea class="form-control w190"
+												name="productRemark"></textarea></td>
+										<td><span class="z-pro-del" onclick="del_pro(this)">删除</span></td>
+									</tr>
+								</tbody>
+							</table>
+						    <div class="form-group add_tr">
+								<i class="iconfont">&#xe62e;</i>
+								<span>添加零件(一个询盘最多十个零件)</span>
+							</div>
+							<div class="form-group">
+								<label  class="control-label col-sm-2"><i
+									class="ffhh">*</i>图纸附件</label>
+								<div class="col-sm-6">
+									<div class="sc posirela">
+										<span onclick="uploadProduct(this)"><i class="iconfont">&#xe66e;</i>上传附件</span>多个零件可以上传一个附件
+										<input type="file" name="files" class="posiabso upclass" /> <span
+											id="showdrawfile" class="s1 s13 s132 s1_1"
+											style="display: none"><em class="iconem"
+											onclick="deleteQuicklyfile(this)"></em></span> <input type="hidden"
+											id="drawingName" name="drawingName" value="" /> <input
+											type="hidden" id="drawingPath" name="drawingPath" value="" />
+									</div>
+									<span id="drawSpan"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label  class="col-sm-2 control-label w150"><i>*</i>询盘主工艺</label>
+								<div class="col-sm-8">
+									<label class="radio-inline w132"> <input
+										id="mainCategoryAuto" name="mainCategory" value="0"
+										onclick="cleanData()" type="radio"> 请平台工程师建议
+									</label> <label class="radio-inline"> <input id="mainCategory"
+										type="radio" name="mainCategory" value="1"
+										onclick="showTree(this)"> 展开工艺树选择
+									</label>
+									<div id="treeviewForRfq" class="dxtc">
+										<ul class="category_list pull-left" id="select_main_process"></ul>
+										<ul class="category_list pull-left" id="select_second"></ul>
+									</div>
+									<span id="mainCategoryText"
+										style="color: blue; margin-left: 20px; position: absolute; top: 8px;"></span>
+									<input type="hidden" id="mainProcess" name="mainProcess"
+										value="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label w150"><i
+									class="">*</i>询盘目的</label>
+								<div class="col-sm-8">
+									<label class="radio-inline w132"> <input type="radio"
+										name="quotePurpose" value="0">实际订单
+									</label> <label class="radio-inline"> <input type="radio"
+										name="quotePurpose" value="1"> 暂时不急的询盘，主要想建立些长期供应商关系
+									</label>
+								</div>
+							</div>
+							<div class="form-group bmxy">
+								<label class="col-sm-2 control-label w150"><i
+									class="">*</i>保密协议</label>
+								<div class="col-sm-8">
+									<label class="radio-inline w132"> <input type="radio"
+										name="confidentialityAgreement"
+										onclick="showQuicklyUploadEnter(this)" value="0">
+										无保密协议
+									</label> <label class="radio-inline w160"> <input type="radio"
+										name="confidentialityAgreement"
+										onclick="showQuicklyUploadEnter(this)" value="1">
+										快制造保密协议
+									</label> <label class="radio-inline"> <input type="radio"
+										name="confidentialityAgreement"
+										onclick="showQuicklyUploadEnter(this)" value="2">
+										自己上传保密协议
+									</label>
+									<div class="sc posirela" style="display: none"
+										id="confidentialityQuicklyFile">
+										<span class="s1 s11" onclick="uploadProduct(this)"><i
+											class="iconfont">&#xe66e;</i>上传附件</span>文件上传最大30M <input type="file"
+											name="files" class="posiabso upclass" /> <span
+											id="UploadfileName" class="s1 s13"><em class="iconem"
+											onclick="deleteQuicklyfile(this)"></em></span> <input type="hidden"
+											name="confidentialityFileName" value="" /> <input
+											type="hidden" name="filePath" value="" />
+
+									</div>
+									<span></span>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="container ntxtbtn">
+					<button class="btn next firstNext">下一步</button>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+		<div class="w-out-box" id="show_upload_dialog" style="display: none">
+			<div class="weui_mask"></div>
+			<div class="w-weui_dialog" style="width: 510px;">
+				<div id="container">
+
+					<div class="content">
+						<h1>上传进度</h1>
+					</div>
+
+					<!-- Progress bar -->
+					<div id="progress_bar" class="ui-progress-bar ui-container">
+						<div class="ui-progress" style="width: 0%;"
+							id="ui-progress-upload">
+							<span class="ui-label" style="display: none;">正在加载...<b
+								class="value">0%</b></span>
+						</div>
+					</div>
+					<!-- /Progress bar -->
+					<a class="close-reveal-modal" style="color: #eee; font-size: 22px;"
+						href="javascript:void(0);" onclick="cancel_upload()">×</a>
+					<div class="content" id="main_content" style="display: none;">
+						<p>加载完成。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 51la统计代码 -->
+		<script type="text/javascript" src="//js.users.51.la/19493791.js"></script>
+</body>
+</html>
+<script type="text/javascript" src="/zh/icn/verification.js"></script>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/upload-base.js"></script>
+<script type="text/javascript" src="/js/jquery-form.js"></script>
+<script type="text/javascript" src="/js/easydialog.min.js"></script>
+<script type="text/javascript" src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/zh/icn/quickly_release.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script src="/lib/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/lib/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+    $('#header').load('header.html');
+    $('#footer').load('footer.html');
+    /* 日历插件*/
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 4,
+        forceParse: 0
+    });
+       
+	$('.quickly_release_new .top input').focus(function(){
+
+		$('.div_transparent').show();
+		$(this).parent().next().show();
+	})
+	$('.quickly_release_new .top input').click(function(){
+		$('.div_transparent').show();
+		$(this).parent().next().show();
+	})
+	$('.quickly_release_new .top input').keydown(function(){
+		$('.div_transparent').hide();
+		$(this).parent().siblings('ul').hide();
+	})
+	$('.quickly_release_new .td_input_select ul li').click(function(){
+		$('.div_transparent').hide();
+        $(this).parent().hide();
+		var li_val = $(this).text();
+		$(this).parents('td').find('input').val(li_val);
+	})
+	$('.div_transparent').click(function(){
+		$('.div_transparent').hide();
+		$('.quickly_release_new .td_input_select ul').hide();
+	})
+	//注意：火狐使用event时， 
+	function inputNum(evt){ 
+	  //火狐使用evt.which获取键盘按键值，IE使用window.event.keyCode获取键盘按键值
+	  var ev = evt.which?evt.which:window.event.keyCode;
+	  if(ev>=48&&ev<=57){
+	    return true;  
+	  }else{
+	    return false;
+	  } 
+	} 
+
+	//Add 添加表格 add_tr
+	$('.add_tr').click(function(){
+// 		$('#firstProduct tr:last-child input,#firstProduct tr:last-child textarea').val('');
+		var tr_length = $('#firstProduct tr').length;
+		var name_val = $('#productName').val();
+		var qty_val = $('#productQty').val();
+		if(name_val == "" || qty_val == ""){
+			easyDialog.open({
+				container : {
+					content : '零件名和数量不能为空'
+				},
+				overlay : false,
+				autoClose : 1500
+			});
+			return false;
+		}
+		if(tr_length > 9 ){			
+			easyDialog.open({
+				container : {
+					content : '最多添加10个零件'
+				},
+				overlay : false,
+				autoClose : 1500
+			});
+			return false;
+		}
+		var addtr = $('#firstProduct tr:first-child').clone(true);
+		$('#firstProduct').append(addtr);
+		if(tr_length > 0){
+			$('#firstProduct').find('tr').not(':first').find('td:last').find('.z-pro-del').css({'visibility':'visible'});
+		}		
+		
+	});		
+	 function del_pro(obj){
+		$(obj).parents('tr').remove();
+	} 
+</script>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- 邮件发送bean -->
+	<bean id="sendmail" class="com.cbt.quartz.SendMailTask"/>
+    <!-- 获取钉钉审批-->
+	<bean id="dingTalk" class="com.cbt.quartz.DingTalkTask"/>
+    <!-- 获取钉钉里程碑补录-->
+	<bean id="dingTalkMileStone" class="com.cbt.quartz.DingTalkMileStoneEditTask"/>
+    <!-- 百家号推送询盘-->
+	<bean id="baijiaNew" class="com.cbt.baijia.push.PushBaijiaNews"/>
+
+
+    <!-- 定时发邮件任务 -->
+    <bean id="sendEmailSchedule" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!--指定执行任务的对象 -->
+        <property name="targetObject">
+            <ref bean="sendmail"/>
+        </property>
+        <!-- 指定对象执行的方法 -->
+        <property name="targetMethod">
+            <value>pushEmail</value>
+        </property>
+       <!-- 设置为非并发执行 -->
+    <property name="concurrent" value="false"/>
+    </bean>
+
+    <!-- 定时获取任务系统里程碑 -->
+    <bean id="dingTalkSchedule" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!--指定执行任务的对象 -->
+        <property name="targetObject">
+            <ref bean="dingTalk"/>
+        </property>
+        <!-- 指定对象执行的方法 -->
+        <property name="targetMethod">
+            <value>currentGetTalk</value>
+        </property>
+       <!-- 设置为非并发执行 -->
+    <property name="concurrent" value="false"/>
+    </bean>
+    <!-- 定时获取任务系统里程碑(补录) -->
+    <bean id="dingTalkMileStoneSchedule" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!--指定执行任务的对象 -->
+        <property name="targetObject">
+            <ref bean="dingTalkMileStone"/>
+        </property>
+        <!-- 指定对象执行的方法 -->
+        <property name="targetMethod">
+            <value>currentGetTalk</value>
+        </property>
+       <!-- 设置为非并发执行 -->
+    <property name="concurrent" value="false"/>
+    </bean>
+
+    <!-- 百家号定时推送任务 -->
+    <bean id="baijiaNewSchedule" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!--指定执行任务的对象 -->
+        <property name="targetObject">
+            <ref bean="baijiaNew"/>
+        </property>
+        <!-- 指定对象执行的方法 -->
+        <property name="targetMethod">
+            <value>currentPushNews</value>
+        </property>
+       <!-- 设置为非并发执行 -->
+    <property name="concurrent" value="false"/>
+    </bean>
+
+
+
+    
+    <!-- 发送推送邮件触发器  -->
+   <bean id="sendMailTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="sendEmailSchedule" />
+       <!-- 整点执行-->
+       <property name="cronExpression" value="0 0 10 ? * MON" />
+       <!--<property name="cronExpression" value="00 * * * * ?" />-->
+   </bean>
+
+    <!-- 任务系统里程碑触发器  -->
+   <bean id="dingTalkTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="dingTalkSchedule" />
+       <!-- 整点执行-->
+       <property name="cronExpression" value="0 0 10 ? * *" />
+       <!--<property name="cronExpression" value="00 * * * * ?" />-->
+   </bean>
+    <!-- 任务系统里程碑触发器(补录)  -->
+   <bean id="dingTalkMileStoneTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="dingTalkMileStoneSchedule" />
+       <!-- 整点执行-->
+       <property name="cronExpression" value="0 5 * ? * *" />
+       <!--<property name="cronExpression" value="00 * * * * ?" />-->
+   </bean>
+    <!-- 百家号定时推送触发器  -->
+   <bean id="baijiaNewTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="baijiaNewSchedule" />
+       <!-- 整点执行-->
+       <property name="cronExpression" value="0 0 10 ? * *" />
+       <!--<property name="cronExpression" value="00 * * * * ?" />-->
+   </bean>
+
+
+   <!--  调度器 -->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <!-- 发送邮件触发器 -->
+                <!-- <ref bean="sendEmailTrigger" /> -->
+                <!--<ref bean="sendMailTrigger" />-->
+                <!--<ref bean="dingTalkTrigger" />-->
+                <!--<ref bean="dingTalkMileStoneTrigger" />-->
+                <!--<ref bean="baijiaNewTrigger" />-->
+            </list>
+        </property>
+    </bean>
+</beans>

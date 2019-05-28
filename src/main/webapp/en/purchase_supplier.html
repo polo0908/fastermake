@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>quickpart-purchase_supplier</title>
+     <link rel="shortcut icon" href="/img/favicon.ico"/>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/lib/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+    <script src="/lib/html5sshiv/html5shiv.min.js"></script>
+    <script src="/lib/respond/respond.js"></script>
+    <link rel="stylesheet" href="/css/easydialog.css" />
+	<link rel="stylesheet" href="/css/progressBar.css" />
+	<link rel="stylesheet" href="/css/ui.css" />
+	<link rel="stylesheet" href="/css/ui.progress-bar.css" />
+    <link rel="stylesheet" href="/css/css.css"/>
+    <style>
+        @media (min-width: 1200px) {
+            .container {
+                width: 1200px;
+            }
+        }
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+<body>
+<div class="purchase_detail purchase_supplier purchase_supplier_en">
+    <div class="tc">
+        <div class="panel">
+            <div class="panel-heading">reason <span class="iconfont pull-right">&#xe643;</span></div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="radio">
+                                <label for="">
+                                    <input type="radio" name="dx"/> The price of the existing supplier is cheaper
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-6">
+                            <div class="radio radio2">
+                                <label for="">
+                                    <input type="radio" name="dx" checked="checked"/>other
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 posirela">
+                            <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                            <em><i>0</i>/300</em>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn">submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="header"></div>
+    <div class="section">
+        <div class="container container1">
+            <h3><span style="font-size:30px;"></span><span id="quote_title" style="font-size:26px;padding-right: 64px;"></span>
+                                                  Serial #<span id="quoteId" style="font-size:26px;"></span> -<small></small></h3>
+            <div class="panel panel1">
+                <div class="panel-heading clearfix">
+                    <a href="###" class="activea">RFQ detail</a>
+<!--                     <a href="###">验厂</a> -->
+<!--                     <a href="###">打样</a> -->
+                    <!-- <a href="###">大货</a> -->
+<!--                     <a href="###">图纸管理</a> -->
+                </div>
+            </div>
+            <div class="panel panel2">
+                <div class="panel-heading">RFQ information </div>
+                <div class="panel-body clearfix">
+                	<div class="panel-body-L pull-left">
+	                    <table class="table tab1 ">
+	                        <tbody id="tbody">
+	                            <tr>
+	                                <td>Supplier Name</td>
+	                                <td><span class="w378" id="factory_name"></span></td>
+	                            </tr>
+	                            <!-- <tr>
+	                                <td>报价日期</td>
+	                                <td id="quote_date"></td>
+	                            </tr> -->
+	                            <tr>
+	                                <td>Quote effective time</td>
+	                                <td id="quote_date"></td>
+	                            </tr>
+	                            <tr>
+	                                <td>Terms</td>
+	                                <td><span class="w378" id="payment_term"></span></td>
+	                            </tr>
+	                            <!--<tr>-->
+	                                <!--<td >Note</td>-->
+	                                <!--<td><span class="h_over" id="payment_remark"></span></td>-->
+	                            <!--</tr>-->
+	                            <tr>
+	                                <td >Quotation Sheet</td>
+	                                <td class="afj"><a href="###" id="file_attachment"><span></span><span class="iconfont">&#xe686;</span></a></td>
+	                            </tr>
+	                            <tr>
+	                                <td>Special Advantage</td>
+	                                <td><span class="h_over" id="quote_reasons"></span></td>
+	                            </tr>
+	                        </tbody>
+	                    </table>
+	                    <div class="ys" id="factory_advantage">
+	                    	<h3><span></span>Supplier Info</h3>
+	                    	<p>
+	                    		<em>Special technic advantage or cost advantage:</em>
+	                    		<span></span>
+	                    	</p>
+	                    	<p>
+	                    		<em>Familiar materials: </em>
+	                    		<span></span>
+	                    	</p>
+	                    	<p>
+	                    		<em>What size of product are we good at: </em>
+	                    		<span></span>
+	                    	</p>
+	                    	<p>
+	                    		<em>Process strength </em>
+	                    		<span></span>
+	                    	</p>
+	                    	<p>
+	                    		<em>Factory size </em>
+	                    		<span></span>
+	                    	</p>
+	                    </div>
+                    </div>
+                   <form id="file_upload_id" action="/upload/uploadAttachmentAndChangeName.do" onsubmit="return false;" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="filePath">       
+                    <input type="hidden" name="orderId" id="orderId">       
+                    <div class="q_right pull-right">
+                        <div class="title"><i class="iconfont">&#xe63a;</i>Chat with supplier</div>
+                        <div class="q_detail" id="quote_message">
+                            <div class="ds" id="message">
+                            
+                            </div>
+                            <textarea id="message_details" class="form-control" placeholder="Chat with supplier"></textarea>
+                            <div class="btns">
+                             <input type="text" style="width: 100px;margin-left: -80px;opacity: 1;text-decoration: underline;" id="fileName" name="selectDrawingName"/>
+                                <span></span>
+                            	<input type="file"  name="file_upload" onchange="show_drawingName(this)"/>
+                                <button onclick="send_message(this)">send</button>
+                            </div>
+                        </div>
+                    </div>
+                   </form>
+                    
+                </div>
+            </div>
+            <div class="panel panel2 panel3">
+                <div class="panel-heading ">Latest quotation </div>
+                <div class="panel-body" id="current_quote">
+                  
+                </div>
+            </div>
+            <div class="panel panel2 panel3 panel4">
+                <div class="panel-heading">history</div>
+                <div class="panel-body" id="history_quote">
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="footer" style="position: relative;"></div>
+    
+    
+    	<div class="w-out-box" id="show_upload_dialog" style="display:none;">
+			<div class="weui_mask"></div>
+			<div class="w-weui_dialog" style="width:510px;">
+			  <div id="container">
+			
+				<div class="content">
+					<h1>Processing</h1>
+				</div>
+				
+				<!-- Progress bar -->
+				<div id="progress_bar" class="ui-progress-bar ui-container">
+				<div class="ui-progress" style="width: 0%;" id="ui-progress-upload">
+				<span class="ui-label" style="display:none;">Loading...<b class="value">0%</b></span>
+				</div>
+				</div>
+				<!-- /Progress bar -->
+			    <a class="close-reveal-modal" style="color:#eee;font-size:22px;" href="javascript:void(0);" onclick="cancel_upload()">×</a>
+				<div class="content" id="main_content" style="display: none;">
+					<p>Loading completed</p>
+				</div>
+			   </div>
+			   </div>
+          </div>
+</div>
+	<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/dateFormat.js"></script>
+<script src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script type="text/javascript" src="/js/jquery-form.js"></script>
+<script src="icn/purchase_supplier.js"></script> 
+<script src="/lib/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/lib/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+    $('#header').load('header.html');
+    $('#footer').load('footer.html');
+    /* panel1切换效果*/
+    $('.panel1 a').click(function(){
+        $(this).addClass('activea').siblings().removeClass('activea');
+    })
+    /* 询盘信息操作*/
+    $('.tab1 tbody td:even').css({
+        'padding-left':'0',
+        'background-color':'#f0f0f0',
+        'font-size':'14px',
+        'text-align':'center',
+        'width':'160px'
+    })
+    $('.tab1 tbody td:odd').css({
+        'width':'249px'
+    })
+    /* panel3隔行换色*/
+    $(".panel3 tbody tr:not('.trcol'):even").css({
+        'background-color':'#f9f9f9'
+    })
+    /* panel4隔行换色*/
+    $('.panel4 tbody tr:even').css({
+        'background-color':'#f9f9f9'
+    })
+    /*侧边栏长度控制效果*/
+    var h1 = $(document.body).height() + 230 ;
+    var h2 = window.screen.availHeight  ;
+    if(h1 < h2){
+        $('#footer').addClass('footer1');
+    }else{
+        $('#footer').removeClass('footer1');
+    }
+
+
+    /*历史报价显示隐藏切换*/
+    $('.purchase_supplier .p1:first-child i').css({
+        'background':'url(/images/red.png) no-repeat'
+    })
+    $('.purchase_supplier .p1 i').click(function(){
+        var $this = $(this).parent().next('table');
+        if($this.hasClass('dis')){
+            $this.removeClass('dis');
+            $this.show();
+            $(this).css({
+                'background':'url(/images/red.png) no-repeat'
+            })
+        }else{
+            $this.addClass('dis');
+            $this.hide();
+            $(this).css({
+                'background':'url(/images/green.png) no-repeat'
+            })
+        }
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

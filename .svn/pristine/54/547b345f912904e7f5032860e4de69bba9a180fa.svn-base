@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<footer class="footer">
+			<div class="footer_in w12">
+				<div class="logo">
+					<img src="/images/foot.png" alt="免费报价 、发布询盘网 - 快制造" />
+				</div>
+				<div class="b_a">
+					备案许可编号:<br>沪ICP备17041761号-3
+				</div>
+				<button class="more">更多</button>
+				<div class="dls clearfix">
+					<dl class="pull-left">
+						<dt> <a >新手指南</a></dt>
+						<dd>
+							<a  href="/zh/new_inquiry.html">免费询盘</a>
+						</dd>
+						<dd>
+							<a  href="">快经验</a>
+						</dd>
+						<dd>
+							<a  href="/zh/register_zh.html">工厂入口</a>
+						</dd>
+						<dd>
+							<a  href="/zh/register_zh.html">采购商入门</a>
+						</dd>
+						
+					</dl>
+					<dl class="pull-left dl_gy">
+						<dt><a >供应商服务</a></dt>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/plastic/injection-molding/1"> 注塑询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/plastic/vacuum-forming/1"> 吸塑询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/plastic/rotational-molding/1"> 滚塑询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/plastic/blow-molding/1"> 吹塑询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/plastic/plastic-extrusion/1"> 挤塑询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/cast/stainless-steel-casting/1"> 不锈钢铸造询盘</a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/cast/die-casting/1"> 压铸询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/cast/sand-casting/1"> 砂铸询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/cast/gravity-casting/1"> 重力铸造询盘</a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/forging/1"> 锻造询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/metal/1"> 钣金询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/machining/1"> 机加工询盘 </a></dd>
+						<dd> <a  href="http://www.kuaizhizao.cn/rfq/goods/1"> 现货询盘 </a></dd>
+					</dl>
+					<dl class="pull-left">
+						<dt><a >采购商服务</a></dt>
+						<dd>
+							<a  href="/zh/quickly_release.html">快速发布询盘</a>
+						</dd>
+					</dl>
+					
+					<dl class="pull-left">
+						<dt>帮助中心</dt>						
+						<dd>
+							<a>联系我们</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="qrcode">
+					<span>欢迎关注快制造微信服务号</span> <img src="/images/qrcode.jpg" alt="免费报价、发布询盘网 微信服务号">
+				</div>
+			</div>
+		</footer>
+  	<div class="w-out-box" id="show_upload_dialog" style="display:none;">
+		<div class="weui_mask"></div>
+		<div class="w-weui_dialog" style="width:510px;">
+		  <div id="container">
+		
+			<div class="content">
+				<h1>上传进度</h1>
+			</div>
+			
+			<!-- Progress bar -->
+			<div id="progress_bar" class="ui-progress-bar ui-container">
+			<div class="ui-progress" style="width: 0%;" id="ui-progress-upload">
+			<span class="ui-label" style="display:none;">正在加载...<b class="value">0%</b></span>
+			</div>
+			</div>
+			<!-- /Progress bar -->
+		    <a class="close-reveal-modal" style="color:#333;font-size:40px;position:absolute;right:6px;top:0px;" href="javascript:void(0);" onclick="cancel_upload()">×</a>
+			<div class="content" id="main_content" style="display: none;">
+				<p>加载完成</p>
+			</div>
+		   </div>
+		   </div>
+        </div>
+</body>
+<script>
+    // 尾部点击更多效果
+    $('.footer .more').on('click',function(){
+        var button_text = $('.footer .more').text();
+        if(button_text == '更多'){
+            $('.footer .more').text('收起').animate({'top':'280px'},300);
+            $('.footer').css({'overflow':'hidden'});
+            $('.footer .dl_gy,.footer .footer_in').css({'height':'340px'});
+            $('.footer,.footer .footer_in .dls').css({'height':'340px'});
+            $('.footer .dl_gy').animate({'height':'285px','margin-bottom':'0px'},300);
+        }else if(button_text == '收起'){
+            $('.footer .more').text('更多').animate({'top':'110px'},600);
+            $('.footer,.footer .footer_in').animate({'height':'170px'},300);
+            $('.footer .footer_in .dls').animate({'height':'140px'},300);
+            $('.footer .dl_gy').animate({'height':'94px'},300);
+        };
+
+    });
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+

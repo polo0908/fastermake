@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="Keywords"
+	content="快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘">
+<meta name="Description"
+	content="快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘">
+<title>快制造-登录</title>
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/easydialog.css" />
+<link rel="stylesheet" href="/css/css.css" />
+<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+<script src="/lib/respond/respond.js"></script>
+<script type="text/javascript" src="/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="/js/easydialog.min.js"></script>
+<script type="text/javascript" src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script src="/js/login.js"></script>
+<style>
+@media ( min-width : 1200px) {
+	.container {
+		width: 1200px;
+		padding: 0;
+	}
+}
+
+#easyDialogBox {
+	margin-top: -310px !important;
+}
+</style>
+</head>
+<body>
+	<div class="sign">
+		<div class="head ">
+			<div class="head_in container w12">
+				<a href="index.html" class="logo"><img
+					src="/images/head_146-39.png" alt="" /></a> <span></span>
+			</div>
+		</div>
+		<div class="section">
+			<div class="sign_info w12 posirela">
+				<div class="login_a panel" style="display:block;">
+					<h1>恭喜您已微信登录</h1>
+					<p>您可以:</p>
+					<a href="#">1.补全注册信息成为供应商</a>
+					<a href="#">2.补全注册信息成为采购商</a>
+					<a href="#">3.与已有账号绑定</a>
+				</div>
+				<div class="login_a panel login_b">
+					<span>亲爱的<i></i>，绑定成功</span><br>
+					<span>即将在<em>5</em>秒后自动返回<i>首</i>页</span>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/js/cookie_util.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+</html>
+<script type="text/javascript">
+
+
+	//获取unionid
+	var unionid = getQueryString("unionid");
+	var type = getQueryString("type");
+	var num = 6;
+    var factoryInfo = getCookie("factoryInfo");
+	
+	if(unionid != null && unionid != '') {
+        $('.login_a').find('a').eq(0).attr('href', '/zh/register_zh.html?unionid=' + unionid + '&type=1');
+        $('.login_a').find('a').eq(1).attr('href', '/zh/register_zh.html?unionid=' + unionid + '&type=2');
+        if (factoryInfo != null && factoryInfo != '' && factoryInfo != undefined) {
+            $('.login_a').find('a').eq(2).attr('href', '/inquiry/index?unionid=' + unionid);
+        }else{
+            $('.login_a').find('a').eq(2).attr('href', '/zh/login.html?unionid=' + unionid);
+		}
+    }
+
+	//获取userName
+	if(type != null && type != ''){
+			var userName = getCookie("userName");
+			if (userName != null && userName != '' && userName != undefined) {
+				var base = new Base64();
+				userName = base.decode(userName);
+				$('.login_b').find('i:first').text(userName);
+				$('.login_a').eq(1).show();
+				showtime();
+			}
+	}
+
+
+
+
+	//  欢迎页面跳转
+	function showtime(){
+		num--;
+		$('.login_b em').text(num);
+		if(num == 0){
+			num = 0;
+			location.href="https://www.kuaizhizao.cn/";
+		}
+		setTimeout("showtime()",1000); 
+	}
+	/* showtime(); */
+	
+	
+	
+	   function getQueryString(name) {
+    	var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    	var r = window.location.search.substr(1).match(reg);
+    	if (r != null) {
+    		return unescape(r[2]);
+    	}
+    	return null;
+    }
+</script>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="Keywords">
+<meta name="Description"
+	th:content="${'This page shows the main process is the quality supplier information of '+ category +' molding, the process covers：'+ processEn +'and more'}">
+<title th:text="${(category eq 'goods' ? 'Prompt Goods & Others' : #strings.toUpperCase(#strings.substring(category,0,1))+ #strings.substring(category,1, #strings.length(category)) + (category eq 'raw' ? ' Material Procuring' : (category eq 'metal' ? ' Fabrication' : ''))) +' Manufacturer-Get free industrial,manufacturing quotes from chinese manufacture | QUICKPART.cn'}"></title>
+<link rel="canonical" th:href="@{${'https://www.quickpart.cn/manufacturer-category/'+ category+'-'+page}}"/>
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/css.css" />
+<link rel="stylesheet" href="/css/comments.css">
+<link href="/css/myPage.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/css/iconfont.css">
+<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+<script src="/lib/respond/respond.js"></script>
+<style>
+@media ( min-width : 1200px) {
+	.container {
+		width: 1200px;
+	}
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+<body>
+	<div id="header"></div>
+	<div class="products products_minh comments_echart comments_echart_en">
+		<div class="container">
+			<div class="row">				
+				<div class="products-nav">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<ol class="breadcrumb">
+								<li><a href="http://www.quickpart.cn">Home</a></li>
+								<li><a th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+ category+'-'+page}}">Manufacturer Category</a></li>
+								<li><a th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+ category+'-'+page}}" th:text="${#strings.toUpperCase(#strings.substring(category,0,1))+ #strings.substring(category,1, #strings.length(category)) +' Manufacturer'}"></a></li>
+							</ol>
+							<h1 class="add_h1"  th:text="${(category eq 'goods' ? 'Prompt Goods & Others' : #strings.toUpperCase(#strings.substring(category,0,1))+ #strings.substring(category,1, #strings.length(category)) + (category eq 'raw' ? ' Material Procuring' : (category eq 'metal' ? ' Fabrication' : ''))) +' Manufacturer(supplier)'}"></h1>
+							<p class="add_p" th:text="${'All manufacturer(Suppliers) are selected by '+ category +' fabrication process.Hope all the purchasers to find the right factory here.'}"></p>
+						</div>
+				</div>
+			</div>
+			<div class="company-list">
+				<div id="factoryList" class="row panel panel-default main-content">
+					<div class="panel-body content-info" th:each="factoryInfo,factoryStat:${factoryList}">
+						<div class="row">
+							<div class="col-xs-9 clearfix">
+								<div class="row">
+									<div class="col-xs-12 company-member-name">
+										<div class="company-logo text-align">
+											<img class="factoryLogo" th:src="@{${factoryInfo.factoryLogo == null ? '/images/web_log.png' :'/static_img/factory_logo/'+factoryInfo.factoryId+ '/'+ factoryInfo.factoryLogo}}" alt="">
+										</div>
+										<h2 class="factoryName_h2">
+											<a class="hai-title-link factoryName" th:href="@{${'/manufacturer-category/'+factoryInfo.factoryId+'/info'}}" target="_blank" th:text="${factoryInfo.factoryName}"></a></h2>
+										<div class="memb-background">
+											<h4 class="specialLabel" th:text="${factoryInfo.specialLabel == null ? '' : factoryInfo.specialLabel}"></h4>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="row list-cont-body">
+									<div class="col-xs-10">
+										<div class="row clearfix">
+											<div class="col-xs-6">
+												<dl class="dl-horizontal">
+													<dt>Process</dt>
+													<dd class="mainProcess" th:text="${factoryInfo.mainProcess == null ?'':factoryInfo.mainProcess}"></dd>
+													<dt>Industry</dt>
+													<dd class="industryType" th:text="${factoryInfo.industryType == null?'':factoryInfo.industryType}"></dd>
+													<dt>Location</dt>
+													<dd class="state" th:text="${factoryInfo.state==null?'':factoryInfo.state}"></dd>
+													<dt>Main Products</dt>
+													<dd class="productNames"></dd>
+												</dl>
+											</div>
+											<div class="col-xs-6">
+												<dl class="dl-horizontal">
+													<dt>Year Established</dt>
+													<dd class="establishmentYear" th:text="${factoryInfo.establishmentYear==null?'':factoryInfo.establishmentYear }"></dd>
+													<dt>Certification</dt>
+													<dd class="qualifications" th:text="${factoryInfo.qualificationNames==null?'':factoryInfo.qualificationNames }"></dd>
+													<dt>Total Factory Area</dt>
+													<dd class="factoryAcreage" th:text="${factoryInfo.factoryAcreage==null?'':factoryInfo.factoryAcreage }"></dd>
+													<dt>Total Employees</dt>
+													<dd class="staffNumber" th:text="${factoryInfo.staffNumber==null?'':factoryInfo.staffNumber }"></dd>
+												</dl>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-2">
+										<div class="row clearfix">
+											<div class="col-xs-12 factoryStatus" th:if="${factoryInfo.factoryStatus eq '1'}" th:attrappend="style='display:none'">
+												<img src="/images/translation_4.png">
+											</div>
+										</div>
+									</div>
+								</div> -->
+								<div class="row list-cont-body">
+									<div class="col-xs-10">
+										<div class="row clearfix">
+											<div class="col-xs-6">
+												<dl class="dl-horizontal">
+													<dt>Location</dt>
+													<dd class="state" th:text="${factoryInfo.state==null?'':factoryInfo.state}"></dd>
+													<dt>Year Established</dt>
+													<dd class="establishmentYear" th:text="${factoryInfo.establishmentYear==null?'':factoryInfo.establishmentYear }"></dd>
+													<dt>Export Right</dt>
+													<dd></dd>												
+													<dt>MP</dt>
+													<dd>+86 13817685889</dd>
+												</dl>
+											</div>
+											<div class="col-xs-6">
+												<dl class="dl-horizontal">
+													<dt>Total Factory Area</dt>
+													<dd class="factoryAcreage" th:text="${factoryInfo.factoryAcreage==null?'':factoryInfo.factoryAcreage }"></dd>
+													<dt>Total Employees</dt>
+													<dd class="staffNumber" th:text="${factoryInfo.staffNumber==null?'':factoryInfo.staffNumber }"></dd>
+													<dt>Annual Output Value</dt>
+													<dd></dd>
+													<dt>Website</dt>
+													<dd>https://www.quickpart.cn</dd>												
+												</dl>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-2">
+										<div class="row clearfix">
+											<div class="col-xs-12 factoryStatus" th:if="${factoryInfo.factoryStatus eq '1'}" th:attrappend="style='display:none'">
+												<img src="/images/translation_4.png">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								
+								
+								
+							</div>
+							<!-- <div class="col-xs-3">
+								<div style="max-width: 500px; max-height: 300px;" class="rating-matrix" th:attr="id=${'rating_matrix_'+factoryStat.index}" th:attrappend="jp-data=${factoryInfo.factoryEchart}"></div>
+							</div> -->
+							<!-- <div class="col-xs-3">
+								<a class="thumbnail">
+									<p class="text-center f15">Quickpart Benchmark:</p>
+									<div class="bg_c00 pd">
+										<p class="f30 color_fff text-center">QBM</p>
+										<p class="f30 color_fff text-center" th:text="${factoryInfo.factoryScore}"></p>
+									</div>
+									<div class="text-center">
+										<span class="glyphicon glyphicon-new-window"></span>
+										<em class="f15">Share this Manufacturer</em>
+									</div>
+								</a>
+							</div> -->
+						</div>
+						<div class="row clearfix comments_echart_row_1">
+							<div class="default-box">
+								<a th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+factoryInfo.factoryId+'/products'}}" target="_blank" class="product">
+									<button type="button" class="btn btn-default">
+										<i class="iconfont">&#xe61e;</i>Product list
+									</button>
+								</a>
+							</div>
+							<div class="default-box">
+								<a class="equipment" th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+factoryInfo.factoryId+'/equipments'}}" target="_blank">
+									<button type="button" class="btn btn-default w140">
+										<i class="iconfont">&#xe798;</i>Equipment list
+									</button>
+								</a>
+							</div>
+
+							<div class="default-box">
+								<a class="environment" th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+factoryInfo.factoryId+'/photos'}}" target="_blank">
+									<button type="button" class="btn btn-default">
+										<i class="iconfont">&#xe611;</i>Pictures
+									</button>
+								</a>
+							</div>
+
+							<div class="default-box">
+								<a class="comments" th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+factoryInfo.factoryId+'/comments'}}" target="_blank">
+									<button type="button" class="btn btn-default">
+										<i class="iconfont">&#xe618;</i>Comments
+									</button>
+								</a>
+							</div>
+							<div class="default-box">
+								<a class="invitation" th:onclick="'javascript: showInquiry(\''+${factoryInfo.factoryId}+'\',\''+${factoryInfo.factoryName}+'\')' " target="_blank" >
+									<button type="button" class="btn btn-default w275">
+										<i class="iconfont">&#xe600;</i>Send RFQ to this manufacturer
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div id="biuuu_link" style="text-align: center; padding-bottom: 50px;"></div>-->
+
+		<div class="text-center">
+			<ul class="pagination" id="pagination">
+				<li class="first" jp-role="first" jp-data="1" th:if="${isFirstPage}" th:attrappend="class=${' disabled'}">
+					<a href="javascript:void(0);" >First</a>
+				</li>
+				<li class="first" jp-role="first" jp-data="1" th:if="${not isFirstPage}">
+					<a th:href="@{${'/manufacturer-category/'+category+'-1'}}">First</a>
+				</li>
+				<li class="prev disabled" jp-role="prev" th:attrappend="jp-data=${page-1}" th:if="${isFirstPage}">
+					<a href="javascript:void(0);" ><i class="arrow arrow2"></i>Prev</a>
+				</li>
+				<li class="prev" jp-role="prev" th:attrappend="jp-data=${page-1}" th:if="${not isFirstPage}">
+					<a th:href="@{${'/manufacturer-category/'+category+'-'+(page-1)}}"><i class="arrow arrow2"></i>Prev</a>
+				</li>
+
+				<!--进行判断，当前最多显示10页，当数字大于5显示2-11 -->
+				<li jp-role="page" th:if=" ${totalPages gt 0 && totalPages le 10}"  th:each="pageNo,pageStat : ${#numbers.sequence(1, totalPages)}" th:class="${page eq pageNo}? 'page active' : 'page'" th:attrappend="jp-data=${pageStat.index}">
+					<a th:href="@{${'/manufacturer-category/'+category+'-'+pageNo}}" th:text="${pageNo}"></a>
+				</li>
+				<li jp-role="page"  th:each="pageNo,pageStat : ${#numbers.sequence(1, totalPages)}" th:class="${page eq pageNo}? 'page active' : 'page'" th:attrappend="jp-data=${pageStat.index}" th:if=" ${(totalPages gt 10) && page le 5 && pageStat.index lt 10}">
+					<a th:href="@{${'/manufacturer-category/'+category+'-'+pageNo}}" th:text="${pageNo}"></a>
+				</li>
+				<li jp-role="page"  th:each="pageNo,pageStat : ${#numbers.sequence(1, totalPages)}" th:class="${page eq pageNo}? 'page active' : 'page'" th:attrappend="jp-data=${pageStat.index}" th:if=" ${(totalPages gt 10) && page gt (totalPages-5) && pageStat.index gt (totalPages-11)}">
+					<a th:href="@{${'/manufacturer-category/'+category+'-'+pageNo}}" th:text="${pageNo}"></a>
+				</li>
+				<li jp-role="page"  th:each="pageNo,pageStat : ${#numbers.sequence(1, totalPages)}" th:class="${page eq pageNo}? 'page active' : 'page'" th:attrappend="jp-data=${pageStat.index}" th:if=" ${(totalPages gt 10) && page gt 5 && page le (totalPages-5) && pageStat.index ge (page-5) && pageStat.index lt (page+5)}">
+					<a th:href="@{${'/manufacturer-category/'+category+'-'+pageNo}}" th:text="${pageNo}"></a>
+				</li>
+
+
+				<li th:if=" ${totalPages} eq '0'" class="active">
+					<a >1</a>
+				</li>
+
+
+				<li class="next" th:if="${not isLastPage}" th:href="@{${'/manufacturer-category/'+category+'-'+(page+1)}}" jp-role="next" th:attrappend="jp-data=${page+1}">
+					<a th:href="@{${'/manufacturer-category/'+category+'-'+(page+1)}}">Next<i class="arrow arrow3"></i></a>
+				</li>
+				<li class="next" th:if="${isLastPage}" jp-role="next" th:attrappend="jp-data=${page+1}">
+					<a href="javascript:void(0);" >Next<i class="arrow arrow3"></i></a>
+				</li>
+				<li class="last" jp-role="last" th:attrappend="jp-data=${totalPages}">
+					<a th:href="@{${'/manufacturer-category/'+category+'-'+ totalPages}}">Last</a>
+				</li>
+			</ul>
+			<input type="hidden" id="page" th:value="${page}"/>
+			<input type="hidden" id="category" th:value="${category}"/>
+			<input type="hidden" id="PageCount" runat="server"/>
+			<input type="hidden" id="PageSize" runat="server" value="5" />
+			<input type="hidden" id="countindex" runat="server" value="10"/>
+			<!--设置最多显示的页码数 可以手动设置 默认为10-->
+			<input type="hidden" id="visiblePages" runat="server" value="10" />
+		</div>
+	</div>
+
+
+
+
+	<div id="footer"></div>
+
+	<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<!--<script src="/lib/laypage/laypage.js"></script>-->
+<script type="text/javascript" src="/js/echarts.min.js"></script>
+<!--<script type="text/javascript" src="/zh/icn/comments_echart_process.js"></script>-->
+<script src="/js/jqPaginator.min.js" type="text/javascript"></script>
+<script>
+	$('#header').load('../en/header.html');
+	$('#footer').load('../en/footer.html');
+	/*产品不限控制*/
+	$('.sel-detail em i').css({
+		'display' : 'block'
+	});
+	/*产品筛选点击选中*/
+	$('.sel-detail.pull-left span:not(".sclear"),.sonOptionOl ol span').hover(
+			function() {
+				$(this).find('.i0').show();
+				$(this).css({
+					'color' : '#006dcc'
+				});
+			}, function() {
+				$(this).find('.i0').hide();
+				if (!$(this).find('i').hasClass('iactive')) {
+					$(this).css({
+						'color' : '#333'
+					});
+				}
+			})
+	$('.sel-detail em').click(
+			function() {
+
+				if ($(this).find('i').is(':visible')) {
+					$(this).children().find('i').hide()
+				} else {
+					$(this).next().find('span:not(".sclear")').css('color', '')
+							.find('i').removeClass('iactive');
+
+					$(this).find('i').css({
+						'display' : 'block'
+					})
+				}
+
+			})
+		$('.sel-detail.pull-left span:not(".sclear"),.sonOptionOl ol span').click(
+			function() {
+				if ($(this).find('i').hasClass('i0')) {
+					$(this).find('i').removeClass('i0').addClass('iactive');
+					/*控制字体颜色*/
+					$(this).css({
+						'color' : '#006dcc'
+					});
+				} else {
+					$(this).find('i').removeClass('iactive').addClass('i0');
+				}
+				/*控制换行高度*/
+				var len = $('.sel-detail span .iactive').length;
+				if (len > 0) {
+					$(this).parent().parent().parent().find('em').find('i')
+							.css({
+								'display' : 'none'
+							});
+				}
+		})
+	/*超过一行隐藏*/
+	var h1 = $('.sel-detail .spans').height();
+	if (h1 > 35) {
+		$('.sel-detail .spans').css({
+			'overflow' : 'hidden',
+			'height' : '35px'
+		});
+	}
+	/*筛选箭头点击*/
+	$('.sel-detail .icon').click(
+			function() {
+				if ($(this).hasClass('glyphicon-menu-down')) {
+					$(this).removeClass('glyphicon-menu-down').addClass(
+							' glyphicon-menu-up');
+					$(this).parent('.sel-detail').find('.spans').css({
+						'height' : h1 + 'px'
+					});
+				} else {
+					$(this).removeClass('glyphicon-menu-up').addClass(
+							'glyphicon-menu-down');
+					$(this).parent('.sel-detail').find('.spans').css({
+						'overflow' : 'hidden',
+						'height' : '35px'
+					});
+				}
+			})
+	/*点击清空条件*/
+	$('.sel-detail .sclear').click(
+			function() {
+				$('.sel-detail span:not(".sclear")').css('color', '').find('i')
+						.removeClass('iactive').addClass('i0').css('display','none');
+				
+				$('.sel-detail em i').css({
+					'display' : 'block'
+				});
+			})
+
+
+
+	/*点击分页*/
+	$('.pagination li:first-child').nextUntil('.pagination li:last-child')
+			.click(
+					function() {
+						$(this).addClass('active').siblings().removeClass('i0')
+								.removeClass('active');
+					})
+
+	$('.more-condition').hover(function() {
+		$(this).find('.sonOption').show()
+		
+
+	}, function() {
+		$(this).find('.sonOption').hide()
+	})
+
+
+
+
+
+
+
+    //选择邀请报价 1、添加到工厂收藏
+    //2、 根据工厂收藏进行邀请报价
+    function showInquiry(factoryId,factoryName){
+
+        if(!factoryId){
+            return false;
+        }
+
+        $.ajax({
+            url : "/viewFactoryInfo/addCollect.do",
+            type : "post",
+            traditional : true,
+            data : {
+                'factoryId' : factoryId,
+                'factoryName' :factoryName,
+                'url' : location.href
+            },
+            datatype : "json",
+
+            success : function(result) {
+
+                if (result.state == 0) {
+                    window.location = "/en/quickly_release.html";
+                }
+                if (result.state == 2) {
+                    window.location = result.data;
+                }
+            }
+        })
+
+    }
+
+
+    //页面加载运行
+    $(function(){
+	   $('.panel-body').each(function(i){
+           var factoryEchart = $('#rating_matrix'+ i).attr('jp-data');
+           echartPic(i,factoryEchart);
+	   })
+	})
+
+
+	//4维对比图
+ /*   var option = {
+        title : {
+            /!*text: '基础雷达图'*!/
+        },
+        tooltip : {
+            /!*trigger: 'item',
+            formatter: "{b}: {c} ({d}%)"*!/
+        },
+        legend : {
+            /!*data: ['预算分配（Allocated Budget）']*!/
+        },
+        symbolSize : '2',
+        radar : {
+            splitNumber : 4,
+            radius : "50%",
+            shape : 'circle',
+            name : {
+                textStyle : {
+                    color : '#333',
+                    /!*backgroundColor: '#999',
+                    borderRadius: 3,
+                    padding: [3, 5]*!/
+                }
+            },
+            indicator : [ {
+                name : '质量',
+                max : 100
+            }, {
+                name : '价格',
+                max : 100
+            }, {
+                name : '沟通',
+                max : 100
+            }, {
+                name : '交期',
+                max : 100
+            } ],
+            splitArea : {
+                show : true,
+                areaStyle : {
+                    type : "default",
+                    color : "rgb(255, 255, 255)"
+                }
+            }
+        },
+        series : [ {
+            /!*name: '预算 vs 开销（Budget vs spending）',*!/
+            type : 'radar',
+            areaStyle : {
+                normal : {
+                    color : "rgba(48,159,255,0.4)"
+                }
+            },
+            data : [ {
+                value : [ 100, 60, 80, 90 ],
+                name : '预算分配'
+            } ],
+            itemStyle : {
+                normal : {
+                    lineStyle : {
+                        color : 'rgba(48,159,255,0.4)'
+                    }
+                }
+            },
+            symbolSize : 0
+        } ]
+    };*/
+    // 使用刚指定的配置项和数据显示图表。
+
+
+
+    function echartPic(i,obj){
+
+        var option = {
+            title : {
+                /*text: '基础雷达图'*/
+            },
+            tooltip : {
+                /*trigger: 'item',
+                formatter: "{b}: {c} ({d}%)"*/
+            },
+            legend : {
+                /*data: ['预算分配（Allocated Budget）']*/
+            },
+            symbolSize : '2',
+            radar : {
+                splitNumber : 4,
+                radius : "50%",
+                shape : 'circle',
+                name : {
+                    textStyle : {
+                        color : '#333',
+                        /*backgroundColor: '#999',
+                        borderRadius: 3,
+                        padding: [3, 5]*/
+                    }
+                },
+                indicator : [ {
+                    name : '质量',
+                    max : 100
+                }, {
+                    name : '价格',
+                    max : 100
+                }, {
+                    name : '沟通',
+                    max : 100
+                }, {
+                    name : '交期',
+                    max : 100
+                } ],
+                splitArea : {
+                    show : true,
+                    areaStyle : {
+                        type : "default",
+                        color : "rgb(255, 255, 255)"
+                    }
+                }
+            },
+            series : [ {
+                /*name: '预算 vs 开销（Budget vs spending）',*/
+                type : 'radar',
+                areaStyle : {
+                    normal : {
+                        color : "rgba(48,159,255,0.4)"
+                    }
+                },
+                data : [ {
+                    value : [ 80, 80, 80, 90 ],
+                    name : '预算分配'
+                } ],
+                itemStyle : {
+                    normal : {
+                        lineStyle : {
+                            color : 'rgba(48,159,255,0.4)'
+                        }
+                    }
+                },
+                symbolSize : 0
+            } ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+
+
+        var quality='';
+        var price = '';
+        var connect = '';
+        var delivery = '';
+        if(obj){
+            var factoryEchart = obj;
+            quality = factoryEchart.quality;
+            price = factoryEchart.price;
+            connect = factoryEchart.connect;
+            delivery = factoryEchart.delivery;
+        }
+        option.series[0].data[0].value = []
+        option.series[0].data[0].value.push(80)
+        option.series[0].data[0].value.push(80)
+        option.series[0].data[0].value.push(80)
+        option.series[0].data[0].value.push(90)
+
+        var myChart = echarts.init(document.getElementById('rating_matrix_'+i));
+        myChart.setOption(option);
+
+    }
+
+</script>

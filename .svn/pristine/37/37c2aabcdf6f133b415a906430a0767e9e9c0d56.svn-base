@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="Keywords" content="">	
+	<meta name="Description" content="An free Injection Molding Price Calculator .which can estimate injection molding price in china easy ,fast and accurate">
+    <title>Injection Molding Price Calculator | QUICKPART.cn</title>
+    <link rel="shortcut icon" href="/img/favicon.ico"/>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/lib/html5sshiv/html5shiv.min.js"></script>
+    <script src="/lib/respond/respond.js"></script>
+    <link rel="stylesheet" href="/css/css.css"/>    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+<body>
+<div class="InjectionMolding">
+    <div id="header"></div>
+    <div class="section">
+    	<div class="panel w12">
+    		<div class="panel-heading">
+    			<ol class="breadcrumb">
+	    			<li><a href="https://www.quickpart.cn/">Home</a></li>
+	    			<li><a href="ManufactureCalculator.html">Quickpart Calculator</a></li>
+	    			<li><a href="">Injection Molding Price Calculator introduction</a></li>	    			
+    			</ol>
+    		</div>
+    		<div class="panel-body">
+    			<h3>Injection Molding Price Calculator</h3>
+    			<p class="f16">Quickpart.cn is the No.1 Platform for you to work with top molding companies in China.</p>
+    			<p class="f16">You will work directly with the factories, and there's no markups or comissions.</p>
+    			<p class="f16">For injection molding of small products, we offer speedy order process where you can pay online and have production started right away.</p>
+				<div class="imgs">
+					<a class="thumbnail" target="_blank" href="https://www.emold.net/view/Calculate.jsp">
+						<img src="../images/calculator/Injection-Molding1.jpg">
+						<span  class="text-center">GET STARTED</span>
+					<a>									
+				</div>
+    		</div>
+    	</div>
+    </div>
+    <div id="footer"></div>
+</div>
+</body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script>
+	$('#header').load('header.html');
+	$('#footer').load('footer.html');   
+</script>

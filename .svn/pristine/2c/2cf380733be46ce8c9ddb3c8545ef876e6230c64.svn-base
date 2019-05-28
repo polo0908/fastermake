@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>站内聊天详情</title>
+		<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css">
+		<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" />	
+		<link rel="stylesheet" href="../css/css.css" />	
+	</head>
+
+	<body>
+		<div class="page-container ">
+		<div class="message_browse detail">
+			<button class="btn" onclick="window.location='/backstage/message-list.html'">返回</button>
+			<div class="row">
+				<label>发送者:</label>
+				<span id="send_name"></span>
+			</div>
+			<div class="row">
+				<label>接收者:</label>
+				<span id="receiver_name"></span>
+			</div>
+			<div class="row">
+				<label>主题:</label>
+				<span id="title"></span>
+			</div>
+			<div class="row">
+				<label>日期:</label>
+				<span id="create_time"></span>
+			</div>
+			<div class="row">
+				<label>附件:</label>
+				<a id="attachment"></a>
+			</div>
+			<div class="content" id="detail"></div>
+		</div>
+		</div>
+		<script type="text/javascript" src="/backstage/lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+		<script type="text/javascript">
+		var id = getQueryString("id");		
+		$(function(){
+			
+			if (!id) {
+				return false;
+			}
+
+			$.ajax({
+						url : "/backstage/queryMessageById.do",
+						type : "post",
+						traditional : true,
+						data : {
+							'id' : id
+						},
+						datatype : "json",
+						success : function(result) {
+
+							if (result.state == 0) {
+								var noteMessage = result.data;
+								var receiverInfo = noteMessage.receiverInfo;
+								var sendInfo = noteMessage.sendInfo;
+                                $('#send_name').text((sendInfo == null || sendInfo.factoryName == "" || sendInfo.factoryName == null ? '系统管理员' : sendInfo.factoryName));
+					     	    $('#receiver_name').text((receiverInfo == null || receiverInfo.factoryName == null ? '' : receiverInfo.factoryName));
+                                $('#title').text(noteMessage.messageTitle);
+                                $('#create_time').text(noteMessage.createTime);
+                                $('#detail').text(noteMessage.messageDetails);
+                                
+                                
+                                //如果存在附件，现在附件下载
+                                if (noteMessage.fileName && noteMessage.filePath) {
+		                            $('#attachment').attr("onclick","download_file("+noteMessage.id+")");
+		                            $('#attachment').text(noteMessage.fileName);
+								}
+							}			
+					   }
+				})
+		})
+		
+		
+		
+		checkSession();
+
+		function checkSession(){
+			$.ajax({
+				url : "/sysUser/checkSession.do",
+				type : "post",
+				success : function(data) {
+					
+					if(data.state==0){
+						
+						$('#loginName').text(data.data)
+						
+					}else{
+						
+						window.location = "/backstage/login.html";
+						
+					}
+					
+				}
+			})
+		}
+		
+		
+		//下载附件
+		function download_file(dataid) {
+			if (dataid) {
+
+				window.location = "/download/messageFiledownload.do?id="
+						+ dataid;
+			}
+		}
+		
+		
+		  //获取参数
+		   function getQueryString(name) {
+		    	var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+		    	var r = window.location.search.substr(1).match(reg);
+		    	if (r != null) {
+		    		return unescape(r[2]);
+		    	}
+		    	return null;
+		    }
+		</script>
+	</body>
+
+</html>

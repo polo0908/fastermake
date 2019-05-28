@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<title th:text="${ factoryInfo.factoryName + ' | QUICKPART.cn'}"></title>
+		<link rel="canonical" th:href="@{${'https://www.quickpart.cn/manufacturer-category/'+factoryId+'/info'}}"/>
+		 <link rel="shortcut icon" href="/img/favicon.ico"/>
+		<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		 <link rel="stylesheet" href="/css/easydialog.css" />
+		<link rel="stylesheet" type="text/css" href="/lib/video/video-js.css"/>
+		<link rel="stylesheet" href="/css/css.css"/>
+		<link rel="stylesheet" href="/css/profile.css" />
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+
+	<body>
+	    <input id="factoryId" type="hidden" th:value="${factoryId}">
+	    <div id="header"></div> 
+	    <div class="view_factory_info_section view_factory_evaluation_en">
+		<div class="container box-top box-top1">
+			<div class="row">
+				<div class="cont_01">
+					<ol class="breadcrumb">
+						<li><a href="http://www.quickpart.cn/">Home</a></li>
+						<li><a href="http://www.quickpart.cn/zh/comments_echart.html">Manufacturer Category</a></li>
+					</ol>
+					<h3 class="profilelogo">
+						<div class="imgs">	
+							<img id="factory_logo" alt=""/>
+						</div>
+					</h3>
+					<div class="logo_tit">
+						<p class="cont_01_tit">
+							<span  class="cont_01_span factoryName"></span><i class="iconfont icon1">&#xe60e;</i>
+						</p>
+						<p class="cont_02_tit">
+							<span id="isCollect"  class="hide_01" onclick="addOrCancelCollect(this)">+ Add Collection</span>
+							<!--<span class="hide_02" style="display:none">已收藏</span>  -->
+							<span class="hide_03">Invitations can be invited after collection</span>
+						</p>
+						<p class="cont_03_tit">
+							<i class="iconfont cont_03_time1">&#xe612;</i>
+							<span id="create_time"  class="cont_03_time2"></span>
+						</p>
+					</div>
+					<div class="watch_fact" style="display:none"></div>
+					<div class="col-xs-3 posion_abs" style="display:none">
+							<a class="thumbnail">
+								<p class="text-center f15 color_000">Quickpart Benchmark:</p>
+								<div class="bg_c00 pd8">
+									<p class="f30 color_fff text-center">QBM:300</p>									
+								</div>
+								<div class="text-center">
+									<span class="glyphicon glyphicon-new-window f15"></span>
+									<em class="f15 color_000">Share this Manufacturer</em>
+								</div>
+							</a>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="container box-top box-top2">
+			<div class="row">
+				<div class="cont_01">
+					<div class="active1">
+						<div class="list-group1">
+							<a  th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+factoryId+'/info'}}" class="list-group-item1 list-active"><i class="iconfont">&#xe644;</i>Company profile</a>
+							<a  th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+factoryId+'/products'}}" class="list-group-item1"><i class="iconfont" style="font-size:20px;">&#xe61e;</i>Product list</a>
+							<a  th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+factoryId+'/equipments'}}" class="list-group-item1"><i class="iconfont">&#xe798;</i>Equipments</a>
+							<a  th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+factoryId+'/photos'}}" class="list-group-item1"><i class="iconfont">&#xe63c;</i>Pictures</a>
+							<a  th:href="@{${'http://www.quickpart.cn/manufacturer-category/'+factoryId+'/comments'}}" class="list-group-item1"><i class="iconfont" style="font-size:26px;left:-5px;">&#xe618;</i>Comments</a>
+						</div>
+					</div>
+					<div class="actives clearfix">
+					<div class="line"></div>
+					<div class="active2">
+						<div class="box_01">
+							<h1 class="text-center com-tit">Company Profile</h1>
+							<div class="com-box">
+								<p id="fatoryInfo" class="com-txt" th:text="${factoryInfo.factoryInfo}"></p>
+								<div class="com-info">
+									<p class="text-center com-tit">Company Information</p>
+									<div class="com-table">
+										<table class="table table-bordered">
+											<tr>
+												<td><span class="span-01">Region</span><span id="region"  class="span-02" th:text="${factoryInfo.state}"></span></td>
+												<td><span class="span-01">Total Employees</span><span id="staffNumber" class="span-02" th:text="${factoryInfo.staffNumber}"><em></em></span></td>
+											</tr>
+											<tr>
+												<td><span class="span-01">Factory Location</span><span  class="span-02"><em id="detailsAddress" th:text="${factoryInfo.detailsAddress}"></em></span></td>
+												<td><span class="span-01">Annual Output Value</span><span id="factoryValue" class="span-02" th:text="${factoryInfo.factoryValue}"></span></td>
+											</tr>
+											<tr>
+												<td><span class="span-01">Year Established</span><span class="span-02"><em id="establishmentYear" th:text="${factoryInfo.establishmentYear}"></em></span></td>
+												<td><span class="span-01">Import And Export</span>
+													<span class="span-02" th:if="${factoryInfo.type=='yes'}">Yes<i class="iconfont icon-01">&#xe854;</i></span>
+													<span class="span-02" th:if="${factoryInfo.type=='no'}">no</span>
+												</td>
+											</tr>
+											<tr>
+												<td><span class="span-01">Total Factory Area</span><span class="span-02"><em id="factoryAcreage" th:text="${factoryInfo.factoryAcreage}"></em></span></td>
+												<td><span class="span-01">Website</span><span class="span-02"><a href="" rel="nofollow" id="website" th:text="${factoryInfo.website}"></a></span></td>
+											</tr>
+											<tr>
+												<td><span class="span-01">Telephone</span><span class="span-02"><em id="tel" th:text="${factoryInfo.tel}"></em></span></td>
+												<td><span class="span-01">phone</span><span class="span-02"><em id="phone" th:text="${factoryInfo.mobile}"></em></span></td>
+											</tr>
+											<tr>
+												<td colspan="2" id="mainProcess">												
+													
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<span class="span-01">Materials</span><span class="span_03" id="dominantMaterialModel" th:text="${factoryInfo.dominantMaterialModel}"></span>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<span class="span-01">Good At Workpiece Size</span><span id="dominantMaterialSize" class="span_03" th:text="${factoryInfo.dominantMaterialSize}"></span>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<span class="span-01">Specialty Process</span><span class="span_03" th:text="${factoryInfo.mainProcess}"></span>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<div class="com-info">
+									<p class="text-center com-tit">Factory Audit Report</p>
+									<p class="com-txt"></p>
+								</div>
+								<div class="com-info">
+									<p class="text-center com-tit">Certification</p>
+									<div class="com-table com-bottom">
+										<table class="table table-bordered table-bg">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Validity Period</th>
+													<th>Attachment</th>
+												</tr>
+											</thead>
+											<tbody id="qualification">
+							
+												
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+						<div class="active3">
+							<div class="right-box">
+								<p class="contact_tit">Contact Supplier</p>
+							</div>
+							<div class="right-box2">
+								<p class="contact_tit2">Send internal message</p>
+								<p><textarea id="messageTitle"  type="text" placeholder="Title length cannot be greater than 50 characters" class="contact-input" /></textarea></p>
+								<p class="p-area"><textarea id="messageInfo" class="contact-area" placeholder="Please enter the name of the product you want to purchase, the required process, the corresponding materials, etc. (preferably with self-introduction and special requirements)"></textarea><span class="span-area">( <em class="em_enter">0</em>/<em class="em_surplus">100</em> )</span></p>
+								<span></span>
+								<p class="p">
+									<a href="javascript:void(0);" id="sendMessageToFactory" class="contact-btn">Send</a>
+								</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="evaluate_box">
+			<div class="evaluate_container">
+				<div class="evaluate_row">
+					<div class="evaluate_tit">
+						<span class="evaluate_left">Supplier Name</span>
+						<span class="evaluate_right factoryName" ></span>
+					</div>
+				</div>
+				<div class="evaluate_cont">
+					<div class="evaluate_tit">
+						<span class="evaluate_left evaluate_lineheight"><em class="star-color">*</em>Comments</span>
+						<textarea id="evaluateInfo" class="evaluate_txtarea"></textarea>
+					</div>
+					<div>
+						<span id="ffdiv"></span>
+					</div>
+				</div>
+				<!--<div class="evaluate_row">
+					<div class="evaluate_tit">
+						<span class="evaluate_left evaluate_pic">图片附件</span>
+						<div class="evaluate_right">
+							<span class="btn-upload form-group">
+							  <a href="javascript:void(0);" class="a_file"><i class="iconfont">&#xe66e;</i> 上传附件</a>
+							  <input class="input-text upload-url radius-txt" type="text" name="uploadfile" id="uploadfile" readonly>
+							  <input type="file" multiple name="file-1" class="input-file">
+							</span>
+						</div>
+					</div>
+				</div>  -->
+				<div class="evaluate_btn">
+					<a href="javascript:void(0);" class="evaluate_ok">提交</a>
+					<a href="javascript:void(0);" class="evaluate_cancel">取消</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div id="footer"></div>
+		<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
+	<script src="/lib/jquery/jquery.min.js"></script>
+	<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+	<script src="/lib/respond/respond.js"></script>
+	<script src="/lib/laypage/laypage.js"></script>
+	<script type="text/javascript" src="/en/icn/view_factory_info.js"></script>
+	<script type="text/javascript" src="/js/easydialog.min.js"></script>
+		<script type="text/javascript">
+		    $('#header').load('../../en/header.html');
+		    $('#footer').load('../../en/footer.html');
+		    
+//			tabChange('.active1 .list-group-item1', '.active2 .box_01', 'list-active', 'click', 0)
+			/*输入文字就显示蓝色按钮*/
+			$('.active3 input,.active3 textarea').bind("input propertychange",function(){
+				if($(this).val()){
+					$('#sendMessageToFactory').css({
+						'background-color':'#0069da'
+					})
+				}else{
+					$('#sendMessageToFactory').css({
+						'background-color':'#999'
+					})
+				}
+			
+			})
+			
+		</script>
+		<script type="text/javascript">
+			rightRequire();//右侧联系供应商部分
+			function rightRequire(){
+				var number_size = 100;
+				$('.contact-area').bind('input propertychange', function() {
+					var value = $.trim($(this).val());
+					var len = value.length;
+					if(len > number_size) {
+						var char_val = value.substr(0, number_size);
+						$(this).val(char_val);
+						len = number_size;
+						alert('Up to 100 characters');
+					}
+					$(this).parents('.p-area').find('.em_enter').text(len);
+				})
+			}
+			
+		</script>
+		
+		
+		
+		
+</html>
+

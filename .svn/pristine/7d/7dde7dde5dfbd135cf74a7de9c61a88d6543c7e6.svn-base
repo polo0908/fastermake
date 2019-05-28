@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+<footer class="footer footer_en add_footer_en">
+	<div class="footer_in w12">
+		<div class="logo"><img src="/images/head_en.png" alt="" /></div>
+		<div class="b_a">:娌狪CP澶�17041761鍙�-2</div>
+		<p>a subsidiary of <a href="http://china-sourcing.com" target="_blank" >china-sourcing.com<a></p>
+	</div>
+	<div class="w12 clearfix row">
+		<dl class="col-xs-3">
+			<dt>Newbie Guide</dt>
+			<dd><a href="https://www.quickpart.cn">Free RFQ </a></dd>
+			<dd><a href="https://www.quickpart.cn/en/register_en.html">Purchaser Access</a></dd>
+			<!--<dd><a href="https://www.kuaizhizao.cn/zh/register_zh.html">Manufacturer Access</a></dd>-->
+		</dl>
+		<dl class="col-xs-4">
+			<dt>Manufacturer Category</dt>
+			<dd><a href="https://www.quickpart.cn/manufacturer-category/plastic-1">Plastic Manufacturer(supplier)</a></dd>
+			<dd><a href="https://www.quickpart.cn/manufacturer-category/cast-1">Casting Manufacturer(supplier)</a></dd>
+			<dd><a href="https://www.quickpart.cn/manufacturer-category/forging-1">Forging Manufacturer(supplier)</a></dd>
+			<dd><a href="https://www.quickpart.cn/manufacturer-category/raw-1">Raw Material Procuring Manufacturer(supplier)</a></dd>
+			<dd><a href="https://www.quickpart.cn/manufacturer-category/metal-1">Metal Fabrication Manufacturer(supplier)</a></dd>
+			<dd><a href="https://www.quickpart.cn/manufacturer-category/machining-1">Machining Manufacturer(supplier)</a></dd>
+			<dd><a href="https://www.quickpart.cn/manufacturer-category/goods-1">Prompt Goods & Others Manufacturer(supplier)</a></dd>
+		</dl>
+		<dl class="col-xs-3">
+			<dt>Purchaser Services</dt>
+			<dd><a href="https://www.quickpart.cn/en/quickly_release.html">Sent RFQ</a></dd>
+		</dl>
+		<dl class="col-xs-2">
+			<dt><a href="###">About us</a></dt>
+		</dl>
+	</div>
+</footer>
+  	<div class="w-out-box" id="show_upload_dialog" style="display:none;">
+		<div class="weui_mask"></div>
+		<div class="w-weui_dialog" style="width:510px;">
+		  <div id="container">
+		
+			<div class="content">
+				<h1>Progess</h1>
+			</div>
+			
+			<!-- Progress bar -->
+			<div id="progress_bar" class="ui-progress-bar ui-container">
+			<div class="ui-progress" style="width: 0%;" id="ui-progress-upload">
+			<span class="ui-label" style="display:none;">loading...<b class="value">0%</b></span>
+			</div>
+			</div>
+			<!-- /Progress bar -->
+		    <a class="close-reveal-modal" style="color:#eee;font-size:22px;" href="javascript:void(0);" onclick="cancel_upload()">X</a>
+			<div class="content" id="main_content" style="display: none;">
+				<p>Finish</p>
+			</div>
+		   </div>
+		   </div>
+        </div>
+</body>
+
+
+
+

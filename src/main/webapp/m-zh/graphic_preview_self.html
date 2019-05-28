@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<meta http-equiv="pragram" content="no-cache">  
+		<meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+		<meta http-equiv="expires" content="0">
+		<title>微信快制造-图文预览(自用)</title>
+		<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/css/easydialog.css" />
+		<link rel="stylesheet" href="/m-zh/css/m-css.css" />
+	</head>
+	<body>
+		<div class="container-fluid upload pb40 preview">
+			<div class="row row1 ">
+			<div class="row row_logo clearfix ">
+				<img src="../images/head.png" alt="" class="pull-left">
+				<!-- <div class="pull-left lh40 color_fff m_l10">我工厂的快评分:<span>355</span></div> -->
+			</div>
+			<div class="row pl5 pr5 title">
+				<a class="btn btn-default" onclick="window.history.back()">后退</a>
+				<span th:text="${'询盘#'+(reportType.orderId == null?reportType.csgOrderId:reportType.orderId)}"> </span>
+				<img src="../images/flag/16other_flag.gif">
+			</div>	
+			<div class="row pl5 pr5">
+				<h3 th:if="${reportType.projectStage == 1}">材质报告和质量证明</h3>
+				<h3 th:if="${reportType.projectStage == 2}">出货质量报告</h3>
+				<h3 th:if="${reportType.projectStage == 3}">生产过程</h3>
+				<h3 th:if="${reportType.projectStage == 4}">出运报告</h3>
+				<p th:text="${#strings.substringBefore(reportType.createDate, '.')}"></p>
+				<div th:each="report:${reportType.reportList}" th:if="${report.fileType == 0}">
+					<div class="imgs">
+						<img th:src="@{${report.photoPath}}"  class="img-responsive">
+					</div>
+					<div class="position_relative mt10">
+						<div th:text="${report.remark==null?'':report.remark}"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row pl5 pr5">
+				<h3>文档</h3>
+				<p th:each="report:${reportType.reportList}" th:if="${report.fileType == 1}"  th:onclick="'javascript: window.location=\'/download/download_report?id='+${report.id}+'\''"><a th:text="${'文档:'+report.fileName}" style="color:#337ab7;text-decoration: none;"></a></p>
+			</div>
+			<div class="row pl5 pr5">
+				<h3>视频</h3>
+				<div th:each="report:${reportType.reportList}" th:if="${report.fileType == 2}">
+					<div class="video text-center">
+						<video controls>
+							<source th:src="@{${report.photoPath}}">
+							<!-- <source src="https://img1.import-express.com/importcsvimg/video/home.mp4"> -->
+						</video>
+					</div>
+					<p th:text="${'视频:'+report.fileName}"></p>
+				</div>
+			</div>	
+			<div class="row pl5 pr5">
+				<h3>文字说明</h3>
+				<p th:text="${reportType.remark == null?'':reportType.remark}"></p>
+			</div>	
+			<div class="row pl5 pr5">
+				<a class="btn btn-default f20" onclick="window.history.back()">后退</a>
+			</div>									
+			<div id="footer"></div>
+		</div>
+	 </div>	
+	</body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/easydialog.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="/m-zh/js/getNationalFlag.js"></script>
+<script>
+//        $('#footer').load('/m-zh/footer.html');
+
+
+        window.onload = window.onresize = function(){
+
+            var clientWidth =document.documentElement.clientWidth;
+
+            document.getElementsByTagName("html")[0].style.fontSize =
+
+                    clientWidth / 1200 * 40 + "px";
+        }
+
+
+        
+</script>
+<script>
+
+$('.foot div').click(function(){
+	$(this).find('ul').toggle();
+})
+
+</script>
+
+

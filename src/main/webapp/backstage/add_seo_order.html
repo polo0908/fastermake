@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>seo文章复制</title>
+		<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css">
+		<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" />	
+		<link rel="stylesheet" href="../lib/datetimepicker/css/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" href="../css/css.css" />	
+		
+    <style type="text/css">
+     #p1 p{
+         margin-top: 15px;
+     }
+
+	 #order p{
+		 font-size: 18px;
+	 }
+    
+    </style>		
+		
+	</head>
+	<body class="add_seo">
+		<div class="contain">
+			<h2>SEO文案生成</h2>	
+			<h3>最新询盘文案</h3>
+			<div class="row">
+				<div class="d_l col-sm-3">
+				<label class="col-sm-3">启始时间</label>
+				<div class="input-group date form_date col-sm-4"
+					data-date="" data-date-format="yyyy-mm-dd"
+					data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+					
+					<input class="form-control brt" size="16" type="text"
+						value="" id="startTime" readonly>
+					<!--<span class="input-group-addon blt"></span></span>-->
+					<span class="input-group-addon date_1"><span
+						class="glyphicon glyphicon-calendar"></span></span>
+				</div>
+				</div>
+				<div class="d_r col-sm-3">
+				<label class="col-sm-3">结束时间</label>
+				<div class="input-group date form_date col-sm-4"
+					data-date="" data-date-format="yyyy-mm-dd"
+					data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+
+					<input class="form-control brt" size="16" type="text"
+						value="" id="endTime" readonly>
+					<!--<span class="input-group-addon blt"></span></span>-->
+					<span class="input-group-addon date_1"><span
+						class="glyphicon glyphicon-calendar"></span></span>
+				</div>
+				</div>
+				
+				<div class="d_r col-sm-3 d_r_2">
+					<span>只显示
+						<input class="form-control brt"  style="width: 40px;border: 1px solid #aaa;display: inline-block;" size="16" type="text" value="2" id="amount">
+					万以上询盘，默认为2</span>
+
+				</div>
+				<div class="col-sm-3 d_r_3"><button class="btn btn-default date_btn" onclick="get_data()">生成对应数据</button></div>
+				</div>
+				
+			<div class="row" id="order">
+
+			</div>
+		</div>
+	</body>
+
+</html>
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+<script src="../lib/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../lib/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/js/getCountryZh.js"></script>
+<script src="/js/process_zh.js"></script>
+<script src="/js/dateFormat.js"></script>
+
+<script src="js/add_seo_order.js"></script>
+<script>
+/* 日历插件 */
+$('.form_datetime').datetimepicker({
+    //language:  'fr',
+    /*weekStart: 1,*/
+    todayBtn:  1,
+    autoclose: 1,
+    /*todayHighlight: 1,*/
+    startView: 4,
+    minView: 4,
+    maxView: 4,
+    forceParse: 0,
+    showMeridian: 1
+});
+$('.table-condensed tfoot').remove();
+
+$('.form_date').datetimepicker({
+    language:  'zh-CN',
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 4,
+    forceParse: 0
+});
+</script>
+
+
+

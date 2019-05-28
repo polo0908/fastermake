@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="Keywords">
+
+
+<meta th:content="${'This page is an inquiry summary of all processes under the '+process+' category.The process covers '+process+'s such as '+processList+' and extrusion.'}" name="Description">
+<title th:text="${#strings.toUpperCase(#strings.substring(process,0,1))+ #strings.substring(process,1, #strings.length(process)) +' Fabrication RFQs-Get free industrial,manufacturing quotes from chinese manufacture | QUICKPART.cn'}"></title>
+<link rel="canonical" th:href="@{${'https://www.quickpart.cn/rfq/'+process+'/'+page}}"/>
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+<link href="/css/myPage.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/css/css.css" />
+<!-- <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script> -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+<body>
+<form id="form" method="post" th:action="@{${'/rfq/'+process+'/'+page}}">
+	<input type="hidden" th:value="${page}" id="page" name="page">
+	<div class="home inquiry_list_2">
+		<header class="header header_en" id="header">
+			<div class="header_top">
+				<div class="header_bottom">
+					<div class="header_bottom_in w12 clearfix">
+						<a href="https://www.quickpart.cn" class="logo pull-left"><img
+								src="/images/head_en.png" alt="" /></a>
+						<div class="header_top_in dl_zc w12 clearfix">
+							<div class="head_R pull-right">
+								<div class="head_l pull-left">
+									</a> <a href="/en/login.html"
+											class="bk dl_zc head_hover ml20 beforLogin">Sign</a>
+									<div class="xxs head_hover">
+										<div class="xx yhm afterLogin">
+											<span class="iconfont">&#xe6c9;</span><span id="username"></span>
+										</div>
+										<div class="xxlist">
+											<a href="#" onclick="exit()"><span class="iconfont">&#xe60a;</span>Exit
+											</a>
+										</div>
+
+									</div>
+								</div>
+								<div class="xxs kzz gys head_hover">
+									<div class="xxlist xplist clearfix">
+
+									</div>
+								</div>
+								<div class="xxs kzz head_hover">
+									<div class="xx xp beforLogin mlr5">
+										Purchaser Access
+									</div>
+									<div class="xxlist xplist clearfix">
+										<div class="N l_sm">
+											<ul>
+												<li>if you have continuous needs to find new suppliers and get quites,you can post your profile or RFQ here and build a selected supply network.</li>
+												<li><span></span>Interested suppliers will contact you,and you can choose the ones that fits your criteria</li>
+												<li><span></span>when you post a new RFQ,it will only reach the suppliers pre-selected by you.</li>
+												<li><span></span>After follow-up collaborations(audits,productions),you can keep the goods ones gradually build a supply network.</li>
+												<li class="home_head_dl"><a
+														href="/en/login.html" class="active">Sign</a> <a
+														href="/en/register_en.html">Register</a></li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="xxs kzz head_hover">
+									<div class="xxlist xplist xpwidth clearfix">
+									</div>
+								</div>
+
+								<div class="xx xp head_hover">
+									<a href="/en/purchase_list.html">
+										<span class="iconfont">&#xe63f;</span>My RFQs
+									</a>
+								</div>
+								<a class="xx xp head_hover afterLogin" href="/en/business_view.html">
+									Control Panel
+								</a>
+								<a class="xx xp head_hover afterLogin" href="/en/news.html">
+									Messages
+								</a>
+								<a class="xx xp head_hover" href="/en/account_management.html">
+									My Account
+								</a>
+
+								<a href="/en/quickly_release.html">
+									<!-- <button class="btn btn-default pull-right">Sent RFQ</button> -->
+									<button class="btn btn-default pull-right" type="button">Sent RFQ</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class=" bgcolor_cc0">
+				<nav class="add__head_nav w12 add__head_nav_en">
+					<ul class="nav-list clearfix">
+
+						<li class="pull-left">
+							<a >All RFQs
+								<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+								<span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+							</a>
+							<ul class="sub-nav ul1">
+								<li>
+									<a href="/rfq/plastic/1" >Plastic RFQ(Sourcing Request)</a>
+									<dl class="dl1">
+										<dt></dt>
+										<dd><a href="/rfq/plastic/injection-molding/1">Injection Molding RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/plastic/vacuum-forming/1">Vacuum Forming RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/plastic/rotational-molding/1">Rotational Molding RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/plastic/blow-molding/1">Blow Molding RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/plastic/plastic-extrusion/1">Plastic Extrusion RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/plastic/others-plastic/1">Others(Plastic) RFQ(Sourcing Request)</a></dd>
+									</dl>
+								</li>
+								<li>
+									<a href="http://www.quickpart.cn/rfq/cast/1" >Casting RFQ(Sourcing Request)</a>
+									<dl class="dl2">
+										<dt></dt>
+										<dd><a href="http://www.quickpart.cn/rfq/cast/stainless-steel-casting/1">Stainless steel casting (silicon glue, water glass) RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/cast/die-casting/1">Die casting (aluminum, zinc, magnesium, copper, etc.) RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/cast/sand-casting/1">Sand casting (steel, iron, copper, aluminum, etc.) RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/cast/gravity-casting/1">Gravity casting (aluminum, copper, etc.) RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/cast/others-casting/1">Others(casting) RFQ(Sourcing Request)</a></dd>
+									</dl>
+								</li>
+								<li>
+									<a href="http://www.quickpart.cn/rfq/raw/1">Forging RFQ(Sourcing Request)</a>
+								</li>
+								<li>
+									<a href="http://www.quickpart.cn/rfq/metal/1" >Metal Fabrication RFQ(Sourcing Request)</a>
+									<dl class="dl5">
+										<dt></dt>
+										<dd><a href="http://www.quickpart.cn/rfq/metal/sheet-metal-machining/1">Sheet metal machining (cutting, bending, welding, assembly) RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/metal/stamping-and-stretching/1">Stamping and stretching RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/metal/spinning/1">Spinning RFQ(Sourcing Request)</a></dd>
+										<dd><a href="http://www.quickpart.cn/rfq/metal/raw-material-procurement/1">Aluminum Extrusion RFQ(Sourcing Request)</a></dd>
+									</dl>
+								</li>
+								<li><a href="http://www.quickpart.cn/rfq/machining/1">Machining RFQ(Sourcing Request)</a></li>
+								<li><a href="http://www.quickpart.cn/rfq/goods/1">Prompt Goods(other purchases) RFQ(Sourcing Request)</a></li>
+							</ul>
+
+						</li>
+						<li class="pull-left">
+							<a >Manufacturer Category
+								<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+								<span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+							</a>
+							<ul class="sub-nav ul2">
+								<li><a href="http://www.quickpart.cn/manufacturer-category/plastic-1">Plastic Manufacturer(supplier)</a></li>
+								<li><a href="http://www.quickpart.cn/manufacturer-category/cast-1">Casting Manufacturer(supplier)</a></li>
+								<li><a href="http://www.quickpart.cn/manufacturer-category/forging-1">Forging Manufacturer(supplier)</a></li>
+								<li><a href="http://www.quickpart.cn/manufacturer-category/raw-1">Raw Material Procuring Manufacturer(supplier)</a></li>
+								<li><a href="http://www.quickpart.cn/manufacturer-category/metal-1">Metal Fabrication Manufacturer(supplier)</a></li>
+								<li><a href="http://www.quickpart.cn/manufacturer-category/machining-1">Machining Manufacturer(supplier)</a></li>
+								<li><a href="http://www.quickpart.cn/manufacturer-category/goods-1">Prompt Goods & Others Manufacturer(supplier)</a></li>
+							</ul>
+						</li>
+						<li class="pull-left">
+							<a rel="nofollow">Manufacture Calculator
+								<span class="nav_s1 glyphicon glyphicon-menu-down"></span>
+								<span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+							</a>
+							<ul class="sub-nav ul4">
+								<li><a href="/en/InjectionMolding.html" target="_blank">Injection Molding Price Calculator</a></li>
+								<li><a href="/en/DieCasting.html" target="_blank">Die Casting Price Calculator</a></li>
+								<li><a href="/en/MetalFabrication.html" target="_blank">Metal Fabrication Price Calculator</a></li>
+							</ul>
+						</li>
+						<li class="pull-left"><a>Quickpart Today</a></li>
+						<!--<li class="pull-left"><a>Kickstarter</a></li>-->
+						<!--<li class="pull-left"><a>Belt &amp; Road</a></li>-->
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+
+		<div class="section w12 home-in">
+			<div class="inquiry_2_top">
+				<ol class="breadcrumb">
+					<li><a href="https://www.quickpart.cn/">Home</a></li>
+					<li><a th:href="@{${'/rfq/'+ process +'/1'}}" th:text="${#strings.toUpperCase(#strings.substring(process,0,1))+ #strings.substring(process,1, #strings.length(process))+' Fabrication RFQ'}"></a></li>
+				</ol>
+				<h1 class="inquiry_2_h1" th:text="${#strings.toUpperCase(#strings.substring(process,0,1))+ #strings.substring(process,1, #strings.length(process))+' Fabrication RFQ(Sourcing Request)'}"></h1>
+				<p class="inquiry_2_p" th:text="${'This page is a summary of all processes under the '+process+' category.The process covers '+process+'s such as ' + processList + 'and extrusion.'}"></p>
+
+			</div>
+			<div class="latest-inquiry">
+				<div class="products">
+					<ul class="clearfix" id="newQuote">
+						<li th:each="product:${products}">
+							<div class="top">
+								<img src="" th:alt="${product.country}"/>
+								<span th:text="${product.mainProcess}"></span>
+								<em class="xpdate"   th:text="${#strings.substringBefore(product.publishDate, ' ')}" ></em>
+							</div>
+							<div class="center">
+								<div class="div_video">
+									<video th:src="@{${product.videoPath}?${product.videoPath}:''}" controls="" loop=""></video>
+									<div class="close_button" onclick="closeVideo(this)"><span class="iconfont">&#xe643;</span></div>
+								</div>
+								<img  src="/images/pic2.png" th:src="@{${product.drawingPathCompress!=null?product.drawingPathCompress:'/images/pic2.png'}}"  th:onclick="'javascript: queryDetail('+${product.orderId}+')' "  th:alt="${product.quoteTitle}"/>
+								<div class="bf_botton" onclick="playVideo(this)" th:if="${not #strings.isEmpty(product.videoPath)}"><span class="iconfont">&#xe626;</span><a title="Click to see 3D"></a></div>
+
+							</div>
+							<div class="bottom clearfix">
+								<div class="bot-left pull-left">
+									<h2><a class="clearfix"  th:text="${product.quoteTitle}" th:href="@{${'http://www.quickpart.cn/rfq/'+ product.orderId}}"></a></h2>
+									<span th:text="${product.materials}"></span>
+									<em class="em_l" th:text="${product.quantityList}"></em><br>
+								</div>
+								<div class="bot-right pull-right"><a target="_blank"  th:href="@{${'http://www.quickpart.cn/rfq/'+ product.orderId}}">Detail</a><br>
+									<div class="text-right"><i>Quote Factory:</i><em><b th:text="${product.currentNumber}"></b>/<b th:text="${product.maxNumber}"></b></em></div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="text-center">
+					<ul class="pagination" id="pagination">
+						<li class="first" jp-role="first" jp-data="1" th:if="${isFirstPage}" th:attrappend="class=${' disabled'}">
+							<a href="javascript:void(0);" >First</a>
+						</li>
+						<li class="first" jp-role="first" jp-data="1" th:if="${not isFirstPage}">
+							<a th:href="@{${'/rfq/'+process+'/1'}}" >First</a>
+						</li>
+						<li class="prev disabled" jp-role="prev" th:attrappend="jp-data=${page-1}" th:if="${isFirstPage}">
+							<a href="javascript:void(0);" ><i class="arrow arrow2"></i>Prev</a>
+						</li>
+						<li class="prev" jp-role="prev" th:attrappend="jp-data=${page-1}" th:if="${not isFirstPage}">
+							<a th:href="@{${'/rfq/'+process+'/'+(page-1)}}" ><i class="arrow arrow2"></i>Prev</a>
+						</li>
+
+						<!--进行判断，当前最多显示10页，当数字大于5显示2-11 -->
+						<li jp-role="page" th:if=" ${totalPages gt 0 && totalPages le 10}"  th:each="pageNo,pageStat : ${#numbers.sequence(1, totalPages)}" th:class="${page eq pageNo}? 'page active' : 'page'" th:attrappend="jp-data=${pageStat.index}">
+							<a th:href="@{${'/rfq/'+process+'/'+pageNo}}" th:text="${pageNo}" ></a>
+						</li>
+						<li jp-role="page"  th:each="pageNo,pageStat : ${#numbers.sequence(1, totalPages)}" th:class="${page eq pageNo}? 'page active' : 'page'" th:attrappend="jp-data=${pageStat.index}" th:if=" ${(totalPages gt 10) && page le 5 && pageStat.index lt 10}">
+							<a th:href="@{${'/rfq/'+process+'/'+pageNo}}" th:text="${pageNo}" ></a>
+						</li>
+						<li jp-role="page"  th:each="pageNo,pageStat : ${#numbers.sequence(1, totalPages)}" th:class="${page eq pageNo}? 'page active' : 'page'" th:attrappend="jp-data=${pageStat.index}" th:if=" ${(totalPages gt 10) && page gt (totalPages-5) && pageStat.index gt (totalPages-11)}">
+							<a th:href="@{${'/rfq/'+process+'/'+pageNo}}" th:text="${pageNo}" ></a>
+						</li>
+						<li jp-role="page"  th:each="pageNo,pageStat : ${#numbers.sequence(1, totalPages)}" th:class="${page eq pageNo}? 'page active' : 'page'" th:attrappend="jp-data=${pageStat.index}" th:if=" ${(totalPages gt 10) && page gt 5 && page le (totalPages-5) && pageStat.index ge (page-5) && pageStat.index lt (page+5)}">
+							<a th:href="@{${'/rfq/'+process+'/'+pageNo}}" th:text="${pageNo}" ></a>
+						</li>
+
+
+						<li th:if=" ${totalPages} eq '0'" class="active">
+							<a >1</a>
+						</li>
+
+
+						<li class="next" th:if="${not isLastPage}" th:href="@{${'/rfq/'+process+'/'+(page+1)}}" jp-role="next" th:attrappend="jp-data=${page+1}">
+							<a th:href="@{${'/rfq/'+process+'/'+(page+1)}}" >Next<i class="arrow arrow3"></i></a>
+						</li>
+						<li class="next" th:if="${isLastPage}" jp-role="next" th:attrappend="jp-data=${page+1}">
+							<a href="javascript:void(0);" >Next<i class="arrow arrow3"></i></a>
+						</li>
+						<li class="last" jp-role="last" th:attrappend="jp-data=${totalPages}">
+							<a th:href="@{${'/rfq/'+process+'/'+ totalPages}}" >Last</a>
+						</li>
+					</ul>
+					<input type="hidden" id="PageCount" runat="server" th:value="${count}"/>
+					<input type="hidden" id="PageSize" runat="server" value="20" />
+					<input type="hidden" id="countindex" runat="server" value="10"/>
+					<!--设置最多显示的页码数 可以手动设置 默认为10-->
+					<input type="hidden" id="visiblePages" runat="server" value="10" />
+				</div>
+			</div>
+			
+		</div>
+		<footer class="footer footer_en add_footer_en">
+			<div class="footer_in w12">
+				<div class="logo"><img src="/images/head_en.png" alt="" /></div>
+				<div class="b_a">:沪ICP备17041761号-2</div>
+				<p>a subsidiary of <a href="http://china-sourcing.com" target="_blank" >china-sourcing.com<a></p>
+			</div>
+			<div class="w12 clearfix row">
+				<dl class="col-xs-3">
+					<dt>Newbie Guide</dt>
+					<dd><a href="https://www.quickpart.cn">Free RFQ </a></dd>
+					<dd><a href="https://www.quickpart.cn/en/register_en.html">Purchaser Access</a></dd>
+					<!--<dd><a href="https://www.quickpart.cn/zh/register_zh.html">Manufacturer Access</a></dd>-->
+				</dl>
+				<dl class="col-xs-4">
+					<dt>Manufacturer Category</dt>
+					<dd><a href="https://www.quickpart.cn/manufacturer-category/plastic-1">Plastic Manufacturer(supplier)</a></dd>
+					<dd><a href="https://www.quickpart.cn/manufacturer-category/cast-1">Casting Manufacturer(supplier)</a></dd>
+					<dd><a href="https://www.quickpart.cn/manufacturer-category/forging-1">Forging Manufacturer(supplier)</a></dd>
+					<dd><a href="https://www.quickpart.cn/manufacturer-category/raw-1">Raw Material Procuring Manufacturer(supplier)</a></dd>
+					<dd><a href="https://www.quickpart.cn/manufacturer-category/metal-1">Metal Fabrication Manufacturer(supplier)</a></dd>
+					<dd><a href="https://www.quickpart.cn/manufacturer-category/machining-1">Machining Manufacturer(supplier)</a></dd>
+					<dd><a href="https://www.quickpart.cn/manufacturer-category/goods-1">Prompt Goods & Others Manufacturer(supplier)</a></dd>
+				</dl>
+				<dl class="col-xs-3">
+					<dt>Purchaser Services</dt>
+					<dd><a href="https://www.quickpart.cn/en/quickly_release.html">Sent RFQ</a></dd>
+				</dl>
+				<dl class="col-xs-2">
+					<dt><a href="###">About us</a></dt>
+				</dl>
+			</div>
+		</footer>
+
+	</div>
+</form>
+
+	<!-- 51la统计代码 -->
+	<script type="text/javascript" src="//js.users.51.la/19493791.js"></script>
+</body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/cookie_util.js"></script>
+<script src="/js/getNationalFlag.js"></script>
+<script src="/js/translate/md5.js"></script>
+<script src="/lib/jquery/jquery.lazyload.js"></script>
+<script src="/js/getServerName.js"></script>
+<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+<script src="/lib/respond/respond.js"></script>
+<script type="text/javascript" src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script src="/js/jqPaginator.min.js" type="text/javascript"></script>
+
+
+<script>
+// 懒加载
+	$('.lazy').lazyload({
+	    effect : "fadeIn"
+	});
+
+
+</script>
+
+
+
+<script>
+	$.post("/account/changeLanguage.do", {
+		"language" : 'en'
+	}, function(result) {
+	});
+
+
+	$('.buyer-purchase li').hover(
+			function() {
+				$(this).children('.li-hover').addClass('active').siblings()
+						.children('.li-hover').removeClass('active');
+			}, function() {
+				$(this).children('.li-hover').removeClass('active');
+			})
+
+	/*导航栏鼠标经过效果*/
+	$('.inquiry_detail .section nav li a').hover(
+			function() {
+				$(this).addClass('active').parent().siblings('li')
+						.children('a').removeClass('active');
+			})
+
+	//*顶部鼠标经过子信息出现效果*/
+	$('.header_top_in .xxs').hover(function() {
+		$(this).children('.xx').css({
+			'border-color' : 'transparent',
+			'border-bottom-color' : 'transparent',
+			'background-color' : '#0046cd'
+		})
+		$(this).children('.xxlist').show();
+	}, function() {
+		$(this).children('.xx').css({
+			'border-color' : 'transparent',
+			'background-color' : 'transparent'
+		})
+		$(this).children('.xxlist').hide();
+	})
+	/*更多消息里面鼠标经过效果*/
+	$('.xxlist a').hover(function() {
+		$(this).css({
+			'color' : '#006DCC'
+		}).siblings().css({
+			'color' : '#666'
+		})
+	})
+
+	$('.xxlist .home_head_dl a').hover(function() {
+		$(this).css({
+			'background-color' : '#006DCC',
+			'color' : '#fff'
+		})
+	}, function() {
+		$('.xxlist .home_head_dl a').css({
+			'background-color' : '#fff',
+			'border' : '1px solid #006DCC',
+			'color' : '#006DCC'
+		})
+
+	})
+
+	$('.beforLogin').show();
+	$('.afterLogin').hide();
+
+	//获取工厂信息
+	var factoryInfo = getCookie("F_INFO");
+	//用户名
+	var userName = getCookie("userName");
+	//工厂id
+	var factoryId = getCookie("F_ID");
+	//是否绑定微信
+	var w_flag = getCookie("w_flag");
+	var factoryType;
+
+	if (factoryInfo != null && factoryInfo != '' && factoryInfo != undefined) {
+		$('.beforLogin').hide()
+		$('.afterLogin').show()
+		
+		//获取工厂类型
+		//如果为采购商或者已绑定微信则不显示微信弹框
+        var base = new Base64();
+        factoryInfo = base.decode(factoryInfo);
+		var strs = [];
+		strs = factoryInfo.split("&");
+		factoryType = strs[2];
+		if(factoryType == 2 || w_flag){
+			$('#wechat_div').hide();
+		}
+	}else{
+		$('#wechat_div').hide();
+	}
+	if (userName != null && userName != '' && userName != undefined) {
+		var base = new Base64();
+		userName = base.decode(userName);
+		$('#username').text(userName);
+	}
+
+	//获取消息数量
+	getMessage();
+
+	function getMessage() {
+
+		if (factoryInfo == null || factoryInfo == '') {
+			return false;
+		} else {
+			window.clearInterval(newMessage_interval);
+		}
+		$.ajax({
+			url : "/noteMessage/newMessageCount.do",
+			cache : false,
+			success : function(data) {
+
+				if (data.state == 0) {
+
+					var summap = data.data
+
+					if (summap) {
+
+						var count = summap.unRead
+						var award = summap.award
+						var updateProcess = summap.updateProcess
+						$('#unRead').text(count ? count : "")
+						$('#newMessageCount').text(count ? count : "")
+						$('#award').text(award ? award : "")
+						$('#updateProcess').text(
+								updateProcess ? updateProcess : "")
+
+					}
+
+				}
+			}
+		});
+
+	}
+
+	function exit() {
+
+		$.post("/account/clearCookie.do", function(result) {
+			if (result.state == 0) {
+				//根据cookie判断不同语言退出页面
+				var lan = getCookie("language");
+				var serverName = getServerName(lan);
+				if (lan == 'en') {
+					window.location = serverName + "/en/login.html";
+				} else {
+					window.location = serverName + "/zh/login.html";
+				}
+			}
+		})
+
+	}
+	var newMessage_interval = setInterval(function() {
+		getMessage();
+	}, 60000);
+
+	/*视频播放控制*/
+	$('.home .bf_botton').click(function() {
+		$(this).siblings('.div_video').show();
+		var div_h = $('.home .div_video').height();
+		var video_h = $(this).parent().find('video').height();
+		var m_t = (div_h - video_h) / 2;
+		$(this).parent().find('video').css({
+			'margin-top' : m_t + 'px'
+		});
+
+	})
+
+	$('.home .close_button').click(function() {
+		$(this).parent().hide();
+	})
+	
+	// 微信弹窗关闭按钮
+	$('.home .contact_tc .close').click(function(){
+		$('.home .contact_tc').hide();
+	})
+
+	// 让视频居中对齐
+
+	/*语言改变设置*/
+	function change_lan() {
+
+		var lan = getCookie("language");
+		if (lan == 'en') {
+			lan = 'zh'
+		} else {
+			lan = 'en'
+		}
+
+		$.post("/account/changeLanguage.do", {
+			"language" : lan
+		}, function(result) {
+
+			var serverName = getServerName(lan);
+			if (lan == 'en') {
+				window.location = serverName + '/en/index.html';
+			} else {
+				window.location = serverName + '/zh/index.html';
+			}
+		});
+
+	}
+
+
+	//循环遍历获取国家图片
+	$('#newQuote').find('li').each(function(){
+	    var country = $(this).find('.top').find('img').attr('alt');
+        var img = getFlag(country);
+        $(this).find('.top').find('img').attr('src',img);
+	})
+
+
+
+
+    //查询详情
+    function queryDetail(orderId){
+
+        window.open("/rfq/"+orderId);
+
+    }
+</script>
+
+
+<script>
+
+
+	if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+
+		window.location.href = "http://kuaizhizao.cn/m-zh/quote_list.html";
+
+	} else if (/(Android)/i.test(navigator.userAgent)) {
+
+		window.location.href = "http://kuaizhizao.cn/m-zh/quote_list.html";
+
+	}
+
+
+
+
+
+    /**
+     * 分页
+     * @param num
+     * @param type
+     */
+ /*   function exeData(num, type) {
+        loadpage();
+    }
+    function loadpage() {
+        var myPageCount = parseInt($("#PageCount").val());
+        var myPageSize = parseInt($("#PageSize").val());
+        var countindex = myPageCount % myPageSize > 0 ? (myPageCount / myPageSize) + 1 : (myPageCount / myPageSize);
+        $("#countindex").val(countindex);
+
+        var isFirstPage = [[${isFirstPage}]];//是否是第一页（true  false）
+        var isLastPage = [[${isLastPage}]]; //是否是最后一页（true  false）
+        var process = '[[${process}]]';      //工艺大类
+        var pageNum = [[${page}]];         //当前页
+        var totalPage = [[${totalPages}]];  //总页数
+        var prevLink = '';
+        var nextLink = '';
+        if(isFirstPage){
+            prevLink="javascript:;"
+        }else{
+            prevLink = 'http://kuaizhizao.cn/rfq/'+process+'/'+(pageNum-1)+'';
+        }
+        if(isLastPage){
+            nextLink="javascript:;"
+        }else{
+            nextLink = 'http://kuaizhizao.cn/rfq/'+process+'/'+(pageNum+1)+'';
+        }
+
+
+        $.jqPaginator('#pagination', {
+            totalPages: parseInt($("#countindex").val()),
+            visiblePages: parseInt($("#visiblePages").val()),
+            currentPage: pageNum,
+            first: '<li class="first"><a href="http://kuaizhizao.cn/rfq/'+process+'/1">首页</a></li>',
+            prev: '<li class="prev"><a href="'+prevLink+'"><i class="arrow arrow2"></i>上一页</a></li>',
+            next: '<li class="next"><a href="'+nextLink+'">下一页<i class="arrow arrow3"></i></a></li>',
+            last: '<li class="last"><a href="http://kuaizhizao.cn/rfq/'+process+'/'+totalPage+'">末页</a></li>',
+            page: '<li class="page"><a href="http://kuaizhizao.cn/rfq/'+process+'/{{page}}">{{page}}</a></li>',
+            onPageChange: function (num, type) {
+                if (type == "change") {
+                    exeData(num, type);
+                }
+            }
+        });
+
+    }*/
+
+
+
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

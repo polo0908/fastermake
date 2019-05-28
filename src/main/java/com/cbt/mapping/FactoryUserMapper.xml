@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cbt.dao.FactoryUserMapper" >
+  <resultMap id="BaseResultMap" type="com.cbt.entity.FactoryUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="factory_id" property="factoryId" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="permission" property="permission" jdbcType="INTEGER" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="unionid" property="unionid" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="qq" property="qq" jdbcType="VARCHAR" />
+    <result column="google_id" jdbcType="VARCHAR" property="googleId"/>
+    <result column="facebook_id" jdbcType="VARCHAR" property="facebookId"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, factory_id, email, pwd, username, permission, update_time, real_name, openid,unionid, tel, qq, google_id, facebook_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from factory_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <!-- 根据邮箱查询 -->
+    <select id="selectByLoginEmail" resultMap="BaseResultMap" parameterType="string">
+    select 
+    <include refid="Base_Column_List" />
+    from factory_user  
+    where email = #{email,jdbcType=VARCHAR}  
+   </select>
+   
+  <!-- 根据名查询 --> 
+  <select id="selectByRealName" resultMap="BaseResultMap" parameterType="string">
+    select 
+    <include refid="Base_Column_List" />
+    from factory_user  
+    where real_name = #{realName,jdbcType=VARCHAR}  
+  </select> 
+   
+  <select id="selectByOpenId" resultMap="BaseResultMap" parameterType="string">
+    select 
+    <include refid="Base_Column_List" />
+    from factory_user  
+    where openid = #{openid,jdbcType=VARCHAR}  
+  </select> 
+  <select id="selectByUnionid" resultMap="BaseResultMap" parameterType="string">
+    select
+    <include refid="Base_Column_List" />
+    from factory_user
+    where unionid = #{unionid,jdbcType=VARCHAR}
+  </select>
+
+   <!-- 根据工厂id查询 -->
+   <select id="selectByFactoryId" resultMap="BaseResultMap" parameterType="string">
+   select  
+   <include refid="Base_Column_List" />   
+   from factory_user  
+   where factory_id = #{factoryId,jdbcType=VARCHAR}  
+   limit 0,1
+  </select>
+  
+     <!-- 根据工厂id查询 -->
+   <select id="selectListByFactoryId" resultMap="BaseResultMap" parameterType="string">
+   select  
+   <include refid="Base_Column_List" />   
+   from factory_user  
+   where factory_id = #{factoryId,jdbcType=VARCHAR}  
+  </select>
+  
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from factory_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cbt.entity.FactoryUser" useGeneratedKeys="true" keyProperty="id">
+    insert into factory_user (id, factory_id, email, 
+      pwd, username,permission,update_time,real_name, openid ,google_id, facebook_id)
+    values (#{id,jdbcType=INTEGER}, #{factoryId,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{pwd,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},#{permission,jdbcType=INTEGER},
+      #{updateTime,jdbcType=TIMESTAMP},#{realName,jdbcType=VARCHAR},#{openid,jdbcType=VARCHAR},
+      #{googleId,jdbcType=VARCHAR},#{facebookId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cbt.entity.FactoryUser" >
+    insert into factory_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="factoryId != null" >
+        factory_id,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="pwd != null" >
+        pwd,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="factoryId != null" >
+        #{factoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cbt.entity.FactoryUser" >
+    update factory_user
+    <set >
+      <if test="factoryId != null" >
+        factory_id = #{factoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="openid != null" >
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null" >
+        unionid = #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="googleId != null">
+        google_id = #{googleId,jdbcType=VARCHAR},
+      </if>
+      <if test="facebookId != null">
+        facebook_id = #{facebookId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cbt.entity.FactoryUser" >
+    update factory_user
+    set factory_id = #{factoryId,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!-- 去除已绑定的微信号-->
+  <update id="updateByOpenid">
+    update factory_user set openid = null where openid = #{openid,jdbcType=VARCHAR}
+  </update>
+</mapper>

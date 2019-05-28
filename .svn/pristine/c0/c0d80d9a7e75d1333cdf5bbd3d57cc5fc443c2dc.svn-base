@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="description" th:content="${product.productInfoEn + product.enProductName}">
+<title th:text="${product.enProductName + '-' + factoryInfoEn.factoryInfo + ' | QUICKPART.cn'}"></title>
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/css.css" />
+<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+<script src="/lib/respond/respond.js"></script>
+<style>
+@media ( min-width : 1200px) {
+	.container {
+		width: 1200px;
+		background-color: #fff;
+		margin-top: 20px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.compressimg {
+	width: 64px;
+	height: 84px;
+}
+
+.img-size {
+	height: 300px;
+	width: 300px;
+	text-align: center;
+}
+
+.img-size1 {
+	height: 220px;
+	width: 220px;
+	text-align: center;
+}
+
+.media-object-product {
+	height: 300px;
+	line-height: 300px;
+	vertical-align: middle;
+}
+
+.sup-prod-bg-photo {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	display: none;
+	line-height: 466px;
+	overflow: hidden;
+	position: absolute;
+	top: 30px;
+	width: 649px;
+	text-align: center;
+	z-index: 999;
+}
+
+.sup-prod-bg-photo img {
+	max-width: 649px;
+	max-height: 466px;
+}
+
+.factoryLogo {
+	border-radius: 50%;
+	height: 85px;
+	width: 85px;
+}
+
+.s20 {
+	padding-top: 10px;
+}
+
+.notPic {
+	background: url(/images/products/xin.png) no-repeat;
+}
+
+.likePic {
+	background: url(/images/products/redxin.png) no-repeat;
+}
+
+.imgPic {
+	display: inline-block;
+	margin-top: 10px;
+	max-width: 220px;
+	max-heigth: 220px;
+	width: auto;
+	heigth: auto;
+}
+</style>
+</head>
+<body>
+	<div class="product_details">
+		<div class="tc beforeFoot">
+			<div class="nr">
+				<div class="close1 iconfont">&#xe643;</div>
+				<p>Send RFQ to this Manufacturer</p>
+				<div class="btns">
+					<a href="/en/purchase_list.html"><button class="btn btn-default btn1" style="font-size: 14px;margin: -23px 50px 0;">Exsisted RFQ</button></a>
+					<a href="###"><button id="createNewQuote"
+							class="btn btn-default" style="font-size: 14px;margin: -23px 0px 0;width: 126px;">Create new RFQ</button></a>
+				</div>
+			</div>
+		</div>
+		<div id="header"></div>
+		<div class="product_detail section page1 beforeFoot">
+
+
+			<div class="panel panel-default container">
+				<div class="panel-heading">
+					<ol class="breadcrumb">
+						<li><a href="#">Home</a></li>
+						<li><a href="/en/products.html">Factory Category</a></li>
+						<li class="active">Product List</li>
+					</ol>
+				</div>
+				<div class="panel-body ">
+					<div class="media">
+						<div class="media-left">
+							<a href="#">
+								<div class="media-object media-object-js ">
+									<div class="img-size">
+										<img class="f3"
+											style="display: inline-block; margin-top: 30px;" src=""
+											alt="..." />
+
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading productName"></h4>
+							<input type="hidden" id="productId" th:value="${product.id}"> <input type="hidden"
+								id="factoryId" th:value="${factoryInfo.factoryId}"> <input type="hidden" id="buyerId">
+
+							<p>
+								<span>Company Name</span> <a href="###" class="cc0 factoryName" th:text="${factoryInfo.factoryName}"></a>
+								<a id="producta" th:href="@{${'/manufacturer-category/'+factoryInfo.factoryId+'/products'}}" target="_blank"><button
+										class="btn btn-default btn1">More products</button></a>
+							</p>
+							<p>
+								<span>Product Name</span> <em class="productName" th:text="${product.enProductName}"></em>
+							</p>
+							<p>
+								<span>Process</span> <em id="mainProcess" th:text="${product.mainProcessEn}"></em>
+							</p>
+							<p>
+								<span>Material</span> <em id="materials" th:text="${product.materialsEn}"></em>
+							</p>
+						<!--	<p>
+								<span>Details</span> <em class="ff4" th:text="${product.productInfoEn}"></em>
+							</p>-->
+							<!-- <p>
+							<span>产能情况</span> <em>-</em>
+						</p> -->
+							<!--<p>-->
+								<!--<span>最低采购量</span> <em id="minAqmountPurchased"></em>-->
+							<!--</p>-->
+							<p class="last_p">
+								<i id="preferencePic" class="notPic"></i>
+								<!--<i class="glyphicon glyphicon-heart"></i>-->
+								<span class="sc">Collection</span>
+								<button id="connectFactory" class="btn btn-default  btnheight">Contact supplier to quote this product</button>
+								<button class="btn btn-default btnheight btnh2"
+									style="margin-left: 20px;">Send RFQ to this Manufacturer</button>
+							</p>
+							<div class="sup-prod-bg-photo" style="display: none;">
+								<img src="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="productInfo" class="container contain2">
+				<h3>
+					<i class="border_i"></i>Details
+				</h3>
+
+			</div>
+			<div class="container contain2">
+				<h3>
+					<i class="border_i"></i>Manufacturer Info
+				</h3>
+				<div class="table-responsive">
+					<table class="table" style="width: 98%">
+						<thead>
+							<tr>
+								<th class="eb">Company Name</th>
+								<th colspan="3" class="th2"><a id="viewFactory" th:href="@{${'/manufacturer-category/'+factoryInfo.factoryId+'/info'}}" class="factoryName" target="_blank" th:text="${factoryInfoEn.factoryName}"></a></th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td class="eb">Main Process</td>
+									<td id="factoryMainProcess" th:text="${factoryInfoEn.mainProcess}"></td>
+									<td class="eb">Total Factory Area</td>
+									<td id="factoryAcreage" th:text="${factoryInfoEn.factoryAcreage}"></td>
+								</tr>
+								<tr>
+									<td class="eb">Year Established</td>
+									<td id="establishmentYear" th:text="${factoryInfoEn.establishmentYear}"></td>
+									<td class="eb">Factory Location</td>
+									<td id="detailsAddress" th:text="${factoryInfoEn.detailsAddress}"></td>
+								</tr>
+								<tr>
+									<td class="eb">Total Employees</td>
+									<td id="staffNumber" th:text="${factoryInfoEn.staffNumber}"></td>
+									<td class="eb">Industry</td>
+									<td id="industryType" th:text="${factoryInfoEn.industryType}"></td>
+								</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="container contain2">
+				<h3>
+					<i class="border_i"></i>Equipments List
+				</h3>
+				<div class="table-responsive">
+					<table class="table table3" style="width: 98%">
+						<thead>
+							<tr>
+								<th class="th1"><span class="eb">Equipment Name</span></th>
+								<th class="th2"><span class="eb">Model</span></th>
+								<th class="th3"><span class="eb pull-left">Qty</span></th>
+								<th class="thlast"><span class="eb eb_1 pull-right">Notes</span></th>
+								<!--<th class="th2"><span class="eb">参数</span></th>
+							<th class="th1"><span class="eb">设备类型</span></th>-->
+							</tr>
+						</thead>
+						<tbody>
+						     <tr th:each="equipment:${factoryInfo.equipmentList}">
+								 <!--<td><span th:text="${equipment}"></span></td>-->
+								 <!--<td><span th:text="${equipment.id}"></span></td>-->
+								 <td><span class="w140" th:text="${equipment.equipmentNameEn}"></span></td>
+								 <td><span class="w140" th:text="${equipment.equipmentModel}"></span></td>
+								 <td><span class="w140 pull-left" th:text="${equipment.number}"></span></td>
+								 <td><span class="w249" th:text="${equipment.type}"></span></td>
+							 </tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="contact_supplier page2 beforeFoot" style="display: none">
+			<div class="panel panel-default container">
+				<div class="panel-heading">
+					<ol class="breadcrumb">
+						<li><a href="#">Home</a></li>
+						<li><a href="/zh/products.html">Product Library</a></li>
+						<li><a th:href="@{${'/manufacturer-category/'+factoryInfo.factoryId+'/products/'+productNameEn+'-'+pid}}">Product Detail</a></li>
+					</ol>
+				</div>
+				<div class="panel-body">
+					<div class="media">
+						<div class="media-left">
+							<a href="#"> <img class="media-object factoryLogo" alt="..." th:src="@{${'/static_img/factory_logo/'+factoryInfo.factoryId+'/'+factoryInfo.factoryLogo}}">
+							</a>
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading factoryName"></h4>
+							<p id="userName" th:text="${factoryInfoEn.username}"></p>
+						</div>
+					</div>
+					<div class="media media2">
+						<div class="media-left" style="">
+							<a href="#" class="">
+								<div class="media-object">
+									<div class="img-size1">
+										<img id="productPic" class="media-object imgPic"
+											src="/images/products/fang.png" alt="...">
+
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading productName"></h4>
+							<p id="productInfo2"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container contain2">
+				<form id="sendToFactory" class="form-horizontal" method="post">
+					<div class="form-group">
+
+						<input type="hidden" name="factoryId" id="formFacoryId" th:value="${factoryInfo.factoryId}"> <input
+							type="hidden" name="proId" id="proId" th:value="${product.id}"> <input
+							type="hidden" name="proName" id="proName" th:value="${product.productName}"> <input
+							type="hidden" name="planBuyCountUnit" id="planBuyCountUnit">
+
+
+						<label for="planBuyCount" class="col-sm-2 control-label">Planned purchase(optional)</label>
+						<div class="col-sm-5 posrel">
+							<input type="text" class="form-control" id="planBuyCount"
+								name="planBuyCount" placeholder="">
+						</div>
+						<div class="s20">
+							<span>123</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="planBuyPrice" class="col-sm-2 control-label">Planned purchase price(optional)</label>
+						<div class="col-sm-5 posrel">
+							<input type="text" class="form-control" id="planBuyPrice"
+								name="planBuyPrice" placeholder="">
+						</div>
+						<div class="s20">
+							<span></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="planInfo" class="col-sm-2 control-label">Consulting content</label>
+						<div class="col-sm-5">
+							<textarea id="planInfo" name="planInfo" class="form-control"
+								rows="6"></textarea>
+							<span></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button id="saveButton" class="btn btn-default">Send</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+
+		<div id="footer"></div>
+	</div>
+
+	<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/en/icn/product_detail.js"></script>
+<script src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script>
+	$('#header').load('header.html');
+	$('#header1').load('header.html');
+	$('#footer').load('footer.html');
+
+
+
+	/*
+	var productName = $('.productName').text();
+	  $('.product_detail .media-heading').html(productName);
+	 */
+</script>
+

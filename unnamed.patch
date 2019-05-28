@@ -1,0 +1,1421 @@
+Index: src/main/webapp/zh/detail.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/zh/detail.html	(revision 10470)
++++ src/main/webapp/zh/detail.html	(revision )
+@@ -1,450 +1,452 @@
+ <!DOCTYPE html>
+ <html>
+ <head lang="en">
+-<meta charset="utf-8">
+-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+-<meta name="viewport"
+-	content="width=device-width,initial-scale=1,user-scalable=0">
+-<meta name="Keywords"
+-	content="快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘">
+-<meta name="Description"
+-	content="快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘">
+-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+-<meta http-equiv="pragram" content="no-cache">
+-<meta http-equiv="cache-control" content="no-cache, must-revalidate">
+-<meta http-equiv="expires" content="0">
+-	<title>快制造-供应商询盘详情_自营</title>
+-<link rel="shortcut icon" href="/img/favicon.ico" />
+-<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+-<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+-<script src="/lib/respond/respond.js"></script>
+-<!--   <link rel="stylesheet" href="/css/css.css"/> -->
+-<link rel="stylesheet" href="/css/details.css" />
+-<link rel="stylesheet" href="/css/easydialog.css" />
+-<link rel="stylesheet" href="/css/progressBar.css" />
+-<link rel="stylesheet" href="/css/ui.css" />
+-<link rel="stylesheet" href="/css/ui.progress-bar.css" />
+-<link rel="stylesheet" href="/css/css.css" />
++    <meta charset="utf-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport"
++          content="width=device-width,initial-scale=1,user-scalable=0">
++    <meta name="Keywords"
++          content="快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘">
++    <meta name="Description"
++          content="快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘">
++    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
++    <meta http-equiv="pragram" content="no-cache">
++    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
++    <meta http-equiv="expires" content="0">
++    <title>快制造-供应商询盘详情_自营</title>
++    <link rel="shortcut icon" href="/img/favicon.ico" />
++    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
++    <script src="/lib/html5sshiv/html5shiv.min.js"></script>
++    <script src="/lib/respond/respond.js"></script>
++    <!--   <link rel="stylesheet" href="/css/css.css"/> -->
++    <link rel="stylesheet" href="/css/details.css" />
++    <link rel="stylesheet" href="/css/easydialog.css" />
++    <link rel="stylesheet" href="/css/progressBar.css" />
++    <link rel="stylesheet" href="/css/ui.css" />
++    <link rel="stylesheet" href="/css/ui.progress-bar.css" />
++    <link rel="stylesheet" href="/css/css.css" />
+ 
+ </head>
+ <body>
+-	<div class="supplier_detail purchase_supplier">
+-		<div class="transparent_div"></div>
+-		<div class="tc">
+-			<div class="tc_con">
+-				<div class="tc_con-title">
+-					提示<em></em>
+-				</div>
+-				<div class="inps">
+-					<div class="inp clearfix">
+-						<em class="pull-left"></em> <span class="pull-left">该询盘已经加入收藏夹
++<div class="supplier_detail purchase_supplier">
++    <div class="transparent_div"></div>
++    <div class="tc">
++        <div class="tc_con">
++            <div class="tc_con-title">
++                提示<em></em>
++            </div>
++            <div class="inps">
++                <div class="inp clearfix">
++                    <em class="pull-left"></em> <span class="pull-left">该询盘已经加入收藏夹
+ 							方便你访问</span>
+-					</div>
+-					<div class="inp clearfix">
+-						<em class="pull-left"></em> <span class="pull-left">请尽快报价</span>
+-					</div>
+-					<div class="inp clearfix">
+-						<em class="pull-left"></em> <span class="pull-left">如果对该需求有不清楚的地方，可积极和采购商沟通</span>
+-					</div>
+-				</div>
+-				<p>
+-					<span class="span1" id="count_down">3s</span>后自动返回询盘列表页
+-				</p>
+-			</div>
+-		</div>
+-		<div id="header"></div>
+-		<div class="section">
+-			<div class="container w12">
+-				<div class="row">
+-					<h2>
+-						<span style="font-size: 30px;"></span><span id="quote_title"
+-							style="font-size: 26px; padding-right: 28px;"></span> 询盘编号 #<span
+-							id="quoteId" style="font-size: 26px;"></span>
+-					    <button id="self_or_other" style="color: red;font-weight: normal;border: 1px solid;background-color: #fff;margin-left: 40px;font-size: 20px;"></button>	
+-					    <span style="font-size: 15px;"></span>	
+-					</h2>
+-					<nav>
+-						<ul class="clearfix" id="title_ul">
+-							<li><a href="###" class="active">询盘明细</a></li>
+-							<li><a href="#" class="quote" onclick="to_offer()">报价</a></li>
+-						</ul>
+-					</nav>
+-					
+-					
+-					
+-					<div class="t1 t1_7 clearfix">
+-						<div class="sc sc01 detail_sc pull-left"
+-							onclick="addOrCancelCollect()">
+-							<span id="collect_order">收藏</span>
+-						</div>
+-						<div class="sc bj pull-left to-quote" onclick="to_offer()">
+-							<a href="###" class="quote">马上报价</a>
+-						</div>
+-						<span style="font-size: 14px; color: red;" id="note"></span>
+-					</div>
+-					
+-					
+-					
+-					<!-- 添加wrap1 -->
+-					<div class="quotation clearfix wrap1">
+-						<div class="pull-left d_l">
+-							<h4>客户采购代表谈该项目:</h4>
+-							<p title="文字介绍" id="quote_detail"></p>
+-							<h4>报价管理工程师谈该项目:</h4>
+-							<p title="文字介绍" id="quote_remark"></p>
+-						</div>
+-							<div class="q_left pull-right posi_rel">
+-								<table class="tab1">
+-									<thead id="comparison_thead">
+-										<tr class="tr1">
+-											<th class="f9" style="width: 100px;">资质审核</th>
++                </div>
++                <div class="inp clearfix">
++                    <em class="pull-left"></em> <span class="pull-left">请尽快报价</span>
++                </div>
++                <div class="inp clearfix">
++                    <em class="pull-left"></em> <span class="pull-left">如果对该需求有不清楚的地方，可积极和采购商沟通</span>
++                </div>
++            </div>
++            <p>
++                <span class="span1" id="count_down">3s</span>后自动返回询盘列表页
++            </p>
++        </div>
++    </div>
++    <div id="header"></div>
++    <div class="section">
++        <div class="container w12">
++            <div class="row">
++                <h2>
++                    <span style="font-size: 30px;"></span><span id="quote_title"
++                                                                style="font-size: 26px; padding-right: 28px;"></span> 询盘编号 #<span
++                        id="quoteId" style="font-size: 26px;"></span>
++                    <button id="self_or_other" style="color: red;font-weight: normal;border: 1px solid;background-color: #fff;margin-left: 40px;font-size: 20px;"></button>
++                    <span style="font-size: 15px;"></span>
++                </h2>
++                <nav>
++                    <ul class="clearfix" id="title_ul">
++                        <li><a href="###" class="active">询盘明细</a></li>
++                        <li><a href="#" class="quote" onclick="to_offer()">报价</a></li>
++                    </ul>
++                </nav>
++
++
++
++                <div class="t1 t1_7 clearfix">
++                    <div class="sc sc01 detail_sc pull-left"
++                         onclick="addOrCancelCollect()">
++                        <span id="collect_order">收藏</span>
++                    </div>
++                    <div class="sc bj pull-left to-quote" onclick="to_offer()">
++                        <a href="###" class="quote">马上报价</a>
++                    </div>
++                    <span style="font-size: 14px; color: red;" id="note"></span>
++                </div>
++
++
++
++                <!-- 添加wrap1 -->
++                <div class="quotation clearfix wrap1">
++                    <div class="pull-left d_l">
++                        <h4>客户采购代表谈该项目:</h4>
++                        <p title="文字介绍" id="quote_detail"></p>
++                        <h4>报价管理工程师谈该项目:</h4>
++                        <p title="文字介绍" id="quote_remark"></p>
++                    </div>
++                    <div class="q_left pull-right posi_rel">
++                        <table class="tab1">
++                            <thead id="comparison_thead">
++                            <tr class="tr1">
++                                <th class="f9" style="width: 100px;">资质审核</th>
+ 
+-										</tr>
+-									</thead>
+-									<tbody id="comparison_tbody">
+-									    <tr>
+-											<td class="f9" style="width: 100px;">询盘要求</td>
++                            </tr>
++                            </thead>
++                            <tbody id="comparison_tbody">
++                            <tr>
++                                <td class="f9" style="width: 100px;">询盘要求</td>
+ 
+-										</tr>
+-										<tr>
+-											<td class="f9" style="width: 100px;">我的情况</td>
++                            </tr>
++                            <tr>
++                                <td class="f9" style="width: 100px;">我的情况</td>
+ 
+-										</tr>
+-										<tr>
+-											<td class="td3">项目状态<span id="order_status" style="font-size: 16px;margin-left: 37px;color: #006DCC;"></span></td>
+-											
+-										</tr>
+-										<tr class="last-tr">
+-											<td colspan="3">
+-												<div class="clearfix">
+-												<p>当前报价情况:</p>
+-												<span id="quote_status">未报价</span>
+-												</div>
+-												<div class="clearfix" id="follow_status" style="display: none">
+-													<p>跟进情况:</p>
+-													<span></span>
+-												</div>
+-												<div class="clearfix" id="order_factory" style="display: none">
+-												<p>下单情况:</p>
+-												<span></span>
+-												</div>
+-												<div class="clearfix" id="price_div" style="display: none">
+-												<p>当前价格水平:</p>
+-												<span class="span_last"></span>
+-												</div>
+-											</td>
+-										</tr>
+-									</tbody>
+-								</table>								
+-								<div class="add_detail_tc">
+-									<p>不符合可能是信息不全造成</p>
+-									<a href="edit_enterprise_archives.html" target="_blank">点击进入补全信息</a>
+-								</div>
+-							</div>
+-							
+-						</div>
++                            </tr>
++                            <tr>
++                                <td class="td3">项目状态<span id="order_status" style="font-size: 16px;margin-left: 37px;color: #006DCC;"></span></td>
++
++                            </tr>
++                            <tr class="last-tr">
++                                <td colspan="3">
++                                    <div class="clearfix">
++                                        <p>当前报价情况:</p>
++                                        <span id="quote_status">未报价</span>
++                                    </div>
++                                    <div class="clearfix" id="follow_status" style="display: none">
++                                        <p>跟进情况:</p>
++                                        <span></span>
++                                    </div>
++                                    <div class="clearfix" id="order_factory" style="display: none">
++                                        <p>下单情况:</p>
++                                        <span></span>
++                                    </div>
++                                    <div class="clearfix" id="price_div" style="display: none">
++                                        <p>当前价格水平:</p>
++                                        <span class="span_last"></span>
++                                    </div>
++                                </td>
++                            </tr>
++                            </tbody>
++                        </table>
++                        <div class="add_detail_tc">
++                            <p>不符合可能是信息不全造成</p>
++                            <a href="edit_enterprise_archives.html" target="_blank">点击进入补全信息</a>
++                        </div>
++                    </div>
++
++                </div>
+ 
+ 
+-					<div class="panel panel1" style="display: none;" id="refuse_div">
+-						<div class="panel-heading">报价失败原因</div>
+-						<div class="panel-body ">
+-							<div class="reason1 clearfix">
+-								<em></em> <span></span>
+-							</div>
+-							<div class="reason2 clearfix">
+-								<em></em> <span></span>
+-							</div>
+-						</div>
+-					</div>
++                <div class="panel panel1" style="display: none;" id="refuse_div">
++                    <div class="panel-heading">报价失败原因</div>
++                    <div class="panel-body ">
++                        <div class="reason1 clearfix">
++                            <em></em> <span></span>
++                        </div>
++                        <div class="reason2 clearfix">
++                            <em></em> <span></span>
++                        </div>
++                    </div>
++                </div>
+ 
+-					<div class="panel panel3_1" style="display:none" id="price_rank">
+-						<div class="panel-heading">价格水平</div>
+-						<div class="panel-body">
+-							<div class="title clearfix">
+-								<div class="time pull-left">
+-									<em>报价时间：</em> <em id="quote_date"></em>
+-								</div>
+-								<div class="money pull-left">
+-									<em>报价金额：</em> <em id="total_money"></em>
+-								</div>
+-								<div class="rank pull-left" id="rank_div">
+-									<em>排名：</em> <em>第1名</em> <em></em>
+-								</div>
+-							</div>
+-							<table class="table">
+-								<thead>
+-								<tr>
+-									<th></th>
+-									<th>企业规模</th>
+-									<th>成立日期</th>
+-									<th>认证</th>
+-									<th>场地</th>
+-								</tr>
+-								</thead>
+-								<tbody id="rank_tbody">
+-
+-								</tbody>
+-							</table>
+-						</div>
+-					</div >
+-						
+-					<div class="panel add_panel" style="display:block;">
+-						<div class="panel-heading">价格水平</div>
+-						<div class="panel-body">
+-							<div class="title clearfix row">
+-								<div class="time col-sm-4">
+-									<em>报价时间：</em> <em id="quote_date"></em>
+-								</div>
+-								<div class="money col-sm-4">
+-									<em>报价金额：</em> <em id="total_money"></em>
+-								</div>
+-								<div class="rank col-sm-4" id="rank_div">
+-									<em>排名：</em> <em>第1名</em> <em></em>
+-								</div>
+-							</div>
+-							<table class="table">
+-								<thead>
+-								<tr>
+-									<th class="th1">与第2名竞争的对比/下单厂的对比</th>									
+-									<th class="th2">企业规模</th>
+-									<th class="th3">成立日期</th>
+-									<th class="th4">认证</th>
+-									<th class="th5">场地</th>
+-									<th class="th6">总模具费</th>
+-									<th class="th7">总单价</th>
+-								</tr>
+-								</thead>
+-								<tbody id="rank_tbody">
+-									<tr>
+-										<td>贵司</td>
+-										<td>0-49</td>
+-										<td>2005</td>
+-										<td>-</td>
+-										<td>普通验厂</td>
+-										<td>100万</td>
+-										<td>10元</td>
+-									</tr>
+-									<tr>
+-										<td>第二名</td>
+-										<td>100</td>
+-										<td>2016</td>
+-										<td>-</td>
+-										<td>500强</td>
+-										<td>便宜 200元</td>
+-										<td>便宜1元</td>
+-									</tr>		
+-								</tbody>
+-							</table>
+-							
+-							
+-							
+-						</div>
+-					</div>
+-					<div class="con w12 container con_1">
+-						
+-						<div class="xpxi clearfix">
+-							<div class="title pull-left">
+-								
+-								询盘信息
+-							</div>
+-						</div>
+-						<div class="xp_detail clearfix">
+-							<ul>
+-								<li><span>采购商来自：</span>
+-									<div>
+-										<img src="/images/zg.png" alt="" /> <i id="country"></i>
+-									</div></li>
+-								<li><span>保密协议：</span>
+-									<div>
+-										<a href="###"><i id="confidentiality_agreement"></i></a>
+-									</div></li>	
+-								
+-									
+-									
+-							</ul>
+-							<ul>
++                <div class="panel add_panel" style="display:none" id="price_rank">
++                    <div class="panel-heading">价格水平</div>
++                    <div class="panel-body">
++                        <div class="title clearfix row">
++                            <div class="time col-sm-4">
++                                <em>报价时间：</em> <em id="quote_date"></em>
++                            </div>
++                            <div class="money col-sm-4">
++                                <em>报价金额：</em> <em id="total_money"></em>
++                            </div>
++                            <div class="rank col-sm-4" id="rank_div">
++                                <em>排名：</em> <em>第1名</em> <em></em>
++                            </div>
++                        </div>
++                        <table class="table">
++                            <thead>
++                            <tr>
++                                <th class="th1"></th>
++                                <th class="th2">企业规模</th>
++                                <th class="th3">成立日期</th>
++                                <th class="th4">认证</th>
++                                <th class="th5">场地</th>
++                                <th class="th6">总模具费（元）</th>
++                                <th class="th7">总单价（元）</th>
++                            </tr>
++                            </thead>
++                            <tbody id="rank_tbody">
++
++                            </tbody>
++                        </table>
++                    </div>
++                </div >
++
++                <!--<div class="panel add_panel" style="display:block;">-->
++                <!--<div class="panel-heading">价格水平</div>-->
++                <!--<div class="panel-body">-->
++                <!--<div class="title clearfix row">-->
++                <!--<div class="time col-sm-4">-->
++                <!--<em>报价时间：</em> <em id="quote_date"></em>-->
++                <!--</div>-->
++                <!--<div class="money col-sm-4">-->
++                <!--<em>报价金额：</em> <em id="total_money"></em>-->
++                <!--</div>-->
++                <!--<div class="rank col-sm-4" id="rank_div">-->
++                <!--<em>排名：</em> <em>第1名</em> <em></em>-->
++                <!--</div>-->
++                <!--</div>-->
++                <!--<table class="table">-->
++                <!--<thead>-->
++                <!--<tr>-->
++                <!--<th class="th1">与第2名竞争的对比/下单厂的对比</th>									-->
++                <!--<th class="th2">企业规模</th>-->
++                <!--<th class="th3">成立日期</th>-->
++                <!--<th class="th4">认证</th>-->
++                <!--<th class="th5">场地</th>-->
++                <!--<th class="th6">总模具费</th>-->
++                <!--<th class="th7">总单价</th>-->
++                <!--</tr>-->
++                <!--</thead>-->
++                <!--<tbody id="rank_tbody">-->
++                <!--<tr>-->
++                <!--<td>贵司</td>-->
++                <!--<td>0-49</td>-->
++                <!--<td>2005</td>-->
++                <!--<td>-</td>-->
++                <!--<td>普通验厂</td>-->
++                <!--<td>100万</td>-->
++                <!--<td>10元</td>-->
++                <!--</tr>-->
++                <!--<tr>-->
++                <!--<td>第二名</td>-->
++                <!--<td>100</td>-->
++                <!--<td>2016</td>-->
++                <!--<td>-</td>-->
++                <!--<td>500强</td>-->
++                <!--<td>便宜 200元</td>-->
++                <!--<td>便宜1元</td>-->
++                <!--</tr>		-->
++                <!--</tbody>-->
++                <!--</table>-->
++                <!---->
++                <!---->
++                <!---->
++                <!--</div>-->
++                <!--</div>-->
++                <div class="con w12 container con_1">
++
++                    <div class="xpxi clearfix">
++                        <div class="title pull-left">
++
++                            询盘信息
++                        </div>
++                    </div>
++                    <div class="xp_detail clearfix">
++                        <ul>
++                            <li><span>采购商来自：</span>
++                                <div>
++                                    <img src="/images/zg.png" alt="" /> <i id="country"></i>
++                                </div></li>
++                            <li><span>保密协议：</span>
++                                <div>
++                                    <a href="###"><i id="confidentiality_agreement"></i></a>
++                                </div></li>
++
++
++
++                        </ul>
++                        <ul>
+ 
+-							<li><span>创建时间：</span>
+-									<div>
+-										<i id="publish_date">2017-10-16</i>
+-									</div></li>
+-							<li><span>要求交货期：</span>
+-									<div>
+-										<i id="delivery_date"></i>
+-									</div></li>
+-							
+-							</ul>
+-							<ul>
+-								
+-									<li><span>已报价工厂数：</span>
+-									<div>
+-										<i class="jing" id="current_number"></i>
+-									</div></li>
+-								<li><span>报价截止日期：</span>
+-									<div>
+-										<i id="end_date">2017-10-20</i>
+-									</div></li>
+-							</ul>
+-						</div>
++                            <li><span>创建时间：</span>
++                                <div>
++                                    <i id="publish_date">2017-10-16</i>
++                                </div></li>
++                            <li><span>要求交货期：</span>
++                                <div>
++                                    <i id="delivery_date"></i>
++                                </div></li>
++
++                        </ul>
++                        <ul>
++
++                            <li><span>已报价工厂数：</span>
++                                <div>
++                                    <i class="jing" id="current_number"></i>
++                                </div></li>
++                            <li><span>报价截止日期：</span>
++                                <div>
++                                    <i id="end_date">2017-10-20</i>
++                                </div></li>
++                        </ul>
++                    </div>
+ 
+-						
+-						<div class="lj_info">
+-							<div class="lj_title">
+-								零件信息 <a id="drawing_path">图纸下载</a>
+-							</div>
+-							<div class="lj_det" id="product_div">
++
++                    <div class="lj_info">
++                        <div class="lj_title">
++                            零件信息 <a id="drawing_path">图纸下载</a>
++                        </div>
++                        <div class="lj_det" id="product_div">
+ 
+-								<table class=table>
+-									<thead id="product_thead">
+-										<tr>
+-											<th class="th1"></th>
+-											<th class="th2">零件名称</th>
+-											<th class="th2">基本工艺</th>
+-											<th class="th2">材料</th>
+-											<th>重量(KG)</th>
+-											<th class="th6 th61">订量一</th>
+-											<th class="th6 th62">订量二</th>
+-											<th class="th6 th63">订量三</th>
+-											<th>年用量预估</th>
+-										</tr>
+-									</thead>
+-									<tbody id="product_tbody">
++                            <table class=table>
++                                <thead id="product_thead">
++                                <tr>
++                                    <th class="th1"></th>
++                                    <th class="th2">零件名称</th>
++                                    <th class="th2">基本工艺</th>
++                                    <th class="th2">材料</th>
++                                    <th>重量(KG)</th>
++                                    <th class="th6 th61">订量一</th>
++                                    <th class="th6 th62">订量二</th>
++                                    <th class="th6 th63">订量三</th>
++                                    <th>年用量预估</th>
++                                </tr>
++                                </thead>
++                                <tbody id="product_tbody">
+ 
+-									</tbody>
+-								</table>
+-							</div>
+-						</div>
+-						
+-						<!-- 详情页添加历史报价开始 -->
+-						<div class="container w12 historys">
+-							<div class="history_price ">
+-								<p class="pt">
+-									历史报价<span class="pull-right"></span>
+-								</p>
+-								<div class="history clearfix" style="padding-top: 20px;">
+-									<!-- 新添加内容 -->
+-									<p class="p1 clearfix">
+-										<i class="i1" onclick="history(this)"
+-										   style="background: url(&quot;../images/red.png&quot;) no-repeat;"></i><em></em><span></span><em></em>
+-									</p>
+-									<div class="history_detail_table">
++                                </tbody>
++                            </table>
++                        </div>
++                    </div>
++
++                    <!-- 详情页添加历史报价开始 -->
++                    <div class="container w12 historys">
++                        <div class="history_price ">
++                            <p class="pt">
++                                历史报价<span class="pull-right"></span>
++                            </p>
++                            <div class="history clearfix" style="padding-top: 20px;">
++                                <!-- 新添加内容 -->
++                                <p class="p1 clearfix">
++                                    <i class="i1" onclick="history(this)"
++                                       style="background: url(&quot;../images/red.png&quot;) no-repeat;"></i><em></em><span></span><em></em>
++                                </p>
++                                <div class="history_detail_table">
+ 
+-										<div class="adds clearfix">
+-											<div class="pull-left">
+-												<span>价格类型:</span><em>价格类型1</em>
+-											</div>
+-											<div class="pull-right">
+-												<span>原始报价单:</span><a href="###" download="###">点我下载</a>
+-											</div>
+-										</div>
+-									</div>
+-								</div>
+-							</div>
+-						</div>
+-					<!-- 详情页添加历史报价结束 -->
+-						
+-						
+-						
+-						<div class="quotation clearfix">
+-						<div class="q_left ">
+-							<div class="card detail_card" style="display: none;">
+-							
+-							<h3>报价团队</h3>
+-							<div class="card_1" id="sales_div">
+-								<span></span><br /> <em>客户采购代表</em><br />
+-								<div class="pic">
+-									<img src="">
+-								</div>
+-							</div>
+-							<div class="card_1 card_1_2" id="quoter_div">
+-								<span></span><br /> <em>报价管理工程师</em><br />
+-								<div class="pic">
+-									<img src="">
+-								</div>
+-							</div>
++                                    <div class="adds clearfix">
++                                        <div class="pull-left">
++                                            <span>价格类型:</span><em>价格类型1</em>
++                                        </div>
++                                        <div class="pull-right">
++                                            <span>原始报价单:</span><a href="###" download="###">点我下载</a>
++                                        </div>
++                                    </div>
++                                </div>
++                            </div>
++                        </div>
++                    </div>
++                    <!-- 详情页添加历史报价结束 -->
++
++
++
++                    <div class="quotation clearfix">
++                        <div class="q_left ">
++                            <div class="card detail_card" style="display: none;">
++
++                                <h3>报价团队</h3>
++                                <div class="card_1" id="sales_div">
++                                    <span></span><br /> <em>客户采购代表</em><br />
++                                    <div class="pic">
++                                        <img src="">
++                                    </div>
++                                </div>
++                                <div class="card_1 card_1_2" id="quoter_div">
++                                    <span></span><br /> <em>报价管理工程师</em><br />
++                                    <div class="pic">
++                                        <img src="">
++                                    </div>
++                                </div>
+ 
+-							<div class="card_1" id="assistant_div">
+-								<span></span><br /> <em>报价助理</em><br /> <span class="contact"></span><br />
+-								<span class="contace qq"></span>
+-								<div class="pic">
+-									<img src="">
+-								</div>
+-							</div>
+-							<div class="bj_ewm">
+-								
+-								<p>扫二维码手机报价，功能一致</p>
+-								<div class="imgs">
+-									<img src="" id="qr_code" />
+-								</div>
+-							</div>
++                                <div class="card_1" id="assistant_div">
++                                    <span></span><br /> <em>报价助理</em><br /> <span class="contact"></span><br />
++                                    <span class="contace qq"></span>
++                                    <div class="pic">
++                                        <img src="">
++                                    </div>
++                                </div>
++                                <div class="bj_ewm">
++
++                                    <p>扫二维码手机报价，功能一致</p>
++                                    <div class="imgs">
++                                        <img src="" id="qr_code" />
++                                    </div>
++                                </div>
+ 
+-						</div></div>
+-							<form id="file_upload_id" onsubmit="return false;" method="post"
+-								enctype="multipart/form-data">
+-								<input type="hidden" id="filePath" /> <input type="hidden"
+-									id="orderId" name="orderId" />
+-								<div class="q_right pull-right">
+-									<div class="title">
+-										<i class="iconfont">&#xe63a;</i>发送消息给采购商
+-									</div>
+-									<div class="q_detail" id="quote_message">
+-										<div id="message"></div>
+-										<textarea class="form-control" id="message_details"></textarea>
+-										<div class="btn">
+-											<input type="text"
+-												style="width: 100px; margin-left: -130px; text-decoration: underline;"
+-												id="fileName" name="selectDrawingName" /> <span></span> <input
+-												type="file"
+-												style="position: absolute; margin-top: -30px; width: 16px; margin-left: -25px; opacity: 0; overflow: hidden;"
+-												name="file_upload" onchange="show_drawingName(this)">
+-											<button onclick="send_message(this)">发送</button>
+-										</div>
+-									</div>
+-								</div>
+-							</form>
+-						</div>
+-					
+-					
+-					
+-					
+-					
+-					
+-					</div>
+-									
+-				
+-				</div>
+-			</div>
+-		</div>
+-		<div id="footer"></div>
+-	</div>
+-	<!-- SEO代码 开始-->
+-	<div style="display: none">
+-		快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘
++                            </div></div>
++                        <form id="file_upload_id" onsubmit="return false;" method="post"
++                              enctype="multipart/form-data">
++                            <input type="hidden" id="filePath" /> <input type="hidden"
++                                                                         id="orderId" name="orderId" />
++                            <div class="q_right pull-right">
++                                <div class="title">
++                                    <i class="iconfont">&#xe63a;</i>发送消息给采购商
++                                </div>
++                                <div class="q_detail" id="quote_message">
++                                    <div id="message"></div>
++                                    <textarea class="form-control" id="message_details"></textarea>
++                                    <div class="btn">
++                                        <input type="text"
++                                               style="width: 100px; margin-left: -130px; text-decoration: underline;"
++                                               id="fileName" name="selectDrawingName" /> <span></span> <input
++                                            type="file"
++                                            style="position: absolute; margin-top: -30px; width: 16px; margin-left: -25px; opacity: 0; overflow: hidden;"
++                                            name="file_upload" onchange="show_drawingName(this)">
++                                        <button onclick="send_message(this)">发送</button>
++                                    </div>
++                                </div>
++                            </div>
++                        </form>
++                    </div>
++
++
++
++
++
++
++                </div>
++
++
++            </div>
++        </div>
++    </div>
++    <div id="footer"></div>
++</div>
++<!-- SEO代码 开始-->
++<div style="display: none">
++    快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘
+ 
+-		Keywords: <a href="https://www.kuaizhizao.cn/" title="快制造"
+-			target="_blank"><strong>快制造</strong></a> <a
+-			href="https://www.kuaizhizao.cn/" title="外发加工" target="_blank"><strong>外发加工</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="注塑模具" target="_blank"><strong>注塑模具</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="机械加工" target="_blank"><strong>机械加工</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="钣金加工" target="_blank"><strong>钣金加工</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="塑料模具厂" target="_blank"><strong>塑料模具厂</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="注塑加工" target="_blank"><strong>注塑加工</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="塑料模具设计与制造" target="_blank"><strong>塑料模具设计与制造</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="压铸厂" target="_blank"><strong>压铸厂</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="零件加工" target="_blank"><strong>零件加工</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="外贸加工订单" target="_blank"><strong>外贸加工订单</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="非标定制" target="_blank"><strong>非标定制</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="外发订单" target="_blank"><strong>外发订单</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="外协加工" target="_blank"><strong>外协加工</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="加工订单" target="_blank"><strong>加工订单</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="注塑订单" target="_blank"><strong>注塑订单</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="压铸订单" target="_blank"><strong>压铸订单</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="钣金订单" target="_blank"><strong>钣金订单</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="机加工询盘" target="_blank"><strong>机加工询盘</strong></a>
+-		<a href="https://www.kuaizhizao.cn/" title="外贸询盘" target="_blank"><strong>外贸询盘</strong></a>
+-	</div>
+-	<!-- SEO代码 开始-->
+-	<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
++    Keywords: <a href="https://www.kuaizhizao.cn/" title="快制造"
++                 target="_blank"><strong>快制造</strong></a> <a
++        href="https://www.kuaizhizao.cn/" title="外发加工" target="_blank"><strong>外发加工</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="注塑模具" target="_blank"><strong>注塑模具</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="机械加工" target="_blank"><strong>机械加工</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="钣金加工" target="_blank"><strong>钣金加工</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="塑料模具厂" target="_blank"><strong>塑料模具厂</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="注塑加工" target="_blank"><strong>注塑加工</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="塑料模具设计与制造" target="_blank"><strong>塑料模具设计与制造</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="压铸厂" target="_blank"><strong>压铸厂</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="零件加工" target="_blank"><strong>零件加工</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="外贸加工订单" target="_blank"><strong>外贸加工订单</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="非标定制" target="_blank"><strong>非标定制</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="外发订单" target="_blank"><strong>外发订单</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="外协加工" target="_blank"><strong>外协加工</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="加工订单" target="_blank"><strong>加工订单</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="注塑订单" target="_blank"><strong>注塑订单</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="压铸订单" target="_blank"><strong>压铸订单</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="钣金订单" target="_blank"><strong>钣金订单</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="机加工询盘" target="_blank"><strong>机加工询盘</strong></a>
++    <a href="https://www.kuaizhizao.cn/" title="外贸询盘" target="_blank"><strong>外贸询盘</strong></a>
++</div>
++<!-- SEO代码 开始-->
++<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
+ <script src="/lib/jquery/jquery.min.js"></script>
+ <script src="/lib/bootstrap/js/bootstrap.js"></script>
+ <script src="/js/dateFormat.js"></script>
+@@ -452,56 +454,58 @@
+ <script type="text/javascript" src="/js/base64.js"></script>
+ <script type="text/javascript" src="/js/jquery-form.js"></script>
+ <script src="/js/getNationalFlag.js"></script>
+-<!-- <script src="/js/inquiry/details.js?v=20180702"></script> -->
++<script src="/js/inquiry/details.js?v=20180702"></script>
++
++
+ <script>
+-$('#header').load('header.html');
+-$('#footer').load('footer.html');
++    $('#header').load('header.html');
++    $('#footer').load('footer.html');
+ 
+-/*零件信息显示隐藏切换*/
+-$('.supplier_detail .lj_det tbody tr:first-child em').css({
+-	'background':'url(/images/red.png) no-repeat'
+-})
+-$('.supplier_detail .lj_det tbody em').click(function(){
+-    var $this = $(this).parent().parent().next('.trcol');
+-    if($this.hasClass('currdis')){
++    /*零件信息显示隐藏切换*/
++    $('.supplier_detail .lj_det tbody tr:first-child em').css({
++        'background':'url(/images/red.png) no-repeat'
++    })
++    $('.supplier_detail .lj_det tbody em').click(function(){
++        var $this = $(this).parent().parent().next('.trcol');
++        if($this.hasClass('currdis')){
+             $this.removeClass('currdis');
+             $this.show();
+-        $(this).css({
+-            'background':'url(/images/red.png) no-repeat'
+-        })
+-    }else{
+-        $this.addClass('currdis');
+-         $this.hide();
+-        $(this).css({
+-            'background':'url(/images/green.png) no-repeat'
+-        })
+-    }
+-})
+-/* 隔行换色*/
+-$(".supplier_detail .lj_det tbody tr:not('.trcol'):even").css({
+-	'background-color':'#f9f9f9'
+-})
++            $(this).css({
++                'background':'url(/images/red.png) no-repeat'
++            })
++        }else{
++            $this.addClass('currdis');
++            $this.hide();
++            $(this).css({
++                'background':'url(/images/green.png) no-repeat'
++            })
++        }
++    })
++    /* 隔行换色*/
++    $(".supplier_detail .lj_det tbody tr:not('.trcol'):even").css({
++        'background-color':'#f9f9f9'
++    })
+ 
+-/*点击收藏，弹窗出现*/
++    /*点击收藏，弹窗出现*/
+ 
+ 
+-$(' .tc_con-title em').click(function(){
+-    $('.supplier_detail .tc').hide();
+-})
++    $(' .tc_con-title em').click(function(){
++        $('.supplier_detail .tc').hide();
++    })
+ 
+ 
+-$('.inquiry_detail .section nav li a').hover(function(){
+-    $(this).addClass('active')
++    $('.inquiry_detail .section nav li a').hover(function(){
++        $(this).addClass('active')
+             .parent().siblings('li').children('a').removeClass('active');
+-})
++    })
+ 
+-/* 点击关闭按钮，报价员消失 */
+- $('.supplier_detail .card .close').on('click',function(){
+-	 $(this).parent().hide();
+- })
+-$('.supplier_detail .bj_ewm .close').on('click',function(){
+-	 $(this).parent().hide();
+- })
++    /* 点击关闭按钮，报价员消失 */
++    $('.supplier_detail .card .close').on('click',function(){
++        $(this).parent().hide();
++    })
++    $('.supplier_detail .bj_ewm .close').on('click',function(){
++        $(this).parent().hide();
++    })
+ 
+ </script>
+ </html>
+Index: src/main/java/com/cbt/mapping/SupplierQuoteInfoMapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/cbt/mapping/SupplierQuoteInfoMapper.xml	(revision 10470)
++++ src/main/java/com/cbt/mapping/SupplierQuoteInfoMapper.xml	(revision )
+@@ -20,6 +20,9 @@
+     <result column="is_active" property="isActive" jdbcType="INTEGER" />
+     <result column="refuse_reasons" property="refuseReasons" jdbcType="INTEGER" />
+     <result column="total_amount" property="totalAmount" jdbcType="DOUBLE" />    
++    <result column="total_product_price" property="totalProductPrice" jdbcType="DOUBLE" />
++    <result column="total_mold_price" property="totalMoldPrice" jdbcType="DOUBLE" />
++    <result column="total_amount" property="totalAmount" jdbcType="DOUBLE" />
+     <result column="operation_time" jdbcType="TIMESTAMP" property="operationTime"/>
+     <result column="attachment_name" jdbcType="VARCHAR" property="attachmentName"/>
+     <result column="price_type" jdbcType="INTEGER" property="priceType"/>
+@@ -30,11 +33,13 @@
+     <result column="state" jdbcType="VARCHAR" property="state"/>
+     <result column="staff_number" jdbcType="VARCHAR" property="staffNumber"/>
+     <result column="establishment_year" jdbcType="VARCHAR" property="establishmentYear"/>
++    <result column="site_size" jdbcType="VARCHAR" property="siteSize"/>
+   </resultMap>
+   <sql id="Base_Column_List" >
+     id, factory_id, order_id, payment_term, quote_remark, attachment_path, quote_reasons, 
+     quote_date, quote_status, create_time, validity_days,payment_remark,is_inspected_factory,
+-    is_inspected_product,is_process,is_active,refuse_reasons,total_amount,operation_time,attachment_name,price_type    
++    is_inspected_product,is_process,is_active,refuse_reasons,total_amount,operation_time,attachment_name,price_type,
++    total_product_price,total_mold_price
+   </sql>
+   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+     select   
+@@ -61,8 +66,9 @@
+      select   
+       s.id, s.factory_id, s.order_id, s.payment_term, s.quote_remark, s.attachment_path, s.quote_reasons, 
+       s.quote_date, s.quote_status, s.create_time, s.validity_days,s.payment_remark,s.is_inspected_factory,s.refuse_reasons,
+-      s.is_inspected_product,s.is_process,s.is_active,s.total_amount,s.attachment_name,s.price_type,f.factory_name,f.state,
+-      f.staff_number,f.establishment_year         
++      s.is_inspected_product,s.is_process,s.is_active,s.total_amount,s.attachment_name,s.price_type,s.total_product_price,
++      s.total_mold_price,f.factory_name,f.state,
++      f.staff_number,f.establishment_year,f.site_size
+       from supplier_quote_info s left join factory_info f on s.factory_id = f.factory_id     
+       where  
+     s.factory_id = #{factoryId,jdbcType=VARCHAR}   
+@@ -81,8 +87,9 @@
+       select   
+       s.id, s.factory_id, s.order_id, s.payment_term, s.quote_remark, s.attachment_path, s.quote_reasons, 
+       s.quote_date, s.quote_status, s.create_time, s.validity_days,s.payment_remark,s.is_inspected_factory,s.refuse_reasons,
+-      s.is_inspected_product,s.is_process,s.is_active,s.total_amount,s.attachment_name,s.price_type,f.factory_name,f.state,
+-      f.staff_number,f.establishment_year         
++      s.is_inspected_product,s.is_process,s.is_active,s.total_amount,s.attachment_name,s.price_type,s.total_product_price,
++      s.total_mold_price,f.factory_name,f.state,
++      f.staff_number,f.establishment_year,f.site_size
+       from supplier_quote_info s left join factory_info f on s.factory_id = f.factory_id     
+       where
+       s.order_id = #{orderId,jdbcType=INTEGER}   
+@@ -97,13 +104,15 @@
+   </delete>
+   <insert id="insert" parameterType="com.cbt.entity.SupplierQuoteInfo" useGeneratedKeys="true" keyProperty="id">
+     insert into supplier_quote_info (id, factory_id, order_id, payment_term, quote_remark, attachment_path, 
+-      quote_reasons, quote_date, quote_status,create_time,validity_days,payment_remark,is_active,total_amount,attachment_name,price_type)
++      quote_reasons, quote_date, quote_status,create_time,validity_days,payment_remark,is_active,total_amount,
++      attachment_name,price_type,total_product_price,total_mold_price)
+     values  
+       (#{id,jdbcType=INTEGER}, #{factoryId,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER},#{paymentTerm,jdbcType=VARCHAR}, 
+        #{quoteRemark,jdbcType=VARCHAR}, #{attachmentPath,jdbcType=VARCHAR}, 
+        #{quoteReasons,jdbcType=VARCHAR}, #{quoteDate,jdbcType=DATE}, #{quoteStatus,jdbcType=INTEGER}, 
+        #{createTime,jdbcType=TIMESTAMP}, #{validityDays,jdbcType=INTEGER},#{paymentRemark,jdbcType=VARCHAR},
+-       #{isActive,jdbcType=INTEGER},#{totalAmount,jdbcType=DOUBLE},#{attachmentName,jdbcType=VARCHAR},#{priceType,jdbcType=INTEGER})
++       #{isActive,jdbcType=INTEGER},#{totalAmount,jdbcType=DOUBLE},#{attachmentName,jdbcType=VARCHAR},
++       #{priceType,jdbcType=INTEGER},#{totalProductPrice,jdbcType=DOUBLE},#{totalMoldPrice,jdbcType=DOUBLE})
+   </insert>
+   <insert id="insertSelective" parameterType="com.cbt.entity.SupplierQuoteInfo" >
+     insert into supplier_quote_info
+@@ -141,6 +150,12 @@
+       <if test="attachmentName != null" >
+         attachment_name,
+       </if>
++      <if test="totalProductPrice != null" >
++        total_product_price,
++      </if>
++      <if test="totalMoldPrice != null" >
++        total_mold_price,
++      </if>
+     </trim>
+     <trim prefix="values (" suffix=")" suffixOverrides="," >
+       <if test="id != null" >
+@@ -176,6 +191,12 @@
+        <if test="attachmentName != null" >
+         #{attachmentName,jdbcType=VARCHAR}
+       </if>
++       <if test="totalProductPrice != null" >
++        #{totalProductPrice,jdbcType=DOUBLE}
++      </if>
++       <if test="totalMoldPrice != null" >
++        #{totalMoldPrice,jdbcType=DOUBLE}
++      </if>
+     </trim>
+   </insert>
+   <update id="updateByPrimaryKeySelective" parameterType="com.cbt.entity.SupplierQuoteInfo" >
+@@ -225,6 +246,12 @@
+       </if>
+       <if test="totalAmount != null" >
+         total_amount  = #{totalAmount,jdbcType=DOUBLE},
++      </if>
++      <if test="totalProductPrice != null" >
++        total_product_price  = #{totalProductPrice,jdbcType=DOUBLE},
++      </if>
++      <if test="totalMoldPrice != null" >
++        total_mold_price  = #{totalMoldPrice,jdbcType=DOUBLE},
+       </if>
+       <if test="operationTime != null" >
+         operation_time  = #{operationTime,jdbcType=TIMESTAMP},
+Index: src/main/webapp/m-zh/detail.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/m-zh/detail.html	(revision 10470)
++++ src/main/webapp/m-zh/detail.html	(revision )
+@@ -94,59 +94,56 @@
+ 					<h3>报价管理工程师谈该项目:</h3>
+ 					<p id="quote_remark"></p>
+ 				</div>
+-				<div class="add_price_compare">
++				<div class="add_price_compare" id="price_rank" style="display: none;">
+ 					<p>价格水平</p>
+ 					<table class="table table-bordered">
+ 						<tbody>
+ 							<tr>
+ 								<td>报价时间</td>
+-								<td></td>
++								<td id="quote_date"></td>
+ 							</tr>
+ 							<tr>
+ 								<td>报价金额</td>
+-								<td></td>
++								<td id="total_money"></td>
+ 							</tr>
+ 							<tr>
+ 								<td>排名</td>
+-								<td></td>
++								<td id="rank"></td>
+ 							</tr>
+ 						</tbody>
+ 					</table>
+ 					<table class="table table-bordered">
+-						<thead>
++						<thead id="rank_thead">
+ 							<tr><th colspan="3">下单厂的对比</th></tr>
+-							<tr><th class="th1"></th><th class="th2">贵司</th><th class="th3">第<span>2</span>名</th></tr>
++							<tr>
++								<th class="th1"></th>
++								<th class="th2">贵司</th>
++							</tr>
+ 						</thead>
+-						<tbody>
++						<tbody id="rank_tbody">
+ 							<tr>
+ 								<td>企业规模</td>
+-								<td></td>
+-								<td></td>
++
+ 							</tr>
+ 							<tr>
+ 								<td>成立日期</td>
+-								<td></td>
+-								<td></td>
++
+ 							</tr>
+ 							<tr>
+ 								<td>认证</td>
+-								<td></td>
+-								<td></td>
++
+ 							</tr>
+ 							<tr>
+ 								<td>场地</td>
+-								<td></td>
+-								<td></td>
++
+ 							</tr>
+ 							<tr>
+-								<td>总模具费</td>
+-								<td></td>
+-								<td></td>
++								<td>总模具费（元）</td>
++
+ 							</tr>
+ 							<tr>
+-								<td>总单价</td>
+-								<td></td>
+-								<td></td>
++								<td>总单价（元）</td>
++
+ 							</tr>
+ 						</tbody>
+ 					</table>
+@@ -243,6 +240,7 @@
+ <script type="text/javascript" src="/js/jquery-form.js"></script>
+ <script src="js/getNationalFlag.js"></script>
+ <script src="js/details.js"></script>
++<script>
+ $('#footer').load('/m-zh/footer.html');
+ 
+ window.onload = window.onresize = function(){
+Index: src/main/webapp/m-zh/js/details.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/m-zh/js/details.js	(revision 10470)
++++ src/main/webapp/m-zh/js/details.js	(revision )
+@@ -44,7 +44,15 @@
+ 			    	 var isCollect = result.data.isCollect;
+ 			    	 //是否属于被邀请
+ 			    	 var inviteFlag = result.data.inviteFlag;
+-			    	 //获取国家国旗
++
++			    	 //历史报价
++				     var supplierQuoteProducts = result.data.supplierQuoteProducts;
++				     var supplierQuoteProduct = result.data.supplierQuoteProduct;
++				     //工厂报价
++                     var supplierQuoteInfo = result.data.supplierQuoteInfo;
++					 var supplierQuotes = result.data.supplierQuotes;
++
++                      //获取国家国旗
+ 			    	 var country = quoteInfo.country;	
+ 			    	 var flagSrc=getFlag(country);
+ 			 		 $('.detail .row2 img').attr('src',flagSrc);
+@@ -158,11 +166,42 @@
+ //				    	      $('#title_ul').find('li').eq(1).find('a').removeAttr('onclick');
+ //				    	   	}
+ //			    	  }
+-			    	 
+-			    	 
+-		    	 
++			   //排名
++			   var rank = result.data.rank;
++			   var differPrice = result.data.differPrice;
++               if(supplierQuoteInfo != null && supplierQuoteInfo != '' && supplierQuoteInfo != undefined) {
++                   //报价工厂价格对比表
++                   $('#quote_date').text(new Date(supplierQuoteInfo.createTime).Format("yyyy-MM-dd hh:mm:ss"));
++                   $('#total_money').text(supplierQuoteInfo.totalAmount + "元");
++                   $('#rank').text("第" + rank + "名(价格由低到高排名)");
++                   // $('#price_rank').find('span').text("在所有报价工厂排名第" + rank + "名(价格由低到高排名)" + (rank == 1 ? '' : "比第一名贵了" + differPrice + "(元)"));
++
++                   $('#rank_tbody').find('tr').eq(0).append('<td>'+(supplierQuoteInfo.staffNumber == null ? '-' : supplierQuoteInfo.staffNumber)+'</td>');
++                   $('#rank_tbody').find('tr').eq(1).append('<td>'+(supplierQuoteInfo.establishmentYear == null ? '-' : supplierQuoteInfo.establishmentYear)+'</td>');
++                   $('#rank_tbody').find('tr').eq(2).append('<td>'+(supplierQuoteInfo.qualificationNameList == null ? '-' : supplierQuoteInfo.qualificationNameList)+'</td>');
++                   $('#rank_tbody').find('tr').eq(3).append('<td>'+(supplierQuoteInfo.siteSize == '0' ? '能达到世界500强公司的验厂标准' : (supplierQuoteInfo.siteSize == '1' ? '正常验厂' : (supplierQuoteInfo.siteSize == '2' ? '暂无法验厂' : '-')))+'</td>');
++                   $('#rank_tbody').find('tr').eq(4).append('<td>'+(supplierQuoteInfo.totalMoldPrice == null ? '0' : supplierQuoteInfo.totalMoldPrice)+'</td>');
++                   $('#rank_tbody').find('tr').eq(5).append('<td>'+(supplierQuoteInfo.totalProductPrice == null ? '0' : supplierQuoteInfo.totalProductPrice)+'</td>');
++
++                   for(var j=0;j<supplierQuotes.length;j++){
++
++						if(supplierQuotes[j].factoryId != supplierQuoteInfo.factoryId) {
+ 
+-			    	 
++							$('#rank_thead').find('tr').eq(0).find('th').attr('colspan', supplierQuotes.length + 2);
++							$('#rank_thead').find('tr').eq(1).append('<th class="th' + (j + 3) + '">' + (supplierQuotes[j].factoryName == null ? '-' : supplierQuotes[j].factoryName) + '</th>');
++							$('#rank_tbody').find('tr').eq(0).append('<td>' + (supplierQuotes[j].staffNumber == null ? '-' : supplierQuotes[j].staffNumber) + '</td>');
++							$('#rank_tbody').find('tr').eq(1).append('<td>' + (supplierQuotes[j].establishmentYear == null ? '-' : supplierQuotes[j].establishmentYear) + '</td>');
++							$('#rank_tbody').find('tr').eq(2).append('<td>' + (supplierQuotes[j].qualificationNameList == null ? '-' : supplierQuotes[j].qualificationNameList) + '</td>');
++							$('#rank_tbody').find('tr').eq(3).append('<td>' + (supplierQuotes[j].siteSize == '0' ? '能达到世界500强公司的验厂标准' : (supplierQuotes[j].siteSize == '1' ? '正常验厂' : (supplierQuotes[j].siteSize == '2' ? '暂无法验厂' : '-'))) + '</td>');
++							$('#rank_tbody').find('tr').eq(4).append('<td>' + (supplierQuotes[j].totalMoldPrice == null ? '0' : supplierQuotes[j].totalMoldPrice) + '</td>');
++							$('#rank_tbody').find('tr').eq(5).append('<td>' + (supplierQuotes[j].totalProductPrice == null ? '0' : supplierQuotes[j].totalProductPrice) + '</td>');
++						}
++                   }
++
++                   $('#price_rank').show();
++               }else{
++               	 $('#price_rank').hide();
++			   }
+ 			    	 
+ 			    	 
+ 
+@@ -268,9 +307,6 @@
+ 			    	 }
+ 			           
+ 					    //历史报价记录
+-					    var supplierQuoteInfo = result.data.supplierQuoteInfo;
+-					    var supplierQuoteProducts = result.data.supplierQuoteProducts;
+-				    	var supplierQuoteProduct = result.data.supplierQuoteProduct; 
+ 				    	$('.history').empty(); 
+ 				    	if(supplierQuoteInfo != null && supplierQuoteInfo!= ''){
+ 				    		
+Index: src/main/webapp/m-zh/footer.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/m-zh/footer.html	(revision 10470)
++++ src/main/webapp/m-zh/footer.html	(revision )
+@@ -19,7 +19,7 @@
+ 			</div>
+ 	</body>
+ </html>
+-<!-- <script src="/lib/jquery/jquery.min.js"></script> -->
++ <script src="/lib/jquery/jquery.min.js"></script>
+ <script src="/js/cookie_util.js"></script>
+ <script type="text/javascript" src="/js/base64.js"></script> 
+ <script>
+Index: src/main/webapp/js/inquiry/details.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/js/inquiry/details.js	(revision 10470)
++++ src/main/webapp/js/inquiry/details.js	(revision )
+@@ -281,7 +281,9 @@
+                               '<td>'+(supplierQuoteInfo.staffNumber == null ? '-' : supplierQuoteInfo.staffNumber)+'</td>'+
+                               '<td>'+(supplierQuoteInfo.establishmentYear == null ? '-' : supplierQuoteInfo.establishmentYear)+'</td>'+
+                               '<td>'+(supplierQuoteInfo.qualificationNameList == null ? '-' : supplierQuoteInfo.qualificationNameList)+'</td>'+
+-                              '<td>普通验厂</td>'+
++                              '<td>'+(supplierQuoteInfo.siteSize == '0' ? '能达到世界500强公司的验厂标准' : (supplierQuoteInfo.siteSize == '1' ? '正常验厂' : (supplierQuoteInfo.siteSize == '2' ? '暂无法验厂' : '-')))+'</td>'+
++                              '<td>'+(supplierQuoteInfo.totalMoldPrice == null ? '0' : supplierQuoteInfo.totalMoldPrice)+'</td>'+
++                              '<td>'+(supplierQuoteInfo.totalProductPrice == null ? '0' : supplierQuoteInfo.totalProductPrice)+'</td>'+
+                               '</tr>';
+                           $('#rank_tbody').append(tr);
+                           for(var j=0;j<supplierQuotes.length;j++){
+@@ -289,9 +291,11 @@
+                                   var tr1 =   '<tr>'+
+                                       '<td>'+supplierQuotes[j].factoryName+'</td>'+
+                                       '<td>'+(supplierQuotes[j].staffNumber == null ? '-' : supplierQuotes[j].staffNumber)+'</td>'+
+-                                      '<td>'+(supplierQuotes[j].establishmentYear == null || supplierQuotes[j].establishmentYear == ''  ? '-' : supplierQuotes[j].establishmentYear)+'</td>'+
++                                      '<td>'+(supplierQuotes[j].establishmentYear == null  ? '-' : supplierQuotes[j].establishmentYear)+'</td>'+
+                                       '<td>'+(supplierQuotes[j].qualificationNameList == null ? '-' : supplierQuotes[j].qualificationNameList)+'</td>'+
+-                                      '<td>普通验厂</td>'+
++                                      '<td>'+(supplierQuotes[j].siteSize == '0' ? '能达到世界500强公司的验厂标准' : (supplierQuotes[j].siteSize == '1' ? '正常验厂' : (supplierQuotes[j].siteSize == '2' ? '暂无法验厂' : '-')))+'</td>'+
++                                      '<td>'+(supplierQuotes[j].totalMoldPrice == null ? '0' : supplierQuotes[j].totalMoldPrice)+'</td>'+
++                                      '<td>'+(supplierQuotes[j].totalProductPrice == null ? '0' : supplierQuotes[j].totalProductPrice)+'</td>'+
+                                       '</tr>';
+                                   $('#rank_tbody').append(tr1);
+                               }
+Index: src/main/java/com/cbt/controller/InquiryController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/cbt/controller/InquiryController.java	(revision 10465)
++++ src/main/java/com/cbt/controller/InquiryController.java	(revision )
+@@ -1267,6 +1267,7 @@
+ 											supplierQuoteInfo2.setQualificationNameList(otherFactoryQualificationList);
+ 										}
+ 									}
++
+ 								}
+ 
+ 								//如果当前rank为第一，则当前是最低价
+@@ -1279,7 +1280,7 @@
+ 
+ 							}
+ //						}
+-					  
++
+                       //查询历史报价
+ 					  List<List<SupplierQuoteProduct>> supplierQuoteProducts = new ArrayList<List<SupplierQuoteProduct>>();
+ 					  List<SupplierQuoteProduct> supplierQuoteProduct = supplierQuoteProductService.selectQuoteGroupByQuoteId(factoryId, orderId);
+Index: src/main/java/com/cbt/service/impl/SupplierQuoteInfoServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/cbt/service/impl/SupplierQuoteInfoServiceImpl.java	(revision 10470)
++++ src/main/java/com/cbt/service/impl/SupplierQuoteInfoServiceImpl.java	(revision )
+@@ -126,9 +126,13 @@
+ 						prs = productRemarks.split(",,",-1);
+ 					}
+ 					Double totalAmount = 0.0;
++					Double totalProductPrice = 0.0;
++					Double totalMoldPrice = 0.0;
+ 					for(int i = 0;i<split.length;i++){
+ 						        Double amount = 0.0;
+ 						        Double productPrice = 0.0;
++						        Double productAmount = 0.0;
++						        Double moldPrice = 0.0;
+ 						        String[] split1 = split[i].split("&",-1);
+ 					        	SupplierQuoteProduct  supplierQuoteProduct = new SupplierQuoteProduct();
+ 									Double unitPrice1 = 0.0;
+@@ -138,9 +142,11 @@
+ 									Double moldPrice1 = 0.0;
+ 									if(StringUtils.isNotBlank(split1[1])){
+ 										moldPrice1 = Double.parseDouble(split1[1].trim());
++										moldPrice = moldPrice1;
+ 									}
+ 									if(StringUtils.isNotBlank(split1[2])){
+ 										amount = Double.parseDouble(split1[2].trim());
++										productAmount = new BigDecimal(amount).subtract(new BigDecimal(moldPrice1)).setScale(3,BigDecimal.ROUND_HALF_UP).doubleValue();
+ 									}
+ 									if(StringUtils.isNotBlank(split1[3])){
+ 										productPrice = Double.parseDouble(split1[3].trim());
+@@ -154,9 +160,11 @@
+ 										}									
+ 										if(StringUtils.isNotBlank(split1[5])){
+ 											moldPrice2 = Double.parseDouble(split1[5].trim());
++											moldPrice = moldPrice2;
+ 										}
+ 										if(StringUtils.isNotBlank(split1[6])){
+ 											amount = Double.parseDouble(split1[6].trim());
++											productAmount = new BigDecimal(amount).subtract(new BigDecimal(moldPrice2)).setScale(3,BigDecimal.ROUND_HALF_UP).doubleValue();
+ 										}										
+ 									}
+ 									Double unitPrice3 = 0.0;
+@@ -167,13 +175,17 @@
+ 										}									
+ 										if(StringUtils.isNotBlank(split1[9])){
+ 											moldPrice3 = Double.parseDouble(split1[9].trim());
++											moldPrice = moldPrice3;
+ 										}	
+ 										if(StringUtils.isNotBlank(split1[10])){
+ 											amount = Double.parseDouble(split1[10].trim());
++											productAmount = new BigDecimal(amount).subtract(new BigDecimal(moldPrice3)).setScale(3,BigDecimal.ROUND_HALF_UP).doubleValue();
+ 										}	
+ 									}		
+ 									
+ 									totalAmount +=amount;
++									totalMoldPrice +=moldPrice;
++									totalProductPrice +=productAmount;
+ 									supplierQuoteProduct.setQuoteUnitPrice1(unitPrice1);
+ 									supplierQuoteProduct.setQuoteUnitPrice2(unitPrice2);
+ 									supplierQuoteProduct.setQuoteUnitPrice3(unitPrice3);
+@@ -193,7 +205,13 @@
+ 					
+ 					             //获取产品报价总价（数量最多的价格）
+ 				             	totalAmount = new BigDecimal(totalAmount).setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue();
+-				             	record.setTotalAmount(totalAmount);
++								//获取产品总价（数量最多的价格）
++					            totalProductPrice = new BigDecimal(totalProductPrice).setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue();
++				            	//获取模具总价
++					            totalMoldPrice =  new BigDecimal(totalMoldPrice).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
++					            record.setTotalAmount(totalAmount);
++								record.setTotalProductPrice(totalProductPrice);
++								record.setTotalMoldPrice(totalMoldPrice);
+ 				             	record.setIsActive(1);
+ 				             	supplierQuoteInfoMapper.updateByPrimaryKeySelective(record);
+ 						}

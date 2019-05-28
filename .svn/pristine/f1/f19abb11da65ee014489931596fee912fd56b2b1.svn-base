@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="Keywords" content="Manufacturers, Suppliers ,factories, Products and sourcing in China">
+    <meta name="Description" content="You can post your RFQ and receive quotes from chinese manufacturers,suppliers,factories,for free.Also can check their audit report for free.
+    All kinds of processes are avaliable,including plastic (injection),die casting,forging,raw material,metal fabrication,CNC leath machining or prompt current goods.">
+    <title>Products Sourcing , Get free industrial,manufacturing Quotes from china , Manufacturers Suppliers Directory Category | Quickpart.cn 
+    </title>
+    <link rel="canonical" href="https://www.quickpart.cn" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/css.css" />
+    <script src="/lib/html5sshiv/html5shiv.min.js"></script>
+    <script src="/lib/respond/respond.js"></script>
+    <script type="text/javascript" src="/js/cookie_util.js"></script>
+    <script type="text/javascript" src="/js/base64.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-132557536-1');
+    </script>
+</head>
+<body>
+    <div class="home home_en">
+        <header class="header header_en" id="header">
+            <div class="header_top">
+                <div class="header_bottom">
+                    <div class="header_bottom_in w12 clearfix">
+                        <a href="https://www.quickpart.cn" class="logo pull-left"><img src="/images/head_en.png" alt="" /></a>
+                        <div class="header_top_in dl_zc w12 clearfix">
+                            <div class="head_R pull-right">
+                                <ul class="index_head_R_Login clearfix">
+                                    <!-- <li class="beforLogin">										
+										<a href="/en/login.html" >Sign</a> 
+									</li> -->
+                                    <li class="afterLogin"><a> <span class="iconfont">&#xe6c9;</span><span id="username"></span>
+                                        </a>
+                                        <ul class="xxlist">
+                                            <li><a onclick="exit()"><span class="iconfont">&#xe60a;</span>Exit</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="beforLogin"><a>Purchaser Access</a>
+                                        <ul class="Purchaser_access_ul">
+                                            <li><b>if you have continuous needs to find new suppliers and get quites,you
+                                                    can post your profile or RFQ here and build a selected supply network.</b></li>
+                                            <!--<li><span></span>Interested suppliers will contact
+												you,and you can choose the ones that fits your criteria</li>
+											<li><span></span>when you post a new RFQ,it will only
+												reach the suppliers pre-selected by you.</li>
+											<li><span></span>After follow-up
+												collaborations(audits,productions),you can keep the goods
+												ones gradually build a supply network.</li>-->
+                                            <li class="home_head_dl" style="margin-top: 15px;"><a href="/en/login.html" class="active">Sign</a>
+                                                <a href="/en/register_en.html">Register</a></li>
+                                            <li>Alternatively, you can simply send your RFQ or drawings (Solidworks, CAD,
+                                                IGES, PDF) to <a style="color: #006dcc" href="mailto:rfq@china-sourcing.com?subject=QUICKPART.CN&amp;body=%0d%0d%0a Note: We will reply you within 24 hours.">rfq@china-sourcing.com</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="afterLogin"><a href="/en/news.html">Messages</a>
+                                    </li>
+                                    <li class="afterLogin"><a href="/en/business_view.html">Business Panel
+                                        </a></li>
+                                    <li class="afterLogin"><a href="/en/purchase_list.html">
+                                            <span class="iconfont">&#xe63f;</span>My RFQs
+                                        </a></li>
+                                    <li class="afterLogin"><a href="/en/account_management.html">My Account</a></li>
+                                    <li class="send_li"><a href="/en/quickly_release.html">
+                                            <button class="btn btn-default pull-right send_en">
+                                                <b>Post RFQ </b>
+                                            </button>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" bgcolor_cc0">
+                <nav class="add__head_nav w12 add__head_nav_en">
+                    <ul class="nav-list clearfix">
+
+                        <li class="pull-left"><a>All RFQs <span class="nav_s1 glyphicon glyphicon-menu-down"></span> <span
+                                    class="nav_s2 glyphicon glyphicon-menu-up"></span>
+                            </a>
+                            <ul class="sub-nav ul1">
+                                <li><a href="/rfq/plastic/1">Plastic RFQ(Sourcing Request)
+                                    </a>
+                                    <dl class="dl1">
+                                        <dt></dt>
+                                        <dd>
+                                            <a href="/rfq/plastic/injection-molding/1">Injection Molding RFQ(Sourcing Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/plastic/vacuum-forming/1">Vacuum Forming
+                                                RFQ(Sourcing Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/plastic/rotational-molding/1">Rotational
+                                                Molding RFQ(Sourcing Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/plastic/blow-molding/1">Blow Molding RFQ(Sourcing
+                                                Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/plastic/plastic-extrusion/1">Plastic Extrusion
+                                                RFQ(Sourcing Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/plastic/others-plastic/1">Others(Plastic)
+                                                RFQ(Sourcing Request)</a>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li><a href="http://www.quickpart.cn/rfq/cast/1">Casting RFQ(Sourcing Request)</a>
+                                    <dl class="dl2">
+                                        <dt></dt>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/cast/stainless-steel-casting/1">Stainless
+                                                steel casting (silicon glue, water glass) RFQ(Sourcing Request)
+                                            </a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/cast/die-casting/1">Die casting (aluminum,
+                                                zinc, magnesium, copper, etc.) RFQ(Sourcing Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/cast/sand-casting/1">Sand casting (steel,
+                                                iron, copper, aluminum, etc.) RFQ(Sourcing Request)
+                                            </a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/cast/gravity-casting/1">Gravity casting
+                                                (aluminum, copper, etc.) RFQ(Sourcing Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/cast/others-casting/1">Others(casting) RFQ(Sourcing
+                                                Request)</a>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li><a href="http://www.quickpart.cn/rfq/raw/1">Forging RFQ(Sourcing Request)</a></li>
+                                <li><a href="http://www.quickpart.cn/rfq/metal/1">Metal Fabrication RFQ(Sourcing Request)</a>
+                                    <dl class="dl5">
+                                        <dt></dt>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/metal/sheet-metal-machining/1">Sheet metal
+                                                machining (cutting, bending, welding, assembly) RFQ(Sourcing Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/metal/stamping-and-stretching/1">Stamping
+                                                and stretching RFQ(Sourcing Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/metal/spinning/1">Spinning RFQ(Sourcing
+                                                Request)</a>
+                                        </dd>
+                                        <dd>
+                                            <a href="http://www.quickpart.cn/rfq/metal/raw-material-procurement/1">Aluminum
+                                                Extrusion RFQ(Sourcing Request)</a>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li><a href="http://www.quickpart.cn/rfq/machining/1">Machining RFQ(Sourcing Request)</a></li>
+                                <li><a href="http://www.quickpart.cn/rfq/goods/1">Prompt Goods(other purchases) RFQ(Sourcing
+                                        Request)</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="pull-left"><a rel="nofollow" href="/en/manufacturer_category.html">Manufacturer Category
+                                <span class="nav_s1 glyphicon glyphicon-menu-down"></span> <span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+                            </a>
+                            <ul class="sub-nav ul2">
+                                <li><a href="http://www.quickpart.cn/manufacturer-category/plastic-1">Plastic Manufacturer(supplier)
+                                    </a></li>
+                                <li><a href="http://www.quickpart.cn/manufacturer-category/cast-1">Casting Manufacturer(supplier)
+                                    </a></li>
+                                <li><a href="http://www.quickpart.cn/manufacturer-category/forging-1">Forging Manufacturer(supplier)
+                                    </a></li>
+                                <li><a href="http://www.quickpart.cn/manufacturer-category/raw-1">Raw Material Procuring
+                                        Manufacturer(supplier)</a></li>
+                                <li><a href="http://www.quickpart.cn/manufacturer-category/metal-1">Metal Fabrication Manufacturer(supplier)</a></li>
+                                <li><a href="http://www.quickpart.cn/manufacturer-category/machining-1">Machining Manufacturer(supplier)
+                                    </a></li>
+                                <li><a href="http://www.quickpart.cn/manufacturer-category/goods-1">Prompt Goods & Others
+                                        Manufacturer(supplier)</a></li>
+                            </ul>
+                        </li>
+                        <li class="pull-left"><a rel="nofollow" href="/en/ManufactureCalculator.html">Manufacture Calculator
+                                <span class="nav_s1 glyphicon glyphicon-menu-down"></span> <span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+                            </a>
+                            <ul class="sub-nav ul4">
+                                <li><a href="/en/InjectionMolding.html" target="_blank">Injection Molding Price Calculator</a></li>
+                                <li><a href="/en/DieCasting.html" target="_blank">Die Casting Price Calculator</a></li>
+                                <li><a href="/en/MetalFabrication.html" target="_blank">Metal Fabrication Price Calculator</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="pull-left"><a>Quickpart Today</a></li> -->
+                        <!-- <li class="pull-left"><a>Kickstarter</a></li>
+						<li class="pull-left"><a>Belt &amp; Road</a></li> -->
+                        <li class="pull-left"><a rel="nofollow" href="#">About Us
+                                <span class="nav_s1 glyphicon glyphicon-menu-down"></span> <span class="nav_s2 glyphicon glyphicon-menu-up"></span>
+                                <ul class="sub-nav ul4">
+                                    <li><a href=""></a></li>
+                                    <li><a href="/en/who_we.html">Who Are We</a></li>
+                                    <li><a href="/en/contact_us.html">Contact Us</a></li>
+                                </ul>
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="section w12 home-in">
+            <div class="home-top clearfix">
+                <div class="banner pull-left">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            <!--                         <li data-target="#carousel-example-generic" data-slide-to="3"></li> -->
+                            <!--                         <li data-target="#carousel-example-generic" data-slide-to="4" ></li> -->
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <a class="item active banner1" href="https://www.quickpart.cn/en/register_en.html">								
+                                <img src="/images/en/banner1.jpg" alt="Get quotes from Chinese manufacturers for Plastic Molding, Metal Fabrication, Casting and Forging, CNC Machining, Stamping and Deep Drawing, Roll Forming...">
+								<div class="words">
+									<h1><span class="blue">QUICKPART.</span>cn</h1>
+									<h2>Get quotes from <span class="blue">Chinese manufacturers</span> for Plastic Molding, Metal Fabrication, Casting and Forging, CNC Machining, Stamping and Deep Drawing, Roll Forming...</h2>
+								</div>
+                            </a>
+                            <a href="https://www.quickpart.cn/en/quickly_release.html" class="item banner2">
+                                <img src="/images/en/banner2.jpg" alt="we provide a unique combination of a B2B market place (open,low,price) and a sourcing firm (quality control,communication)">
+                            	<div class="words">
+                            		<div class="p1">
+                            			<h2>We provide a unique combination of</h2>
+										<h2>a B2B market place (open,low price)</h2>	
+										<h2>and a sourcing firm (quality control,communication)</h2>
+                            		</div>
+                            		<div class="p2">
+                            			<h2>Custom manufacture</h2>
+                            			<h2>engineering parts.</h2>
+                            		</div>
+                            		<div class="p3">
+                            			<h2>GET A FREE QUOTE NOW</h2>
+                            		</div>
+                            	</div>                            	                            	                            	
+                            </a>
+                            <a href="mailto:RFQ@CSMFG.COM?subject=QUICKPART.CN&body=%0d%0d%0a Note: We will reply you within 24 hours." class="item banner3">                                
+                                <img src="/images/en/banner3.jpg" alt="Ask our sourcing engineer">
+                                <div class="words">
+                                	<h1>Ask our sourcing engineers</h1>
+                                	<h2>if you have Design engineering issues, Manufacturing issues</h2>
+                                	<h3>Contact Us</h3>
+                                </div>                               
+                            </a>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span
+                                aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a> <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span aria-hidden="true"></span> <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="info pull-right">
+                    <div class="info-top">
+                        <span>Welcome to Quickpart</span>
+                    </div>
+                    <div class="info-imgs">
+                        <div class="imgs">
+                            <img id="factoryLogo" src="/images/logo_en.png" alt="" />
+
+                        </div>
+                        <p>RELIABLE QUOTES FAST PRODUCTION</p>
+                        <p>AND HIGH QUALITY</p>
+                    </div>
+                    <div class="info-bottom" id="s_div"></div>
+                </div>
+            </div>
+            <div class="loop">
+                <span>Latest purchased orders:</span>
+                <div class="facotrys">
+                    <ul id="order_factory">
+
+                    </ul>
+                </div>
+            </div>
+            <!--			<div class="clearfix add_example mb5">
+				<div class="pull-left">
+					<div class="add_title">
+						<i> &lt;!&ndash; <img src="../images/add_title.png"> &ndash;&gt;
+						</i> <span>Manufacturer Categories</span>
+					</div>
+					<ul>
+						<li><a
+							href="http://www.quickpart.cn/manufacturer-category/plastic-1">Plastic
+								Manufacturer</a></li>
+						<li><a
+							href="http://www.quickpart.cn/manufacturer-category/cast-1">Casting
+								Manufacturer</a></li>
+						<li><a
+							href="http://www.quickpart.cn/manufacturer-category/forging-1">Forging
+								Manufacturer</a></li>
+						<li><a
+							href="http://www.quickpart.cn/manufacturer-category/raw-1">Raw
+								Material Procuring Manufacturer</a></li>
+						<li><a
+							href="http://www.quickpart.cn/manufacturer-category/metal-1">Metal Fabrication
+								Manufacturer</a></li>
+						<li><a
+							href="http://www.quickpart.cn/manufacturer-category/machining-1">Machining
+								Manufacturer</a></li>
+						<li><a
+							href="http://www.quickpart.cn/manufacturer-category/goods-1">Prompt
+								Goods & Others Manufacturer</a></li>
+					</ul>
+				</div>
+				<div class="pull-right">
+					<img src="../images/en/example.jpg">
+				</div>
+			</div>-->
+            <div class="latest-inquiry">
+                <div class="l-title clearfix">
+                    <em class="pull-left iconfont">&#xe648;</em> <span class="pull-left">Latest RFQs</span> <a class="pull-left">Temporary
+                        not avaliable for oversea manufacturers</a>
+
+
+                    <div class="pull-right add_price">
+                        <span class="s1">Total estimate RFQ amount of the last week:
+                        </span><span class="s2" id="estimatedPrice"></span><span class="s3" id="estimatedDate"></span>
+                    </div>
+                </div>
+                <div class="products">
+                    <ul class="clearfix" id="newQuote">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="footer footer_en add_footer_en">
+            <div class="footer_in w12">
+                <div class="logo">
+                    <img src="/images/head_en.png" alt="" />
+                </div>
+                <div class="b_a">:沪ICP备17041761号-2</div>
+                <p>
+                    a subsidiary of <a href="http://china-sourcing.com" target="_blank">china-sourcing.com<a>
+                </p>
+            </div>
+            <div class="w12 clearfix row">
+                <dl class="col-xs-3">
+                    <dt>Newbie Guide</dt>
+                    <dd>
+                        <a href="https://www.quickpart.cn">Free RFQ </a>
+                    </dd>
+                    <dd>
+                        <a href="https://www.quickpart.cn/en/register_en.html">Purchaser Access
+                        </a>
+                    </dd>
+                    <!--<dd><a href="https://www.quickpart.cn/zh/register_zh.html">Manufacturer Access</a></dd>-->
+                </dl>
+                <dl class="col-xs-4">
+                    <dt>Manufacturer Category</dt>
+                    <dd>
+                        <a href="https://www.quickpart.cn/manufacturer-category/plastic-1">Plastic Manufacturer(supplier)
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="https://www.quickpart.cn/manufacturer-category/cast-1">Casting Manufacturer(supplier)
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="https://www.quickpart.cn/manufacturer-category/forging-1">Foring Manufacturer(supplier)
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="https://www.quickpart.cn/manufacturer-category/raw-1">Raw Material Procuring Manufacturer(supplier)</a>
+                    </dd>
+                    <dd>
+                        <a href="https://www.quickpart.cn/manufacturer-category/metal-1">Metal Manufacturer(supplier)
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="https://www.quickpart.cn/manufacturer-category/machining-1">Machining Manufacturer(supplier)
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="https://www.quickpart.cn/manufacturer-category/goods-1">Prompt Goods & Others Manufacturer(supplier)</a>
+                    </dd>
+                </dl>
+                <dl class="col-xs-3">
+                    <dt>Purchaser Services</dt>
+                    <dd>
+                        <a href="https://www.quickpart.cn/en/quickly_release.html">Sent RFQ
+                        </a>
+                    </dd>
+                </dl>
+                <dl class="col-xs-2">
+                    <dt>
+                        <a href="###">About us</a>
+                    </dt>
+                </dl>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/cookie_util.js"></script>
+<script src="/js/getNationalFlag.js"></script>
+<script src="/en/icn/index.js"></script>
+<script src="/js/getServerName.js"></script>
+<script>
+    $.post("/account/changeLanguage.do", {
+        "language": 'en'
+    }, function (result) {
+    });
+    $('.buyer-purchase li').hover(
+        function () {
+            $(this).children('.li-hover').addClass('active').siblings()
+                .children('.li-hover').removeClass('active');
+        }, function () {
+            $(this).children('.li-hover').removeClass('active');
+        })
+    $('.beforLogin').show();
+    $('.afterLogin').hide();
+    var userName = getCookie("userName");
+    var factoryInfo = getCookie("F_INFO");
+    if (userName != null && userName != '' && userName != undefined) {
+        var base = new Base64();
+        userName = base.decode(userName);
+        $('#username').text(userName);
+        $('.beforLogin').hide()
+        $('.afterLogin').show()
+    }
+    //获取消息数量
+    getMessage();
+    function getMessage() {
+        if (factoryInfo == null || factoryInfo == '') {
+            return false;
+        } else {
+            window.clearInterval(newMessage_interval);
+        }
+        $.ajax({
+            url: "/noteMessage/newMessageCount.do",
+            cache: false,
+            success: function (data) {
+                if (data.state == 0) {
+                    var summap = data.data
+                    if (summap) {
+                        var count = summap.unRead
+                        var award = summap.award
+                        var updateProcess = summap.updateProcess
+                        $('#unRead').text(count ? count : "")
+                        $('#newMessageCount').text(count ? count : "")
+                        $('#award').text(award ? award : "")
+                        $('#updateProcess').text(
+                            updateProcess ? updateProcess : "")
+                    }
+                }
+            }
+        });
+    }
+    function exit() {
+        $.post("/account/clearCookie.do", function (result) {
+            if (result.state == 0) {
+                //根据cookie判断不同语言退出页面
+                var lan = getCookie("language");
+                var serverName = getServerName(lan);
+                if (lan == 'en') {
+                    window.location = serverName + "/en/login.html";
+                } else {
+                    window.location = serverName + "/zh/login.html";
+                }
+            }
+        })
+    }
+    var newMessage_interval = setInterval(function () {
+        getMessage();
+    }, 60000);
+    /*视频播放控制*/
+    $('.home .bf_botton').click(function () {
+        $(this).siblings('.div_video').show();
+    })
+    $('.home .close_button').click(function () {
+        $(this).parent().hide();
+    })
+    /*语言改变设置*/
+    function change_lan() {
+        var lan = getCookie("language");
+        if (lan == 'en') {
+            lan = 'zh'
+        } else {
+            lan = 'en'
+        }
+        $.post("/account/changeLanguage.do", {
+            "language": lan
+        }, function (result) {
+
+            var serverName = getServerName(lan);
+            if (lan == 'en') {
+                window.location = serverName + '/en/index.html';
+            } else {
+                window.location = serverName + '/zh/index.html';
+            }
+        });
+    }
+</script>

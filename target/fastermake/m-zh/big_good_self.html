@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<meta http-equiv="pragram" content="no-cache">  
+		<meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+		<meta http-equiv="expires" content="0">
+		<meta th:content="${'询盘'+(orderId == null?csgOrderId:orderId) +'-'+supplier.factoryName+'-大货生产情况_图片'+(isPic == true?'√':'×')+'_视频'+(isVideo == true?'√':'×')+'_材质证明'+(isMeterial == true?'√':'×')+'_检验报告'+(isQuality == true?'√':'×')}" name="Description">
+		<title th:title="${'询盘'+(orderId == null?csgOrderId:orderId) +'-'+supplier.factoryName+'-大货生产情况_图片'+(isPic == true?'√':'×')+'_视频'+(isVideo == true?'√':'×')+'_材质证明'+(isMeterial == true?'√':'×')+'_检验报告'+(isQuality == true?'√':'×')}"></title>
+		<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/m-zh/css/m-css.css" />
+		<link rel="stylesheet" href="/css/easydialog.css" />
+		<link rel="stylesheet" href="/css/progressBar.css" />
+		<link rel="stylesheet" href="/css/ui.css" />
+		<link rel="stylesheet" href="/css/ui.progress-bar.css"/>
+	</head>
+	<body>
+		<div class="container-fluid  big_good"> <!-- detail -->
+			<input type="hidden" id="supplierName" th:value="${supplier.factoryName}">
+			<div class="row row1 ">
+			<div class="row row_logo">
+				<img src="../images/head.png" alt="">
+				<button class="pull-right bg_color_fff btn back">微信可点击右上角分享给供应商</button>			
+			</div>
+			<div class="row pl5 pr5">
+				<h3 th:text="${'询盘'+(orderId == null?csgOrderId:orderId) +'-'+supplier.factoryName+'-大货生产情况'}">询盘<span></span>-大货生产</h3>
+			</div>	
+			<div class="row pl5 pr5">
+				如果有问题 请拨打：<a href="tel:15921081083">15921081083</a> 技术帮助
+				
+			</div>
+			<div class="row  pl5 pr5"><div class="line mt10 mb10"></div></div>
+			
+			<div class="row" align="center">
+				<img th:if="${projectVO != null &&projectVO.productImg!=null}" th:src="@{${'http://112.64.174.34:10010/product_img/'+projectVO.productImg}}" class="img-responsive">
+			</div>
+			<!-- <div class="row text-center pl5 pr5">
+				<a class="btn btn-default f20 mb10" th:if="${orderId!=null}" th:onclick="'javascript: window.location=\'/zh/purchase_detail.html?orderId='+${orderId}+'\''">查看询盘详情/报价历史
+</a>
+			</div>	 -->
+			<!-- <div class="row text-center pl5 pr5">
+			<form id="file_upload_id" onsubmit="return false;" method="post" enctype="multipart/form-data">
+			<input type="hidden" id="filePath">                          
+            <input type="hidden" id="orderId" name="orderId" th:value="${orderId}">
+            <input type="hidden" id="csgOrderId" name="csgOrderId" th:value="${csgOrderId}">
+			<div class="send_message panel">
+				<div class="panel-heading clearfix text-left"><span class="iconfont"></span>即时消息 - 发送消息给采购商</div>
+				<div class="panel-body">
+				<div class="dialog" id="message">
+					<div th:each="message:${messages}">
+						<div class="dialog_0 dialog_b dialog_a clearfix" th:if="${factoryId eq message.factoryId}">
+							<div class="pull-left wrap col-xs-10 clearfix">
+								<div class="top">
+									<em class="pull-left" th:text="${message.realName}"></em>
+									<em class="pull-right" th:text="${#strings.substringBefore(message.sendTime, '.')}"></em>
+								</div>
+								<p class="text-left" th:text="${message.messageDetails}"></p>
+								<div class="file-download" th:if="${message.fileName ne null && message.fileName ne ''}">
+									附件:<a style="text-decoration: underline;" th:onclick="'javascript: download_file('+${message.id}+')' " th:text="${message.fileName}"></a>
+								</div>
+							</div>
+							<div class="imgs pull-right"><img th:src="@{${message.photo != null ?  message.photo : (message.factoryLogo == null || message.factoryLogo == '' ? '../images/defaultLogo.png' : '/static_img/factory_logo/'+message.factoryId +'\/'+ message.factoryLogo)}}" alt="" class="pull-left"></div>
+						</div>
+						<div class="dialog_0 dialog_b clearfix"  th:if="${factoryId ne message.factoryId}">
+							<div class="pull-right wrap col-xs-10 clearfix">
+								<div class="top">
+									<em class="pull-left" th:text="${message.realName}"></em>
+									<em class="pull-right" th:text="${#strings.substringBefore(message.sendTime, '.')}"></em>
+								</div>
+								<p class="text-left" th:text="${message.messageDetails}"></p>
+								<div class="file-download" th:if="${message.fileName ne null && message.fileName ne ''}">
+									附件:<a style="text-decoration: underline;" th:onclick="'javascript: download_file('+${message.id}+')' " th:text="${message.fileName}"></a>
+								</div>
+							</div>
+							<div class="imgs pull-left"><img th:src="@{${message.photo != null ?  message.photo : (message.factoryLogo == null || message.factoryLogo == '' ? '../images/defaultLogo.png' : '/static_img/factory_logo/'+message.factoryId +'\/'+ message.factoryLogo)}}" alt="" class="pull-left"></div>
+						</div>
+					</div>
+				</div>
+					<textarea class="form-control" id="message_details"></textarea>
+					<div class="btn">	
+					<input type="text" style="width: 100px;margin-left: -130px;text-decoration: underline;" id="fileName" name="selectDrawingName">											
+						<button onclick="send_message(this,0)">发送</button>
+						<div class="s_c"><input type="file" name="file_upload" onchange="show_drawingName(this)">
+							<span class="iconfont">&#xe66e;</span>
+							<a href="###"></a>
+						</div>
+					</div>
+				</div>			
+			</div>		
+			</form>		
+			</div>					 -->	
+			<div class="pl5 pr5 ver11">			
+				<table class="table table1">
+					<tbody>
+						<tr>
+							<td>项目号</td>
+							<td><span th:text="${csgOrderId}"></span></td>
+							<td>项目名</td>
+							<td><span th:text="${projectVO.projectName}"></span></td>
+						</tr>
+						<tr>
+							<td>采购名</td>
+							<td><span th:text="${projectVO.purchaseName}"></span></td>
+							<td>质检名</td>
+							<td><span th:text="${(projectVO.zhijian1==null || projectVO.zhijian1=='')?projectVO.zhijian2:projectVO.zhijian1}"></span></td>
+						</tr>
+						<tr>
+							<td>合同签订</td>
+							<td><span th:text="${projectVO.dateSampleUploading}"></span></td>
+							<td>交期</td>
+							<td><span th:text="${projectVO.deliveryDate}"></span></td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- <table class="table table2">
+					<thead>
+						<tr>
+							<th colspan="4"><b>受控图纸下载</b>（请只用最新图纸）</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="drawing:${drawings}" th:if="${drawing.category eq '4'}">
+							<td>文件名</td>
+							<td><a style="color: #337ab7;" th:href="@{${'http://112.64.174.34:33168/upload/zhongwentuzhi/'+ drawing.drawingName}}" th:text="${drawing.drawingName}"></a></td>
+							<td>更新日期</td>
+							<td><span th:text="${drawing.uploadTime}"></span></td>
+							<td colspan="4" th:if="${drawing.remark != null}" th:text="${'更新原由：'+ drawing.remark}"></td>
+						</tr>
+					</tbody>
+				</table>	 -->	
+				<div class="table2">
+					<p><b>受控图纸下载</b>（请只用最新图纸）</p>
+					<ul>
+						<li th:each="drawing:${drawings}" th:if="${drawing.category eq '4'}">
+							<em>文件名</em>
+							<a style="color: #337ab7;" th:href="@{${'http://112.64.174.34:33168/upload/zhongwentuzhi/'+ drawing.drawingName}}" th:text="${drawing.drawingName}"></a>
+							<em>更新日期</em>
+							<span th:text="${drawing.uploadTime}"></span>
+							<p th:if="${drawing.remark != null}" th:text="${'更新原由：'+ drawing.remark}"></p>
+						</li>
+					</ul>
+					<p th:if="${#lists.isEmpty(drawings)}">暂无</p>
+				</div>	
+				<div class="line"></div>
+				<div class="pics">
+					<h3>生产图片</h3>
+					<div class="thumbnail mb10 pic" th:each="report:${reports}" th:if="${report.fileType == 0}">
+					  <img th:src="@{${report.photoPath}}"  th:alt="${report.fileName}">
+					  <div class="caption clearfix">
+						<a href="###" class="pull-left"  th:text="${report.fileName}"></a>
+						<span class="pull-right" th:text="${#strings.substringBefore(report.uploadDate, ' ')}"></span>
+					  </div>
+					</div>
+			       <h3>生产视频</h3>
+					<div class="thumbnail mb10 video" th:each="report:${reports}" th:if="${report.fileType == 2}">
+							<div class="videos text-center">
+								 <video controls>
+								<source th:src="@{${report.photoPath}}"/>
+							  </video>
+							</div>
+					  <div class="caption clearfix">
+						<a class="pull-left" th:text="${report.fileName}"></a>
+						<span class="pull-right" th:text="${#strings.substringBefore(report.uploadDate, ' ')}"></span>
+					  </div>
+					</div>
+				</div>
+				<h3>材质证明</h3>
+				<div class="pl5 pr5 material">
+				<table class="table table3" th:each="report:${reports}" th:if="${report.fileType == 1}">
+					<tbody>
+						<tr>							
+							<td><a style="color: #337ab7;" th:onclick="'javascript: window.location=\'/download/download_report?id='+${report.id}+'\''" th:text="${'文档:'+report.fileName}"></a></td>
+							<td><span class="time text-right pull-right" th:text="${#strings.substringBefore(report.uploadDate, ' ')}"></span></td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<h3>检验报告</h3>
+				<div class="pl5 pr5 quality">
+					<table class="table table3"  th:each="report:${reports}" th:if="${report.fileType == 3}">
+						<tbody>
+							<tr>
+								<td><a style="color: #337ab7;" th:onclick="'javascript: window.location=\'/download/download_report?id='+${report.id}+'\''" th:text="${'文档:'+report.fileName}"></a></td>
+								<td style="float: right;"><span class="time" th:text="${#strings.substringBefore(report.uploadDate, ' ')}"></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="line"></div>
+				<div class="mt10 mb10 copy">
+					<p class="clearfix"><span class="pull-left">分享供该供应商上传用地址：</span><button class="btn pull-right" id="btn">非手机微信点我复制</button></p>
+					<!--<p>手机微信请长按下面地址复制</p>-->
+					<textarea type="text" id="foo" style="width: 101%;opacity: 0;"  readonly th:text="${'http://www.kuaizhizao.cn/report/reportList?csgOrderId='+ csgOrderId +'&supplierId='+supplierIdD}"></textarea>
+				</div>
+				<!--<div class="mt10 mb10 copy">-->
+					<!--<p class="clearfix"><span class="pull-left">分享该工厂项目列表地址：</span><button class="btn pull-right" id="btn2">非手机微信点我复制</button></p>-->
+					<!--<textarea type="text" id="foo2" style="width: 101%;display: none;"  readonly th:text="${'http://www.kuaizhizao.cn/report/reportList?quoteStatus=2&supplierId='+supplierIdD}"></textarea>-->
+				<!--</div>-->
+				<div class="share mt10 copy">
+					<!--<p class="clearfix"><span class="pull-left">内部分享地址：</span></p>-->
+					<button class="share_wechat btn share" id="share-qrcode">可点击本按钮分享到微信群(需使用QQ浏览器)</button>
+				</div>
+				<img src="" id="qr_code" style="display: none;">
+			</div>
+			<div id="footer"></div>
+				<!--上传进度-->
+				<div class="w-out-box" id="show_upload_dialog" style="display:none;">
+					<div class="weui_mask"></div>
+					<div class="w-weui_dialog">
+						<div id="container">
+
+							<div class="content">
+								<h1>上传进度</h1>
+							</div>
+
+							<!-- Progress bar -->
+							<div id="progress_bar" class="ui-progress-bar ui-container">
+								<div class="ui-progress" style="width: 0%;" id="ui-progress-upload">
+									<span class="ui-label" style="display:none;">正在加载...<b class="value">0%</b></span>
+								</div>
+							</div>
+							<!-- /Progress bar -->
+							<a class="close-reveal-modal" style="color: #fff; font-size: 30px;position: absolute;right: 10px;top: 10px;" href="javascript:void(0);" onclick="cancel_upload()">×</a>
+							<div class="content" id="main_content" style="display: none;">
+								<p>加载完成。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	 </div>	
+	</body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/easydialog.min.js"></script>
+<script type="text/javascript" src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/upload-base.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script type="text/javascript" src="/js/jquery-form.js"></script>
+<script type="text/javascript" src="/m-zh/js/shareWechat.js"></script>
+<script type="text/javascript" src="/m-zh/js/big_good_self.js"></script>
+<script type="text/javascript" src="/m-zh/js/config.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script>
+//        $('#footer').load('/m-zh/footer.html');
+
+
+        window.onload = window.onresize = function(){
+
+            var clientWidth =document.documentElement.clientWidth;
+
+            document.getElementsByTagName("html")[0].style.fontSize =
+
+			clientWidth / 1200 * 40 + "px";
+			}
+
+
+
+       //  document.getElementById('message').scrollTop = document.getElementById('message').scrollHeight;
+
+        
+</script>
+<script>
+
+$('.foot div').click(function(){
+	$(this).find('ul').toggle();
+});
+
+
+
+
+
+
+$(function(){
+    if(!$('.pics').find('.pic').html()){
+        $('.pics').children('h3:eq(0)').after("<div>暂无</div>");
+    }
+    if(!$('.pics').find('.video').html()){
+        $('.pics').children('h3:eq(1)').after("<div>暂无</div>");
+    }
+    if(!$('.material').find('table').html()){
+        $('.material').append("<div>暂无</div>");
+    }
+    if(!$('.quality').find('table').html()){
+        $('.quality').append("<div>暂无</div>");
+    }
+
+    var projectNo = '[[${projectVO.projectNo}]]';
+    var productImg =  '[[${projectVO.productImg}]]';
+    var companyName =  '[[${projectVO.companyName}]]';
+    var uploadDate = '[[${uploadDate}]]';
+    var a = location.href;
+    var title = "最近更新："+(uploadDate? uploadDate :'无');
+    var img = productImg?'http://112.64.174.34:10010/product_img/'+productImg:'';
+    var desc = projectNo + '_' +companyName + "_大货生产情况";
+    //微信分享
+    var shareInfo = {'url':a,'title':title,'desc':desc,'type':2,'img':img};
+
+    if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+        $('.share_wechat').attr('onclick','shareChat('+JSON.stringify(shareInfo).replace(/\"/g,"'")+')');
+    } else if (/(Android)/i.test(navigator.userAgent)) {
+        $('.share_wechat').attr('onclick','shareChat('+JSON.stringify(shareInfo).replace(/\"/g,"'")+')');
+    }else{
+        $('#share-qrcode').text('请点击微信扫码分享');
+
+
+        //点击进行微信分享（内部分享）
+        $('#share-qrcode').click(function(){
+            a = a + "&type=1";
+            a = encodeURIComponent(a);
+            $('#qr_code').attr('src','/wimpl/qr-code.do?url='+a);
+            $('#qr_code').show();
+        })
+    }
+
+
+
+
+})
+
+
+//微信分享
+function shareChat(shareInfo){
+    qqShare(shareInfo);
+}
+
+
+window.onload=function(event){
+    var button=document.getElementById("btn");
+    button.onclick=function(event){
+        document.getElementById("foo").select();
+        document.execCommand("copy",false,null);
+        easyDialog.open({
+            container : {
+                content : '复制成功'
+            },
+            overlay : false,
+            autoClose : 1000
+        });
+    };
+
+
+
+    /*var button2=document.getElementById("btn2");
+    button2.onclick=function(event){
+        document.getElementById("foo2").select();
+        document.execCommand("copy",false,null);
+        easyDialog.open({
+            container : {
+                content : '复制成功'
+            },
+            overlay : false,
+            autoClose : 1000
+        });
+    };*/
+};
+</script>
+
+

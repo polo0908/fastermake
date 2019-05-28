@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0">
+<title th:text="${quoteInfo.quoteTitle + '  RFQ | Quickpart.cn '}"></title>
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+<script src="/lib/respond/respond.js"></script>
+<link rel="canonical" th:href="@{${'https://www.quickpart.cn/rfq/'+orderId}}"/>
+<link rel="stylesheet" href="/css/css.css" />
+<link rel="stylesheet" href="/css/details.css" />
+<link rel="stylesheet" href="/css/easydialog.css" />
+<link rel="stylesheet" href="/css/progressBar.css" />
+<link rel="stylesheet" href="/css/ui.css" />
+<link rel="stylesheet" href="/css/ui.progress-bar.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+<body>
+	<div class="supplier_detail purchase_supplier supplier_detail_e">
+		<input type="hidden" id="order_id" th:value="${orderId}">
+		<div id="header"></div>
+		<div class="section">
+			<div class="container w12">
+				<div class="row">
+					<div class="product_detail_title">
+						<ol class="breadcrumb">
+							<li><a href="https://www.quickpart.cn">Home</a></li>
+							<li><a th:href="@{${'https://www.quickpart.cn/rfq/'+orderId}}">RFQ Detail</a></li>
+						</ol>
+						<h2>
+							<span style="font-size: 30px;"></span><span id="quote_title"
+								style="font-size: 26px; padding-right: 64px;"></span> Inquiry
+							number #<span id="quoteId" style="font-size: 26px;"></span> <small></small>
+							<em class="color_red">Temporary not available for oversea manufacturers</em>
+						</h2>
+					</div>
+					
+					<!--<nav>-->
+						<!--<ul class="clearfix" id="title_ul">-->
+							<!--<li><a href="###" class="active">RFQ Details</a></li>-->
+						<!--</ul>-->
+					<!--</nav>-->
+					<!--<div class="t1 t1_7 clearfix">-->
+						<!--<div class="sc sc01 detail_sc pull-left"-->
+							<!--onclick="addOrCancelCollect()">-->
+							<!--<span id="collect_order">Add to my favorite</span>-->
+						<!--</div>-->
+						<!--<div class="sc bj pull-left">-->
+                          <!--<a href="###" class="to-quote" onclick="to_offer()">Quote Now</a> -->
+                        <!--</div> -->
+					<!--</div>-->
+				
+					<div class="con w12 container con_1">
+					<!-- 	<div class="card" style="display: none;">
+							<div class="close">
+								<span class="glyphicon glyphicon-remove"></span>
+							</div>
+							<h3>quotation team</h3>
+							<div class="card_1" id="sales_div">
+								<span></span><br /> <em>Customer Purchasing Representative</em><br />
+								<div class="pic">
+									<img src="/images/1.png">
+								</div>
+							</div>
+							<div class="card_1 card_1_2" id="quoter_div">
+								<span></span><br /> <em>Quote Management Engineer</em><br />
+								<div class="pic">
+									<img src="/images/1.png">
+								</div>
+							</div>
+
+							<div class="card_1" id="assistant_div">
+								<span></span><br /> <em>Quote Assistant</em><br /> <span
+									class="contact"></span>
+								<div class="pic">
+									<img src="/images/1.png">
+								</div>
+							</div>
+							<div class="bj_ewm">
+								<div class="close"><span class="glyphicon glyphicon-remove"></span></div>
+								<p>scan QR code for mobile phone quotation the same function</p>
+								<div class="imgs">
+									<img
+										src="/wimpl/qr-code.do?url=http://192.168.1.66:8080/zh/detail.html?orderId=27968"
+										id="qr_code">
+								</div>
+							</div>
+						</div> -->
+						<div class="xpxi clearfix">
+							<div class="title pull-left">
+								<!--<span class="pull-left"></span>-->
+								RFQ Info
+							</div>
+						</div>
+						<div class="xp_detail clearfix">
+							<ul>
+								<li><span>Country:</span>
+									<div>
+										<img src="/images/zg.png" alt="" /> <i id="country" th:text="${quoteInfo.country}"></i>
+									</div>
+								</li>
+															
+							</ul>
+							<ul>								
+								<li><span>Create Date:</span>
+									<div>
+										<i id="publish_date" th:text="${#strings.substringBefore(quoteInfo.publishDate, ' ')}"></i>
+									</div>
+								</li>
+							</ul>
+							<ul>
+								<li><span>Quoted Manufacturers:</span>
+									<div>
+										<i id="current_number" th:text="${quoteInfo.currentNumber+'/'+quoteInfo.maxNumber}"></i>
+									</div>
+								</li>								
+							</ul>
+							<!-- <div class="row">
+						      <span class="f18">Confidentiality:</span>
+                              <span id="confidentiality_agreement" class="f18"></span>
+                            </div> -->	
+						</div>					
+						<div class="lj_info">
+							<div class="lj_title">
+								<span class="iconfont">&#xe60c;</span>Parts Info
+								<a id="drawing_path" class="down_a">More Details</a>
+							</div>
+							<div class="lj_det" id="product_div">
+
+								<table class=table>
+									<thead id="product_thead">
+										<tr>
+											<th></th>
+											<th>Part Name</th>
+											<th>Process</th>
+											<th>Material</th>
+											<th>Weight(KG)</th>
+											<th class="th6 th61">Qty 1</th>
+											<th class="th6 th62">Qty 2</th>
+											<th class="th6 th63">Qty 3</th>
+											<th>EAU</th>
+										</tr>
+									</thead>
+									<tbody id="product_tbody">
+									</tbody>
+								</table>
+							</div>
+						</div>						
+					</div>
+					<div class="quotation clearfix wrap1">
+						<div class="pull-left d_l">
+							<h4>Project comments from the customer purchase representative:</h4>
+							<p th:title="${quoteInfo.quoteDetail}" id="quote_detail" th:text="${quoteInfo.quoteDetail}"></p>
+							<h4>Project comments from the quotation management engineer:</h4>
+							<p th:title="${quoteInfo.quoteRemark}" id="quote_remark" th:text="${quoteInfo.quoteRemark}"></p>
+						</div>
+						<div class="q_left pull-right posi_rel">
+							<table class="tab1">
+								<thead id="comparison_thead">
+									<tr class="tr1">
+										<th class="f9">Qualifications</th>
+										<th>Process</th>
+										<th>Area</th>
+										<th>Equipment</th>
+									</tr>
+								</thead>
+								<tbody id="comparison_tbody">
+									<tr>
+		                               <td class="f9">Requirement</td>
+		                               <td></td>
+		                               <td></td>
+		                               <td></td>
+		                            </tr>
+		                            <tr>
+		                            	<td class="f9">My status</td>
+		                            	<td><img src="../images/xz.png" alt="">
+		                            		<img src="" alt="">
+		                            	</td>
+		                            	<td><img src="../images/xz.png" alt="">
+		                            		<img alt="">
+		                            	</td>		                            	
+		                            	<td>
+		                            		<img src="../images/error1.png" alt="">
+		                            		<img src="../images/supplier/ltan.png" alt="">
+		                            	</td>
+		                            </tr>
+		                            <tr>
+		                                <td class="td3" colspan="4">RFQ status
+		                                <span id="order_status" ></span>
+		                                </td>
+		                            </tr>
+		                            <tr class="last-tr">
+                                <td colspan="4">
+                                    <div class="clearfix">
+                                        <p>My quote:</p>
+                                        <span id="quote_status"></span>
+                                    </div>
+                                    <div class="clearfix" id="follow_status" style="display: none">
+                                        <p>Follow up on the case:</p>
+                                        <span></span>
+                                    </div>
+                                    <div class="clearfix" id="order_factory" style="display: none">
+                                        <p>Order situation:</p>
+                                        <span></span>
+                                    </div>
+                                    <div class="clearfix" id="price_div" style="display: none">
+                                        <p>Current price level:</p>
+                                        <span class="span_last"></span>
+                                    </div>
+                                </td>
+                            </tr>
+						</tbody>
+							</table>
+                        <div class="add_detail_tc" style="display: none;">
+                            <p>Non-conformity may be caused by incomplete information</p>
+                            <a href="edit_enterprise_archives.html" target="_blank">Click to enter the completion information</a>
+                        </div>
+					</div>
+				</div>
+				<div class="section section2">
+					<div class="con">
+								<div class="quotation clearfix">
+							<div class="q_left pull-left">
+								<div class="card detail_card" style="display: none;">
+									<h3>Quote Team</h3>
+									<div class="card_1" id="sales_div">
+	                                    <span></span><br> <em>Customer Purchasing Representative</em><br>
+	                                    <div class="pic">
+	                                        <img src="">
+	                                    </div>
+	                                </div>
+	                                <div class="card_1 card_1_2" id="quoter_div">
+	                                    <span></span><br> <em>Quote Management Engineer</em><br>
+	                                    <div class="pic">
+	                                        <img src="">
+	                                    </div>
+	                                </div>
+	                                <div class="card_1" id="assistant_div">
+	                                    <span>Ands</span><br> <em>Quote Assistant</em><br> <span class="contact">021-62730733 803</span><br>
+	                                    <span class="contace qq"></span>
+	                                    <div class="pic">
+	                                        <img src="">
+	                                    </div>
+	                                </div>
+	                                <div class="bj_ewm">
+                                    <p>Scan the QRcode and try to quote online</p>
+                                    <div class="imgs">
+										<img src="" id="qr_code" />
+                                    </div>
+                                </div>
+								</div>								
+							</div>
+							<form id="file_upload_id" onsubmit="return false;" method="post"
+							enctype="multipart/form-data" class="file_upload_id pull-right">
+							<input type="hidden" id="filePath"> <input type="hidden"
+								id="orderId" name="orderId">
+							<div class="q_right pull-right">
+								<div class="title">
+									<i class="iconfont">&#xe63a;</i>Livechat with purchaser
+								</div>
+								<div class="q_detail" id="quote_message">
+									<div id="message"></div>
+									<textarea class="form-control" id="message_details"></textarea>
+									<div class="btn add_btn">
+										<input type="text" id="fileName" name="selectDrawingName"> 
+										<span></span>
+										<input type="file" name="file_upload" onchange="show_drawingName(this)" class="input_sc">
+										<button onclick="send_message(this)">send</button>
+									</div>
+								</div>
+							</div>
+						</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer"></div>
+	</div>
+</body>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script src="/js/dateFormat.js"></script>
+<script src="/js/cookie_util.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script src="/js/getNationalFlag.js"></script>
+<script type="text/javascript" src="/js/jquery-form.js"></script>
+<script src="/en/icn/details.js"></script>
+
+<script>
+$('#header').load('/en/header.html');
+$('#footer').load('/en/footer.html');
+
+/*零件信息显示隐藏切换*/
+$('.supplier_detail .lj_det tbody tr:first-child em').css({
+	'background':'url(/images/red.png) no-repeat'
+})
+$('.supplier_detail .lj_det tbody em').click(function(){
+    var $this = $(this).parent().parent().next('.trcol');
+    if($this.hasClass('currdis')){
+            $this.removeClass('currdis');
+            $this.show();
+        $(this).css({
+            'background':'url(/images/red.png) no-repeat'
+        })
+    }else{
+        $this.addClass('currdis');
+         $this.hide();
+        $(this).css({
+            'background':'url(/images/green.png) no-repeat'
+        })
+    }
+})
+/* 隔行换色*/
+$(".supplier_detail .lj_det tbody tr:not('.trcol'):even").css({
+	'background-color':'#f9f9f9'
+})
+
+/*点击收藏，弹窗出现*/
+
+// 	$('.t1 .sc01').click(function(){
+// 	    $('.supplier_detail .tc').show();
+// 	})
+$(' .tc_con-title em').click(function(){
+    $('.supplier_detail .tc').hide();
+})
+
+
+$('.inquiry_detail .section nav li a').hover(function(){
+    $(this).addClass('active')
+            .parent().siblings('li').children('a').removeClass('active');
+})
+
+$('.supplier_detail_e .card .close').click(function(){
+	$('.supplier_detail_e .card').hide();
+})
+
+
+</script>
+</html>
+
+

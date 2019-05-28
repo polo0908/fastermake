@@ -1,0 +1,15 @@
+#服务窗应用
+#CorpID和ChannelSecret
+CorpId=ding1ef2d0072a1da828
+ChannelSecret=Bp012UE6bjldK2PRUDNFfDeWEi-CYrmKB06fk2sDdAHpaAG_au4q4zeO12NiACH6
+processCode=PROC-EF6YRO35P2-N4ZB0ONUUWKB13A5K2FS1-O254Q7QI-96
+
+
+#csgtask
+CorpSecret=Fn_bYqlXSUnn39nMIKAJmFZD_khPpIy0570wvE5VPUdahXvHG4cebdIXtzgT2O9p
+
+#SSOSecret
+SSOSecret=
+
+#AgentID
+AgentID = 193645150

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>快制造-完善信息</title>
+    <link rel="shortcut icon" href="/img/favicon.ico"/>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/easydialog.css" />
+    <link rel="stylesheet" href="/css/css.css"/>
+    <script src="/lib/html5sshiv/html5shiv.min.js"></script>
+    <script src="/lib/respond/respond.js"></script>
+    <script src="/js/easydialog.min.js"></script>
+    <style>
+        @media (min-width: 1200px) {
+            .container {
+                width: 1200px;
+                padding:0;
+            }
+        }
+        
+        #easyDialogBox{
+        margin-top: -180px !important;
+        }
+    </style>
+</head>
+<body class="forget_password">
+<div class="sign forget_password">
+    <div class="head ">
+        <div class="head_in container w12">
+            <a href="/zh/index.html" class="logo"><img src="/images/head_146-39.png" alt=""/></a>
+            <span></span>
+        </div>
+    </div>
+    
+    
+    <div class="section">
+    
+       <div class="section_in">
+            <h3>完善信息</h3>
+           <form class="form-horizontal" onsubmit="return false;">
+               <div class="form-group">
+                   <label  class="col-sm-2 control-label" style="width: 20%;"><span style="color: red;font-size: 16px;">*</span>邮箱<span class="da4"></span></label>
+                   <div class="col-sm-4">
+                       <input type="text" class="form-control w336" id="email" placeholder="输入邮箱">
+                   </div>
+               </div>
+               <div class="form-group" style="padding-top: 20px;display:none;">
+                   <label  class="col-sm-2 control-label" style="width: 20%;"><span style="color: red;font-size: 16px;">*</span>密码<span class="da4"></span></label>
+                   <div class="col-sm-4">
+                       <input type="password" class="form-control w336" id="pwd" placeholder="输入密码">
+                   </div>
+               </div>
+               <div class="form-group" style="padding-top: 20px;display:none;">
+                   <label  class="col-sm-2 control-label" style="width: 20%;"><span style="color: red;font-size: 16px;">*</span>公司名称<span class="da4"></span></label>
+                   <div class="col-sm-4">
+                       <input type="text" class="form-control w336" id="company_name" placeholder="输入公司名称">
+                   </div>
+               </div>
+               <div class="form-group" style="padding-top: 20px;display:none;">
+                   <label  class="col-sm-2 control-label" style="width: 20%;"><span style="color: red;font-size: 16px;">*</span>用户名称<span class="da4"></span></label>
+                   <div class="col-sm-4">
+                       <input type="text" class="form-control w336" id="user_name" placeholder="输入用户名称">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label  class="col-sm-2 control-label" style="width: 20%;"></label>
+                   <div class="col-sm-4">
+                       <!--<input type="text" class="form-control w336 bgcc0" placeholder="">-->
+                       <button class="btn btn-default w336 bgcc0" id="login" onclick="confirm_email()">确认</button>
+                   </div>
+               </div>
+           </form>          
+       </div>
+      
+    </div>
+	
+</div>
+	<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
+
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script type="text/javascript">
+    
+
+    //获取openid
+	var openid;
+	var str = window.location.search;
+	if(str != null && str != ''){
+		str = str.substr(1);
+		openid = str.split("&")[0].split("=")[1];
+	}
+
+	//判断当前邮箱是否存在
+	var flag = true;
+	//判断邮箱是否合法
+	var e_judgment = false;
+	//判断密码是否合法
+    var p_judgment = false;	
+	 /**
+     *验证邮箱是否合法
+     */
+     $('#email').blur(function(){
+
+    	 var email = $('#email').val(); 
+    	 if(email == null || email == ''){
+    		 $('#email').next().addClass('error'); 
+    		 $('#email').next().text("邮箱不能为空").fadeIn();
+    		 e_judgment = false;
+    		 return false;
+    	 }
+       	   //验证邮箱是否合法
+    	   var szReg=/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+/;     	    	   
+    	   if(!(email == null || email.length==0)){
+    		   var bChk = szReg.test(email);
+   			
+   			if(!bChk){
+   			    $('#email').next().addClass('error'); 
+    		    $('#email').next().text("邮箱格式不正确").fadeIn();
+   				e_judgment = false;
+   				return false;
+   			}
+   		   }         	 	           	 
+    	   
+    	 $.post("/account/verifyfEmail.do",
+           	  { 
+		      "email" : email
+           	  },
+       	   function(result){
+       	     if(result.state == 0){
+     	    	 $('#pwd').parents('.form-group').show();
+     	    	 $('#company_name').parents('.form-group').show();
+     	    	 $('#user_name').parents('.form-group').show();
+     	    	 flag = true;
+     	    	 e_judgment = true;
+       	     }else{
+       	    	 $('#pwd').parents('.form-group').hide();
+     	    	 $('#company_name').parents('.form-group').hide();
+     	    	 $('#user_name').parents('.form-group').hide();
+     	    	 flag = false;
+     	    	 e_judgment = true;
+       	     }
+       	  }); 
+      })     
+
+	
+	//验证密码是否合理
+   	 $('#pwd').blur(function(){     
+   		$('#pwd').next().css({"display":"none"});
+   		 var pwd = $('#pwd').val();
+   		 var psdReg = /^[0-9a-zA-Z_]{6,15}$/;//密码正则
+   			if (!psdReg.test(pwd)) {
+   				$('#pwd').next().addClass('error').text("6-15位数字或者字母").fadeIn();
+   			    p_judgment = false;
+   				return false;
+   			} 
+   		 $('#pwd').addClass('success');
+   	     p_judgment = true;
+   		 return false;
+   	 });
+	       	 
+	
+	
+	
+	
+	
+	
+	
+	
+	//发送确认邮件
+     function confirm_email(){
+				
+		 var encrypt = "";
+		 var companyName = "";
+		 var userName = "";
+		 var pwd = $('#pwd').val();
+		 var email = $('#email').val();
+		//如果邮箱不存在，则判断是否输入密码、公司名
+    	 $('#email').blur();
+    	 if(flag){
+	    		 $('#pwd').blur(); 
+	    		 companyName = $('#company_name').val();
+	    		 if(companyName == "" || companyName == null){
+	    			 easyDialog.open({
+				    		  container : {
+				    		    content : '公司名不能为空'
+				    		  },
+				    		  overlay : false,
+				    		  autoClose : 1000   			    		  
+				    		});
+	    			 return false;
+	    		 }
+	    		 userName = $('#user_name').val();
+	    		 if(userName == "" || userName == null){
+	    			 easyDialog.open({
+				    		  container : {
+				    		    content : '用户名不能为空'
+				    		  },
+				    		  overlay : false,
+				    		  autoClose : 1000   			    		  
+				    		});
+	    			 return false;
+	    		 }
+	    		 
+	    		 if(!(e_judgment && p_judgment)){
+	    			 return false;
+	    		 }  	    	
+    	 }else{
+    		 //如果邮箱存在，直接判断邮箱是否合法
+        	 if(!e_judgment){
+        		 return false;
+        	 }  		 
+    	 }
+    	
+    	//将数据加密传输
+   	    encrypt = email+"&"+pwd+"&"+companyName+"&"+openid+"&"+userName;
+   	    var base = new Base64();
+   	    encrypt = base.encode(encrypt);
+    	 
+	 
+   	    $('#login').css({'background-color':'#ddd'}).attr("disabled",true);
+    	 $.post("/wechat/sendMail.do",
+            	  { 
+	   	          "encrypt" : encrypt,
+	   	          "email" : email 
+            	  },
+        	   function(result){
+            $('#login').css({'background-color':'#0046cd'}).removeAttr('disabled'); 
+        	    	 easyDialog.open({
+			    		  container : {
+			    		    content : '请查收邮箱，确认登录'
+			    		  },
+			    		  overlay : false,
+			    		  autoClose : 3000   			    		  
+			    		});
+        	    	 setTimeout(function(){ window.location = '/zh/index.html'; }, 3000);  
+          })     	 
+     }         
+   
+</script>

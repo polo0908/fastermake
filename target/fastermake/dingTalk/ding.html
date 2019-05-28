@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/1.6.9/dingtalk.js"></script>
+
+
+</head>
+<body>
+
+
+<div align="center">
+    <img id="userImg" alt="头像" src="">
+</div>
+
+<div align="center">
+    <span>UserName:</span>
+    <div id="userName" style="display: inline-block"></div>
+</div>
+
+<div align="center">
+    <span>UserId:</span>
+    <div id="userId" style="display: inline-block"></div>
+</div>
+
+
+<div align="center">
+    <span class="desc">是否验证成功</span>
+    <button class="btn btn_primary" id="yanzheng">ceshi</button>
+</div>
+<div align="center">
+    <span class="desc">测试按钮</span>
+    <button class="btn btn_primary" id="ceshi">ceshi</button>
+</div>
+
+
+</body>
+<script>
+
+    var agentId = '';
+    var corpId = '';
+    var timeStamp = '';
+    var nonceStr = '';
+    var signature = '';
+    $(function(){
+
+        $.ajax({
+            type: "POST",
+            url: "http://1j97509t42.51mypc.cn/Ding-Talk/getConfig",
+            success: function(result){
+                var data = eval("("+result+")");
+                agentId = data.agentId;
+                corpId = data.corpId;
+                timeStamp = data.timeStamp;
+                nonceStr = data.nonceStr;
+                signature = data.signature;
+
+
+
+                dd.config({
+                    agentId : agentId,
+                    corpId : corpId,
+                    timeStamp : timeStamp,
+                    nonceStr : nonceStr,
+                    signature : signature,
+                    jsApiList : [                           //需要调用的借口列表
+                        'runtime.info',
+                        'biz.contact.choose',            //选择用户接口
+                        'device.notification.confirm',
+                        'device.notification.alert',   //confirm,alert,prompt都是弹出小窗口的接口
+                        'device.notification.prompt',
+                        'biz.ding.post',
+                        'biz.util.openLink' ]
+                });
+
+
+                dd.ready(function() {
+                    dd.runtime.permission.requestAuthCode({
+                        corpId : "ding1ef2d0072a1da828",
+                        onSuccess : function(result) {
+                            var code = result.code;
+                            alert(code);
+                            //将code 发往后台处理
+                            /*
+                             *$.ajax的是用来使得当前js页面和后台服务器交互的方法
+                             *参数url:是需要交互的后台服务器处理代码，userInfoServlet
+                             *参数type:指定和后台交互的方法，因为后台servlet代码中处理Get和post的doGet和doPost
+                             *data:负责传递请求参数
+                             *其中success方法和error方法是回调函数，分别表示成功交互后和交互失败情况下处理的方法
+                             */
+                            $.ajax({
+                                type : "POST",
+                                url : "http://1j97509t42.51mypc.cn/Ding-Talk/sendNotice",
+                                data : {
+                                    code : code
+                                },
+                                success : function(data, status, xhr) {
+                                    alert(data);
+                                    //接收后端发送过来的用户信息
+                                    var userInfo = JSON.parse(data);
+
+                                    //收到用户信息后所做的处理
+                                    document.getElementById("userName").innerHTML = userInfo.name;
+                                    document.getElementById("userId").innerHTML = userInfo.userid;
+
+                                    // 图片
+                                    if(info.avatar.length != 0){
+                                        var img = document.getElementById("userImg");
+                                        img.src = info.avatar;
+                                        img.height = '200';
+                                        img.width = '200';
+                                    }
+
+                                },
+                                error : function(xhr, errorType, error) {
+                                    logger.e("yinyien:" + _config.corpId);
+                                    alert(errorType + ', ' + error);
+                                }
+                            });
+
+                        },
+                        onFail : function(err) {
+                            alert('出错了, ' + err);
+                        }
+                    });
+
+                });
+            }
+        });
+
+    })
+
+
+
+</script>
+</html>

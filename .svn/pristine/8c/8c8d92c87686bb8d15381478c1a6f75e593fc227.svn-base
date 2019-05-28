@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="Description" content="QUICKPART.CN is a subsidiary of china-sourcing.com have over 15 years sourcing experience.Please contact us.Tel:086-15921081083">
+    <title>Who are we | QUICKPART.cn</title>
+    <link rel="shortcut icon" href="/img/favicon.ico"/>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/easydialog.css" />
+    <link rel="stylesheet" href="/css/css.css"/>
+    <script src="/lib/html5sshiv/html5shiv.min.js"></script>
+    <script src="/lib/respond/respond.js"></script>
+    <script src="/js/easydialog.min.js"></script>
+    <style>
+        @media (min-width: 1200px) {
+            .container {
+                width: 1200px;
+                padding:0;
+            }
+        }               
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+<body>
+<div class="about_us">
+    <div id="header"></div>     
+    <div class="section container">
+    	<div class="panel">
+    		<div class="panel-body">
+    			<ol class="breadcrumb">
+    				<li><a href="https://www.quickpart.cn">Home</a></li>
+    				<li><a href="###">About Us</a></li>
+    				<li><a href="###">Who Are We</a></li>
+    			</ol>
+    			<h1>Who are we?</h1>
+    			<p>We are a a subsidiary of <a href="http://www.china-sourcing.com">china-sourcing.com</a>, which has over 15 years sourcing experience.</p>
+    			<p>In QUICKPART,we provide a unique combination of a B2B market place (open,low price) which you can <a href="https://www.quickpart.cn/en/quickly_release.html">POST YOUR RFQ</a> to thousands
+of chinese manufacturers,and a sourcing firm (quality control,communication) .</p>
+					<p>If you have design engineering issues, Manufacturing issues, you can <a href="mailto:RFQ@CSMFG.COM?subject=QUICKPART.CN&body=%0d%0d%0a Note: We will reply you within 24 hours.">ASK</a> our sourcing engineers.
+We are specialists on custom manufacture engineering parts.</p>
+					<img src="../images/en/1.jpg" class="add_img">
+    		</div>
+    	</div>
+    </div>
+		<div id="footer"></div>
+</div>
+</body>
+
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/base64.js"></script>
+<script type="text/javascript" src="/js/cookie_util.js"></script> 
+<script>
+	$('#header').load('header.html');
+	$('#footer').load('footer.html');
+</script>

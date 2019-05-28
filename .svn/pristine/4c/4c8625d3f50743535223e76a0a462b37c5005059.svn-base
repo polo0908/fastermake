@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0">
+<meta name="Keywords"
+  content="快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘">
+<meta name="Description"
+  content="快制造,外发加工,注塑模具,机械加工,钣金加工,塑料模具厂,注塑加工,塑料模具设计与制造,压铸厂,零件加工,外贸加工订单,非标定制,外发订单,外协加工,加工订单,注塑订单,压铸订单,钣金订单,机加工询盘,外贸询盘">
+<title>Control Panel|QUICKPART.cn</title>
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="/lib/html5sshiv/html5shiv.min.js"></script>
+<script src="/lib/respond/respond.js"></script>
+<link rel="stylesheet" href="/css/css.css" />
+<style>
+@media ( min-width : 1200px) {
+	.container {
+		width: 1200px;
+		padding: 0;
+	}
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132557536-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132557536-1');
+</script></head>                                                      
+<body>
+	<div class="enterprise_archives business_view business_view_en">
+		<div id="header"></div>
+		<div class="section ">
+			<div class="section_in section_main container clearfix">
+
+				<div class="contain_right pull-right">
+					<h3>Control Panel</h3>
+					<div class="panels clearfix">
+						<div class=" pull-left panel1">
+							<div class="panel panel_top_part">
+								<div class="panel-heading">Supplier</div>
+								<div class="panel_main_section">
+									<ul class="panel_list_view">
+										<li
+											onclick="window.location.href='/en/quote_list.html'">
+											<div>
+												<em class="em1"><i class="bg_i"></i></em> <span>New RFQ</span>
+											</div> <a href="#"><span id="week_count">0</span>New RFQ last week</a>
+										</li>
+										<li
+											onclick="window.location.href='/en/quote_list.html?quoteStatus=100'">
+											<div>
+												<em class="em2"><i class="iconfont">&#xe6b9;</i></em> <span>Invited Quoted</span>
+											</div> <a href="#"><span id="invitation">0</span>Unread Confirmation</a>
+										</li>
+										<li onclick="window.location.href='/en/quote_list.html?quoteStatus=102'">
+											<div>
+												<em class="em3"><i class="iconfont">&#xe630;</i></em> <span>Communicating</span>
+											</div> <a href="#"><span id="messageOrder">0</span>Communicating RFQ</a>
+										</li>
+										<li
+											onclick="window.location.href='/en/quote_list.html?quoteStatus=1'">
+											<div>
+												<em class="em4"><i class="iconfont">&#xe631;</i></em> <span>Quoted RFQ</span>
+											</div> <a href="/en/quote_list.html?quoteStatus=1"><span
+												id="quote_order">0</span>Quoted RFQ</a>
+										</li>
+										<li
+											onclick="window.location.href='/en/quote_list.html?quoteStatus=2'">
+											<div>
+												<em class="em5"><i class="iconfont">&#xe628;</i></em> <span>Pending</span>
+											</div> <a href="#"><span id="finish_order">0</span>Pending Project</a>
+										</li>
+										<li onclick="window.location.href='/en/quote_list.html?quoteStatus=7'">
+											<div>
+												<em class="em6"><i class="iconfont">&#xe60b;</i></em> <span>Rejected</span>
+											</div> <a href="#"><span id="refusedOrder">0</span>Rejected Quotation</a>
+										</li>
+										<!-- <li>
+                                            <div>
+                                                <em class="em7 em8"><i class="iconfont">&#xe641;</i></em>
+                                                <span>图纸管理</span>
+                                            </div>
+                                            <a href="#"><span>0</span>个项目中的图纸</a>
+                                        </li>
+                                        <li id="comment" >
+                                            <div>
+                                                <em class="em7"><i class="iconfont">&#xe7e8;</i></em>
+                                                <span>评价</span>
+                                            </div>
+                                            <a href="#"><span>0</span>个新评论</a>
+                                            <br/>
+                                            <a href="#"><span>0</span>个等待我完成的评论</a>
+                                        </li> -->
+										<li
+											onclick="window.location.href='/en/quote_list.html?quoteStatus=101'">
+											<div>
+												<em class="em7 em9"><i class="iconfont">&#xe63d;</i></em> <span>Collection</span>
+											</div> <a href="#"><span id="collectCount">0</span>Collected</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel panel_top_part">
+								<div class="panel-heading">Purchaser</div>
+								<div class="panel_main_section">
+									<ul class="panel_list_view">
+										<li
+											onclick="window.location.href='/en/purchase_list.html?orderStatus=0'">
+											<div>
+												<em class="em1"><i class="bg_i unpublished"></i></em> <span>Unpublished</span>
+											</div> <a href="#"><span id="purchase_unpublished">0</span>unpublished RFQs</a>
+										</li>
+										<li
+											onclick="window.location.href='/en/purchase_list.html?orderStatus=1'">
+											<div>
+												<em class="em3"><i class="iconfont"></i></em> <span>Quotable RFQ</span>
+											</div> <a href="#"><span id="quote_count">0</span>Quotable RFQs</a>
+										</li>
+										<li
+											onclick="window.location.href='/en/purchase_list.html?orderStatus=5'">
+											<div>
+												<em class="em6"><i class="iconfont bg_i teaching"></i></em> <span>Pending RFQ</span>
+											</div> <a href="#"><span id="buyerDecisionOrder">0</span>Pending RFQ</a>
+										</li>
+										<li
+											onclick="window.location.href='/en/purchase_list.html?orderStatus=6'">
+											<div>
+												<em class="em6"><i class="iconfont"></i></em> <span>Processing RFQ</span>
+											</div> <a href="#"><span id="buyerProcessOrder">0</span>Processing RFQ</a>
+										</li>
+										<li
+											onclick="window.location.href='/en/purchase_list.html?orderStatus=2'">
+											<div>
+												<em class="em4"><i class="iconfont">&#xe647;</i></em> <span>Finished RFQ</span>
+											</div> <a href="#" class="a_0"><span id="buyerFinishOrder">0</span>Finished RFQ</a>
+										</li>
+										<li
+												onclick="window.location.href='/en/purchase_list.html?orderStatus=7'">
+											<div>
+												<em class="bg_ff1"><i class="bg_i fail"></i></em> <span>Rejected RFQ</span>
+											</div> <a href="#" class="a_0"><span id="buyerNoPassOrder">0</span>Rejected RFQ</a>
+										</li>
+									</ul>
+								</div>
+							</div>							
+						</div>
+						<div class="panels2 pull-right">
+							<div class="panel panel_company_part">
+								<div class="panel-heading" id="userName"></div>
+								<div class="panel-body">
+									<div class="informat_left_font">
+										<h4 id="factoryName"></h4>
+										<p id="tel"></p>
+										<p>
+											Your profile has been viewed for <strong id="click_count"></strong> times.
+										</p>
+									</div>
+									<div class="informat_right_logo">
+										<img src="/images/defaultLogo1.png" alt="" id="factoryLogo">
+									</div>
+									<div class="informat_bottom_list">
+										<a href="/en/enterprise_archives.html">My Profle</a> <a
+											href="/en/edit_enterprise_archives.html">Edit Profle</a> <a
+											href="/en/account_management.html">Account Management</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+
+	<!-- 51la统计代码 --><script type="text/javascript" src="//js.users.51.la/19493791.js"></script></body>
+</html>
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/jquery-form.js"></script>
+<script src="/en/icn/business_view.js"></script>
+<script type="text/javascript" src="/js/upload-base.js"></script>
+<script type="text/javascript" src="/js/easydialog.min.js"></script>
+<script src="/lib/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script
+	src="/lib/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<script src="/js/getNationalFlag.js"></script>
+
+
+<script src="/js/base64.js"></script>
+<script src="/js/cookie_util.js"></script>
+<script src="/js/dateFormat.js"></script>
+<script src="/js/inquiry/getCount.js"></script>
+<script>
+
+$('#header').load('header.html');
+$('#footer').load('footer.html');
+
+    /*顶部鼠标经过子信息出现效果*/
+    $('.header_top_in .xxs').hover(function(){
+        $(this).children('.xx').css({
+            'border-color':'#dfdfdf',
+            'border-bottom-color':'transparent',
+            'background-color':'#fff'
+        })
+        $(this).children('.xxlist').show();
+    },function(){
+        $(this).children('.xx').css({
+            'border-color':'transparent',
+        })
+        $(this).children('.xxlist').hide();
+    })
+    /*更多消息里面鼠标经过效果*/
+    $('.xxlist a').hover(function(){
+        $(this). css({'color':'#006DCC'}).siblings().css({'color':'#666'})
+    })
+
+    /*顶部向下箭头点击变成向上箭头*/
+    $('.header_top_in .head_hover').hover(function(){
+        $(this).css({'background-color':'#fff'})
+                .find('.iconf').css({
+                    'background':'url(/images/xs.png)'
+                });
+    },function(){
+        $(this).find('.iconf').css({
+            'background':'url(/images/xx.png)'
+        });
+    })
+ 
+    $(function(){
+    	var factoryType;
+    	var factoryId;
+    	var factoryInfo = getCookie("factoryInfo");
+    	var f_info = getCookie("F_INFO");
+    	if (factoryInfo != null && factoryInfo != '' && factoryInfo != undefined) {    		
+    		var base = new Base64();
+    		factoryInfo = base.decode(factoryInfo);
+    		f_info = base.decode(f_info);
+    		
+    		var strs = [];
+    		strs = factoryInfo.split("&");
+    		
+    		var strs1 = [];
+    		strs1 = f_info.split("&");
+    		   		
+    		factoryType =  strs1[2];
+    		factoryId =  strs[0];
+    	}else{
+    		window.location = "/en/login.html";
+    	} 
+    	
+    	//客户类型判断 （采购商 供应商）
+    	if(factoryType == 0){
+    		$('.panel_top_part').show();
+    	}else if(factoryType == 1){
+    		$('.panel_top_part').eq(1).hide();
+    	}else if(factoryType == 2){
+    		$('.panel_top_part').eq(0).hide();
+    		$('.panel_center_part').hide();
+    	}else{
+    		window.location = "/en/login.html";
+    	}
+    	//公司评价
+    	if(factoryId != '' && factoryId != undefined && factoryId != null){
+    		$('#comment').attr("onclick","window.location='/en/view_factory_info.html?id="+factoryId+"#!tab=4'");
+    	}
+  	
+    	   
+		$.post("/inquiry/queryCountList.do",
+			function(result){
+			if(result.state == 0){
+				var quoteFinishOrder = result.data.quoteFinishOrder;
+				var normalOrder = result.data.normalOrder;
+				var collectCount = result.data.collectCount;
+				var invitationOrder = result.data.invitationOrder;
+				var evaluateCount = result.data.evaluateCount;
+                var refusedOrder = result.data.refusedOrder;
+                var messageOrder = result.data.messageOrder;
+                var weekCount = result.data.weekCount;
+				
+				//采购商订单数
+                var buyerNormalOrder = result.data.buyerNormalOrder;  //正常报价中
+                var buyerFinishOrder = result.data.buyerFinishOrder;  //已结束
+                var buyerProcessOrder = result.data.buyerProcessOrder;//生产中
+                var buyerDraftOrder = result.data.buyerDraftOrder;    //未发布
+                var buyerDecisionOrder = result.data.buyerDecisionOrder; //授盘中
+                var buyerNoPassOrder = result.data.buyerNoPassOrder;   //未通过
+				
+				
+				//判断是否属于供应商
+				if(factoryType == 0 || factoryType == 1){
+					$('#quote_order').text(normalOrder);
+					$('#finish_order').text(quoteFinishOrder);
+					$('#collectCount').text(collectCount);
+					$('#invitation').text(invitationOrder);
+					$('#comment').find('span').eq(1).text(evaluateCount);
+
+                    $('#messageOrder').text(messageOrder);
+                    $('#refusedOrder').text(refusedOrder);
+                    //一周新增项目数
+                    $('#week_count').text(weekCount);
+
+					if(invitationOrder>0){
+						$('#invitation').css({"color":"#ED1C24"});	
+					}
+					if(normalOrder>0){
+						$('#quote_order').css({"color":"#ED1C24"});	
+					}
+					
+					if(quoteFinishOrder != 0){
+						$('#finish_order').parent().attr('href',"/en/factory_finish_quote_list.html");
+						$('#finish_order').css({"color":"#ED1C24"});
+					}else{
+						$('#finish_order').parents('li').removeAttr('onclick');
+					}
+					if(evaluateCount >0){
+						$('#comment').find('span').eq(1).css({"color":"#ED1C24"});
+					}
+				}
+				
+				//判断是否属于采购商
+				if(factoryType == 0 || factoryType == 2){
+                    $('#purchase_unpublished').text(buyerDraftOrder);
+                    $('#quote_count').text(buyerNormalOrder);
+                    $('#buyerFinishOrder').text(buyerFinishOrder);
+                    $('#buyerProcessOrder').text(buyerProcessOrder);
+                    $('#buyerDecisionOrder').text(buyerDecisionOrder);
+                    $('#buyerNoPassOrder').text(buyerNoPassOrder);
+				}
+
+				
+				
+			}			
+		})
+		
+		
+		
+		/*$('.panel_top_part').find('li').hover(function(){
+			$(this).css({"text-decoration":"underline","color":"#1494d4","cursor":"pointer"});
+		},function(){
+			$(this).css({"text-decoration":"none","color":"#333"});	
+		})*/
+// 		$('#finish_order').hover(function(){
+// 			$(this).css({"text-decoration":"underline","color":"#1494d4","cursor":"pointer"});
+// 		},function(){
+// 			$(this).css({"text-decoration":"none","color":"#333"});	
+// 		})
+		
+		
+		
+    	/*侧边栏长度控制效果*/
+		var h1 = $(document.body).height() + 230 ;
+		var h2 = window.screen.availHeight  - 240 ;
+		if(h1 < h2){
+			$('#footer').addClass('footer1');
+		}else{
+			$('#footer').removeClass('footer1');
+		}
+    	
+    })
+
+    
+    
+    
+
+	
+    
+    
+</script>
